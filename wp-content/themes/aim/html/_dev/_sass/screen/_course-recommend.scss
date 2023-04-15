@@ -1,0 +1,215 @@
+.course-recommend{
+  &__sidebar {
+    @include PC {
+      width: 4rem;
+      margin-left: 0.16rem;
+      padding-top: 0.5rem;
+    }
+  }
+
+  &__regis {
+    @include SP {
+      display: none;
+    }
+
+    .regis-box__text {
+      font-weight: 600;
+
+      @include PC {
+        @include font(24, 28)
+      }
+    }
+  }
+
+  &__advisor {
+    @include PC {
+      display: none;
+    }
+  }
+  &__btn{
+    margin: 0 auto;
+    display: table;
+    @include PC{
+      padding: 0.1rem 0.3rem;
+      @include font(28);
+    }
+    @include SP{
+      padding: 0.05rem 0.2rem 0.04rem;
+      @include font(12);
+    }
+  }
+  &__sort {
+    @include select-arrow;
+    @include SP{
+      margin-top: 0.1rem;
+    }
+  }
+  &__toolbar{
+    @include PC{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 0 0.8rem;
+    }
+    .col{
+      &:nth-child(1),&:nth-child(2){
+        @include PC{
+          min-width: 5.92rem;
+          max-width: 45%;
+        }
+      }
+      &:last-child{
+        width: 100%;
+        text-align: center;
+        @include PC{
+          margin-top: 0.5rem;
+        }
+      }
+      &:not(:last-child){
+        @include SP{
+          margin-bottom: 0.15rem;
+        }
+      }
+    }
+    .label{
+      font-weight: 600;
+      @include PC{
+        text-transform: uppercase;
+        @include font(20,24);
+        padding-left: 0.4rem;
+        margin-bottom: 0.2rem;
+      }
+      @include SP{
+        @include font(13,18)
+      }
+    }
+  }
+  &__wrapper {
+    @include PC {
+      display: flex;
+      margin-top: 0.3rem
+    }
+    @include SP{
+      margin-top: 0.3rem;
+    }
+  }
+
+  &__content {
+    @include PC {
+      flex: 1;
+    }
+    @include SP {
+      margin: 0.1rem 0 0;
+    }
+  }
+  &__list{
+    @include PC{
+      margin-top: 0.16rem;
+    }
+    @include SP{
+      margin-top: 0.1rem;
+    }
+    &:not(:last-child){
+      @include PC{
+        margin-bottom: 0.46rem;
+      }
+      @include SP{
+        margin-bottom: 0.23rem;
+      }
+    }
+  }
+  &__item{
+    background: #f5f5f5;
+    @include PC{
+      padding: 0.39rem 0.48rem;
+    }
+    @include SP{
+      padding: 0.13rem 0.1rem;
+    }
+    &:not(:last-child){
+      @include PC{
+        margin-bottom: 0.2rem;
+      }
+      @include SP{
+        margin-bottom: 0.1rem;
+      }
+    }
+  }
+  &__heading{
+    font-weight: 600;
+    @include PC{
+      @include font(30,36);
+      margin-left: 0.35rem;
+    }
+    @include SP{
+      @include font(16,19);
+      text-align: center;
+    }
+  }
+  &__subheading{
+    font-style: italic;
+    font-weight: 300;
+    @include PC{
+      @include font(20,24)
+    }
+    @include SP{
+      @include font(12,16)
+    }
+  }
+  &__title{
+    font-weight: 600;
+    @include text-gradient(to left);
+    @include PC{
+      @include font(30,36);
+    }
+    @include SP{
+      @include font(12,14);
+      text-align: center;
+    }
+  }
+  &__info{
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+    @include PC{
+      margin-top: 0.3rem;
+    }
+    @include SP{
+      margin-top: 0.08rem;
+    }
+    *{
+      @include PC{
+        @include font(20,24)
+      }
+      @include SP{
+        @include font(9,12);
+        padding: 0 0.05rem;
+      }
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4){
+        text-align: center;
+        @include PC{
+          min-width: 1rem;
+        }
+      }
+      &:nth-child(5){
+        @include SP{
+          display: none;
+        }
+      }
+      &:nth-child(4){
+        @include SP{
+          width: 0.8rem;
+        }
+      }
+    }
+    img{
+      @include PC{
+        width: 0.12rem;
+        vertical-align: middle;
+        margin-right: 0.05rem;
+      }
+    }
+  }
+}

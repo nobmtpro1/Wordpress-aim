@@ -1,0 +1,67 @@
+.hom-detail{
+  @include PC{
+    padding: 0.3rem 0 0;
+    display: none;
+  }
+  @include SP{
+    margin-bottom: 0.1rem;
+    position: relative;
+    overflow: hidden;
+  }
+  &.active{
+    display: block;
+  }
+  &__body{
+    @include SP{
+      display: none;
+      margin-top: 0.1rem;
+    }
+  }
+  &__item{
+    padding-left: 1.5em;
+    margin-bottom: 1em;
+    background: url(../images/icon-vote.svg) no-repeat left top/ 1.1em auto;
+    @include PC{
+      @include font(20,26);
+    }
+    @include SP{
+      @include font(12,16)
+    }
+  }
+  h3{
+    position: relative;
+    @include SP{
+      font-weight: 700;
+      @include font(16,20);
+    }
+    &.active{
+      @include SP{
+        @include text-gradient(to left);
+      }
+    }
+    &:before{
+      @include SP{
+        content: '';
+        width: 0.36rem;
+        height: 0.36rem;
+        background: url(../images/icon-accordion.svg) no-repeat top center/ 0.16rem auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+  input{
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 0.5rem;
+    &:checked{
+      & ~ .hom-detail__body{
+        display: block;
+      }
+    }
+  }
+}

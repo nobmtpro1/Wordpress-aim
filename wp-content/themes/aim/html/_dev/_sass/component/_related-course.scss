@@ -1,0 +1,86 @@
+.related-course{
+  @include PC{
+    margin-top: 0.3rem;
+    margin-bottom: 0.38rem;
+  }
+  &__heading{
+    font-weight: 600;
+    @include SP{
+      text-align: center;
+    }
+    @include PC{
+      @include font(24,28);
+      margin-bottom: 0.25rem;
+    }
+  }
+  &__list{
+
+    @include PC{
+      margin-top: 0.16rem;
+      background: #f5f5f5;
+    }
+    @include SP{
+      margin-top: 0.1rem;
+    }
+  }
+  &__item{
+    @include PC{
+      padding: 0.15rem 0.2rem;
+    }
+    @include SP{
+      padding: 0.13rem 0.1rem;
+      margin-bottom: 0.08rem;
+      background: #f5f5f5;
+    }
+  }
+  &__title{
+    font-weight: 600;
+    @include text-gradient(to left);
+    @include PC{
+      @include font(20,24);
+    }
+    @include SP{
+      @include font(12,14);
+      text-align: center;
+    }
+  }
+  &__info{
+    display: flex;
+    justify-content: space-between;
+    @include PC{
+      margin-top: 0.05rem;
+    }
+    @include SP{
+      margin-top: 0.08rem;
+    }
+    *{
+      @include PC{
+        @include font(20,24)
+      }
+      @include SP{
+        @include font(10,12);
+        padding: 0 0.05rem;
+      }
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4){
+        text-align: center;
+        @include PC{
+          min-width: 1rem;
+        }
+      }
+      &:nth-child(5){
+        @include SP{
+          display: none;
+        }
+      }
+    }
+    img{
+      @include PC{
+        width: 0.12rem;
+        vertical-align: middle;
+        margin-right: 0.05rem;
+      }
+    }
+  }
+}

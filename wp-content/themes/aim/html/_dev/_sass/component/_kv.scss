@@ -1,0 +1,350 @@
+.kv{
+  $root: &;
+
+  color: white;
+  position: relative;
+  overflow: hidden;
+  @include PC{
+    background: url(../images/kv/bg-kv.jpg) no-repeat center/cover;
+    min-height: 7.31rem;
+  }
+  @include SP{
+    background: url(../images/kv/bg-kv-sp.jpg) no-repeat center/cover;
+    min-height: 3.00rem;
+    padding: .80rem 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__inner{
+    z-index: 1;
+    position: relative;
+    
+    @include PC{
+      padding: 1.30rem 1.41rem 1.67rem;
+      height: 100%;
+      justify-content: center;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 7.31rem;
+    }
+    @include SP{
+      align-content: center;
+      text-align: center;
+    }
+  }
+
+  &__title{
+    font-weight: 900;
+    @include PC{
+      @include font(84,91);
+      max-width: 10rem;
+    }
+    @include SP{
+      @include font(28,31);
+    }
+  }
+  &__subtitle{
+     font-weight: 700;
+     display: block;
+    @include PC{
+      @include font(40,60);
+    }
+    @include SP{
+      @include font(14,28);
+    }
+  }
+
+  &__text{
+    font-weight: 600;
+    @include PC{
+      @include font(29,38);
+      max-width: 10rem;
+      margin-top: 0.2rem;
+    }
+    @include SP{
+      @include font(12,16);
+      margin: 0.1rem auto;
+    }
+  }
+
+  &__image{
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+    right: 0.84rem;
+    @include PC{
+      height: 6.03rem;
+      width: auto;
+    }
+    @media (min-width:1001px) and (max-width:1200px) {
+     display: none;
+    }
+  }
+  
+  &__button{
+    font-weight: 700;
+    box-sizing: content-box;
+    @include PC{
+      padding: .22rem .40rem ;
+      @include font(24);
+      margin-top: .40rem;
+    }
+    @include SP{
+      @include font(12);
+      margin-top: .10rem;
+      padding:.06rem .10rem .06rem;
+      min-width: 0.92rem;
+    }
+  }
+
+  &__button-group{
+    display: flex;
+    @include SP{
+      flex-direction: column;
+      align-items: center;
+    }
+    #{$root}__button{
+      @include PC{
+        margin-right: 0.3rem;
+      }
+    }
+  }
+
+  &__list{
+    display: flex;
+    @include PC{
+      max-width: 11.9rem;
+      box-shadow: 7px 7px 7px rgba(#000,0.2);
+      padding: 0.2rem 0;
+      background: -webkit-linear-gradient(to left, #2af598,#009efd);
+      background: -moz-linear-gradient(to left, #2af598,#009efd);
+      background: -o-linear-gradient(to left, #2af598,#009efd);
+      background: linear-gradient(to left, #2af598,#009efd);
+      position: absolute;
+      bottom: 0.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      width: 100%;
+      align-items: stretch;
+      justify-content: center;
+      border-radius: 6px;
+    }
+    @include SP{
+      flex-wrap: wrap;
+      max-width: rem(252);
+    }
+  }
+  &__item{
+    display: flex;
+    @include PC{
+      padding: 0 0.5rem;
+      align-items: center;
+    }
+    @include SP{
+      padding: 0.05rem;
+      width: 1.25rem;
+    }
+    &:not(:last-child){
+      @include PC{
+        border-right: 1px solid white;
+      }
+    }
+  }
+  &__item-link{
+    font-weight: 600;
+    text-align: center;
+    @include PC{
+      @include font(25,30);
+      @include transition;
+    }
+    @include SP{
+      background: -webkit-linear-gradient(to left, #2af598,#009efd);
+      background: -moz-linear-gradient(to left, #2af598,#009efd);
+      background: -o-linear-gradient(to left, #2af598,#009efd);
+      background: linear-gradient(to left, #2af598,#009efd);
+      min-height: 0.33rem;
+      width: 100%;
+      @include font(10,12);
+      padding: 0.05rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 3px;
+    }
+    @include hover{
+      text-decoration: none;
+      transform: translateY(-2px);
+      text-shadow: 7px 7px 7px rgba(#000,0.45);
+    }
+  }
+
+
+  // page
+  &-home{
+    #{$root}__button{
+      @include PC{
+        padding: .22rem .40rem;
+        @include font(35);
+        margin-top: .35rem;
+      }
+      @include SP{
+        margin-top: .10rem;
+        padding:.05rem .10rem .04rem;
+        width: 0.92rem;
+      }
+    }
+    #{$root}__title{
+      font-weight: 900;
+      @include PC{
+        @include font(97,114);
+      }
+      @include SP{
+        @include font(30,36);
+      }
+    }
+    #{$root}__subtitle{
+      font-weight: 600;
+      display: block;
+     
+      @include PC{
+        @include font(71,85);
+        margin-bottom: 0.1rem
+      }
+      @include SP{
+        @include font(20,24);
+        margin-bottom:.1rem;
+      }
+    }
+    #{$root}__image{
+      @include PC{
+        max-width: 5.86rem;
+        right:-0.71rem;
+      }
+    }
+  }
+  
+  &-thankyou{
+    #{$root}__inner{
+      @include absolute(top 50% left 50%);
+      transform: translate(-50%,-50%);
+      text-align: center;
+      background: rgba(#231f20,0.5);
+      @include PC{
+        max-width: 9.6rem;
+        border-radius: 0.3rem;
+        padding: 0.4rem;
+        height: auto;
+        align-items: center;
+        min-height: 0;
+      }
+      @include SP{
+        max-width: 80%;
+        border-radius: 0.2rem;
+        padding: 0.3rem 0.2rem;
+      }
+    }
+    img{
+      @include SP{
+        width: 0.51rem;
+      }
+      @include PC{
+        width: 1.6rem;
+      }
+    }
+    #{$root}__text{
+      font-weight: 600;
+      @include PC{
+        @include font(24,28);
+        margin-top: 0.15rem;
+      }
+      @include SP{
+        @include font(11,14);
+        margin-top: 0.1rem;
+      }
+    }
+    #{$root}__title{
+      font-weight: 900;
+      @include PC{
+        margin-top: 0.25rem;
+        @include font(60,69)
+      }
+      @include SP{
+        @include font(20,20);
+        margin-top: 0.15rem;
+      }
+    }
+  }
+  &-project{
+    #{$root}__text{
+      @include PC{
+        max-width: 6rem;
+      }
+    }
+  }
+  &-ebook{
+    #{$root}__text{
+      @include PC{
+        max-width: 6rem;
+      }
+    }
+  }
+  &-trainer{
+    #{$root}__text{
+      @include PC{
+        max-width: 6rem;
+      }
+    }
+    #{$root}__button{
+      @include SP{
+        min-width: 1.5rem;
+        small{
+          margin-top: 0.03rem;
+        }
+      }
+    }
+  }
+  &-test-digital{
+    #{$root}__image{
+      @include PC{
+        right:-0.2rem;
+      }
+    }
+  }
+  &-competition-award{
+    #{$root}__image{
+      @include PC{
+        right:-0.4rem;
+      }
+    }
+  }
+
+  &-for-individual{
+    #{$root}__image{
+      @include PC{
+        right:-0.4rem;
+      }
+    }
+  }
+  &-career-orientation{
+    #{$root}__image{
+      @include PC{
+        height: 6.8rem;
+      }
+    }
+  }
+  &-hom{
+    @include SP{
+      flex-direction: column;
+      padding-bottom: 0.3rem;
+    }
+    #{$root}__image{
+      @include PC{
+        transform: scaleX(-1);
+      }
+    }
+  }
+}
+

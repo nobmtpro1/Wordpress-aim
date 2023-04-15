@@ -1,0 +1,57 @@
+.section-info{
+  background: #EFEFEF;
+  padding: 0.66rem 0 0.7rem;
+  font-size: 0.2rem;
+  font-weight: 300;
+  line-height: (36/20);
+  color: #000;
+  @include SP{
+    font-size: 0.12rem;
+    line-height: (24/12);
+    padding: 0.36rem 0 0.3rem;
+  }
+  *{
+    margin-bottom: 1.5em;
+    @include SP{
+      margin-bottom: 1.3em;
+    }
+  }
+  h1,h2,h3,h4,h5,h6{
+    font-weight: 600;
+  }
+  h1{
+    font-size: 0.34rem;
+    @include SP{
+      font-size: 0.26rem;
+      line-height: (24/20);
+    }
+  }
+  h2{
+    font-size: 0.32rem;
+    @include SP{
+      font-size: 0.24rem;
+      line-height: (24/20);
+    }
+  }
+  h3{
+    font-size: 0.3rem;
+    @include SP{
+      font-size: 0.2rem;
+      line-height: (24/20);
+    }
+  }
+  h4{
+    font-size: 0.25rem;
+    @include SP{
+      font-size: 0.15rem;
+      line-height: (24/15);
+    }
+  }
+  h5{
+    font-size: 0.22rem;
+    @include SP{
+      font-size: 0.13rem;
+      line-height: (24/15);
+    }
+  }
+}

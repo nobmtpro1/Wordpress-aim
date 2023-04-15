@@ -1,0 +1,437 @@
+.for-individual {
+  $root: &;
+
+  @include PC {
+    padding-top: 0;
+  }
+
+  &__statistic {
+    @include PC {
+      padding-bottom: 0;
+    }
+    @include SP{
+      display: none;
+    }
+  }
+
+  &__sidebar {
+    @include PC {
+      width: 4rem;
+      margin-left: 0.16rem;
+      padding-top: 0.8rem;
+    }
+  }
+
+  &__regis {
+    @include SP {
+      display: none;
+    }
+
+    .regis-box__text {
+      font-weight: 600;
+
+      @include PC {
+        @include font(24, 28)
+      }
+    }
+  }
+
+  &__advisor {
+    @include PC {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+    @include PC {
+      display: flex;
+      margin-top: 0.3rem
+    }
+  }
+
+  &__content {
+    @include PC {
+      flex: 1;
+    }
+
+    @include SP {
+      margin: 0.1rem 0 0;
+    }
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    .heading{
+      @include SP{
+        flex:1;
+      }
+    }
+    .viewall {
+      border-radius: 100px;
+      color: #a5a5a5;
+      display: flex;
+      margin-left: auto;
+      align-items: center;
+      border: 1px solid #a5a5a5;
+
+      @include PC {
+        padding: 0.1rem 0.2rem;
+        @include transition;
+        height: 0.4rem;
+        @include font(16, 19);
+      }
+      @include SP{
+        @include font(12,16);
+        height: 0.24rem;
+        width: 1.1rem;
+        justify-content: center;
+      }
+      @include hover {
+        background: rgba(#a5a5a5, 0.8);
+        color: white;
+
+        .icon {
+          background: url(../images/arrow-white.svg) no-repeat center center/contain
+        }
+      }
+
+      .icon {
+        background: url(../images/arrow-gray.svg) no-repeat center center/contain;
+
+        @include PC {
+          width: 0.3rem;
+          height: 0.3rem;
+          margin-left: 0.1rem;
+        }
+        @include SP {
+          width: 0.15rem;
+          height: 0.15rem;
+          margin-left: 0.05rem;
+        }
+      }
+      
+    }
+  }
+
+  &__list {
+    @include PC {
+      margin-top: 0.25rem;
+    }
+    @include SP{
+      margin-top: 0.2rem;
+    }
+  }
+
+  &__item {
+    &:not(:last-child) {
+      @include PC{
+        margin-bottom: 0.2rem;
+      }
+      @include SP{
+        margin-bottom: 0.1rem;
+      }
+    }
+  }
+
+  &__article {
+    $article: &;
+    border: 1px solid #ebebf2;
+
+    @include PC {
+      display: flex;
+      padding: 0.13rem;
+      border-radius: 2px;
+    }
+    @include SP{
+      flex-wrap: wrap;
+      padding: 0.1rem;
+    }
+
+    &-image {
+      border-radius: 5px;
+      border: 1px solid #ebebf2;
+      overflow: hidden;
+      z-index: 1;
+      @include PC {
+        position: relative;
+        width: rem(210);
+        height: rem(223);
+        padding: 0.2rem 0.25rem 0
+      }
+      @include SP{
+        width: 0.77rem;
+        height: 0.82rem;
+        padding: 0.1rem;
+        position: absolute;
+      }
+
+      &:before {
+        content: '';
+        @include absolute(top 0 left 0);
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: url(../images/decor.svg) no-repeat center top/ 80% auto;
+      }
+
+      img {
+        @include image-fit(top center, cover);
+
+        @include PC {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+    }
+
+    &-desc {
+      @include PC {
+        @include cutText(5, 5);
+        @include font(16, 19);
+        justify-self: flex-end;
+        margin-top: auto;
+      }
+      @include SP{
+        display: none;
+      }
+    }
+
+    &--hot {
+      #{$article}-image {
+        border: none;
+
+        &:before {
+          background-image: url(../images/decor-white.svg);
+        }
+
+        &:after {
+          content: '';
+          @include absolute(top 0 left 0);
+          width: 100%;
+          height: 100%;
+          z-index: -2;
+          @include background-gradient(to left)
+        }
+      }
+    }
+
+    &-body {
+      @include PC {
+        margin-left: 0.26rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-right: 0.13rem;
+      }
+      @include SP{
+        margin-left: 0.1rem;
+        width: 2.88rem;
+        padding-left: 0.77rem;
+      }
+
+      .info {
+        font-weight: 700;
+
+        @include PC {
+          @include font(16, 19);
+        }
+        @include SP{
+          @include font(10,14)
+        }
+
+        &:last-child {
+          @include PC {
+            margin-bottom: 0.1rem;
+          }
+        }
+      }
+    }
+
+    &-label {
+      display: inline-block;
+      color: white;
+      background: -webkit-linear-gradient(to right, #009EFD, #2AF598);
+      background: -moz-linear-gradient(to right, #009EFD, #2AF598);
+      background: -o-linear-gradient(to right, #009EFD, #2AF598);
+      background: linear-gradient(to right, #009EFD, #2AF598);
+      text-align: center;
+      font-weight: 600;
+
+      @include PC {
+        padding: 0.04rem 0.05rem 0.03rem;
+        @include font(11);
+        margin-bottom: 0.05rem;
+        width: 0.69rem;
+      }
+
+      @include SP {
+        padding: 0.03rem 0.08rem 0.02rem;
+        @include font(8)
+      }
+    }
+
+    &-title {
+      @include text-gradient(to left);
+      font-weight: 900;
+
+      @include PC {
+        @include font(24, 28);
+        margin-bottom: 0.05rem;
+      }
+      @include SP {
+        @include font(14,18);
+        margin-bottom: 0.05rem;
+      }
+    }
+
+    &-footer {
+      @include PC {
+        width: 2.5rem;
+        border-left: 1px solid #ebebf2;
+        margin: -0.13rem 0;
+        padding: 0.13rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+      @include SP{
+        width: 100%;
+        position: relative;
+      }
+      .price {
+        @include text-gradient(to left);
+        font-weight: 800;
+        @include PC {
+          @include font(24, 28);
+          text-align: right;
+        }
+        @include SP {
+          @include font(14, 18);
+          padding-left: 0.4rem;
+
+        }
+
+        small {
+          margin-left: 0.05rem;
+          @include PC {
+            @include font(14, 18);
+          }
+          @include SP {
+            @include font(8,12);
+          }
+        }
+      }
+
+      .discount {
+        color: #969696;
+        font-weight: 800;
+        text-decoration: line-through;
+        @include PC {
+          @include font(18, 22);
+          text-align: right;
+        }
+        @include SP {
+          @include font(10, 14);
+          padding-left: 0.4rem;
+        }
+      }
+
+      .info {
+        color: #969696;
+      }
+
+      .note {
+        font-style: italic;
+        @include PC {
+          @include font(12, 16);
+          margin-bottom: 0.1rem;
+          color: #969696;
+          text-align: right;
+        }
+        @include SP {
+          @include font(8,12);
+          padding-left: 0.85rem;
+        }
+      }
+    }
+    .top{
+      @include SP{
+        padding-left: 0.85rem;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 0.3rem;
+        margin: 0.05rem 0;
+      }
+    }
+    .label{
+      width: 0.3rem;
+      top: 0;
+      left: 0.88rem;
+      position: absolute;
+    }
+    &-btn-group {
+      @include PC{
+        justify-self: flex-end;
+        margin-top: auto;
+        text-align: right;
+      }
+      @include SP{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0.1rem;
+      }
+      .button {
+        display: flex;
+        justify-content: center;
+
+        @include PC {
+          width: 1.35rem;
+          padding: 0.1rem 0.15rem 0.08rem;
+          @include font(16, 19);
+          margin-top: 0.1rem;
+          margin-left: auto;
+        }
+        @include SP {
+          padding: 0.07rem 0.1rem;
+        }
+
+        &.button--border {
+          @include hover {
+            .icon {
+              background: url(../images/arrow-white.svg) no-repeat center center/contain
+            }
+          }
+        }
+
+        &.btn-download {
+          @include PC {
+            @include font(14, 18);
+            width: 100%;
+          }
+          @include SP{
+            margin-left: 0.1rem;
+          }
+        }
+
+        .icon {
+          background: url(../images/arrow-gradient.svg) no-repeat center center/contain;
+          @include PC {
+            width: 0.15rem;
+            height: 0.16rem;
+            margin-left: 0.1rem;
+          }
+          @include SP{
+            width: 0.1rem;
+            margin-left: 0.05rem;
+          }
+        }
+      }
+    }
+  }
+}

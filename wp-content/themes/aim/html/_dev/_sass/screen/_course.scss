@@ -1,0 +1,193 @@
+.course{
+  @include PC{
+    padding: 0 0.2rem 0.5rem;
+    max-width: 12.8rem;
+    margin: 0 auto
+  }
+  @include SP{
+    padding-bottom: 0.3rem;
+  }
+  &__category{
+    @include PC{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.4rem;
+    }
+    @include SP{
+      display: none;
+    }
+    &-item{
+      text-align: center;
+      img{
+        @include PC{
+          @include transition;
+          height: 0.73rem;
+          @include image-fit(center,contain)
+        }
+      }
+    }
+    &-link{
+      @include hover{
+        text-decoration: none;
+        img{
+          transform: translateY(-10px);
+        }
+      }
+    }
+    &-name{
+      font-weight: 600;
+      @include PC{
+        @include font(14,19);
+        margin-top: 0.15rem;
+      }
+    }
+  }
+  &__heading{
+    @include PC{
+      margin-top: 0.3rem;
+    }
+    @include SP{
+      margin-top: 0.15rem;
+    }
+  }
+  &__section{
+    @include PC{
+      margin-top: 0.2rem;
+    }
+    @include SP{
+      margin-top: 0.1rem;
+    }
+    &-heading{
+      position: relative;
+      z-index: 1;
+      @include PC{
+        padding-left: 0.15rem;
+      }
+      @include SP{
+        padding-left: 0.05rem;
+      }
+      &:before{
+        content: "";
+        height: 0.7em;
+        position: absolute;
+        left: 0;
+        @include background-gradient(to top);
+        @include PC{
+          top: 0.14rem;
+          width: 0.065rem;
+        }
+        @include SP{
+          top: 0.02rem;
+          width: 0.02rem;
+        }
+      }
+      &::after{
+        @include SP{
+          content:'';
+          background: url(../images/icon-accordion.svg) no-repeat center/0.16rem 0.16rem;
+          position: absolute;
+          z-index: -1;
+          width: 0.18rem;
+          height: 0.18rem;
+          position: absolute;
+          right: 0;
+          top: -0.02rem;
+          transform: rotate(-90deg);
+          @include transition;
+        }
+      }
+      &.active{
+        &:after{
+          @include SP{
+            transform: rotate(-180deg);
+          }
+        }
+      }
+    }
+    &-table{
+      width: 100%;
+      @include PC{
+        border-top: 1px solid #000;
+      }
+      @include SP{
+        margin-top: 0.05rem;
+        display: none;
+      }
+      &.active{
+        @include SP{
+          display: block;
+        }
+      }
+      tr{
+        &:nth-child(even){
+          background: #efefef;
+        }
+      }
+      td{
+        padding: 0.1rem ;
+        vertical-align: middle;
+        text-align: center;
+        @include PC{
+          @include font(16,19)
+        }
+        @include SP{
+          @include font(10,12)
+        }
+        &:first-child{
+          text-align: left;
+          @include PC{
+            width: 5rem;
+            @include font(18,24);
+            font-weight: 500;
+          }
+          @include SP{
+            @include font(10,12)
+          }
+        }
+        &:nth-child(2){
+          @include SP{
+            display: none;
+          }
+        }
+        &:nth-child(3){
+          @include PC{
+            min-width: 1.35rem
+          }
+          @include SP{
+            display: none;
+          }
+        }
+        &:nth-child(4){
+          @include PC{
+            min-width: 1.1rem
+          }
+        }
+        &:nth-child(5){
+          @include PC{
+            min-width: 0.96rem
+          }
+          @include SP{
+            display: none;
+          }
+        }
+        &:nth-child(6){
+          @include SP{
+            display: none;
+          }
+        }
+        &:nth-child(7){
+          @include SP{
+            display: none;
+          }
+        }
+        img{
+          @include PC{
+            width: 0.11rem;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+  
+}

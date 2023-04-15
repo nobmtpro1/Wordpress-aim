@@ -1,0 +1,135 @@
+.testimonial{
+  &__content{
+    margin: 0 auto;
+    font-style: italic;
+    @include font-default;
+    position: relative;
+    @include PC{
+      max-width: 7.2rem;
+      padding: 0.15rem 0.7rem;
+    }
+    @include SP{
+      max-width: 2.58rem;
+      padding: 0.05rem 0.3rem;
+    }
+    &:before,&:after{
+      content: '';
+      position: absolute;
+      @include PC{
+        width: 0.51rem;
+        height: 0.4rem;
+      }
+      @include SP{
+        width: 0.2rem;
+        height: 0.16rem;
+      }
+    }
+    &:before{
+      background: url(../images/icon-quote-start.svg) no-repeat top center/ 0.51rem auto;
+      top: 0;
+      left: 0;
+      @include SP{
+        background-size: 0.2rem auto;
+      }
+    }
+    &:after{
+      background: url(../images/icon-quote-end.svg) no-repeat top center/ 0.51rem auto;
+      bottom: 0;
+      right:  0;
+      @include SP{
+        background-size: 0.2rem auto;
+      }
+    }
+  }
+  &__pagination{
+    display: flex;
+    background: #b8b8b8;
+    border-radius: 300px;
+    align-items: center;
+    @include PC{
+      padding: 0.1rem;
+    }
+    @include SP{
+      padding: 0.08rem;
+      max-width: 2.58rem;
+      margin: 0 auto
+    }
+    &-image{
+      @include image-fit(top);
+      border-radius: 999px;
+      background: white;
+      margin-right: 0.1rem;
+      @include SP{
+        width: 0.44rem!important;
+        height: 0.44rem;
+      }
+      @include PC{
+        width: 0.62rem!important;
+        height: 0.62rem;
+      }
+    }
+    .swiper-slide-thumb-active &{
+      @include background-gradient(to left)
+    }
+  }
+  &__name{
+    text-transform: uppercase;
+    display: block;
+    color: white;
+    text-align: left;
+    font-weight: 700;
+    @include PC{
+      @include font(15,18);
+    }
+    @include SP{
+      @include font(10,12)
+    }
+  }
+  &__position{
+    font-style: italic;
+    display: block;
+    color: white;
+    text-align: left;
+    margin-top: 0.05rem;
+    @include PC{
+      @include font(12,14);
+    }
+    @include SP{
+      @include font(8,10)
+    }
+  }
+  &-thumbs{
+    cursor: pointer;
+    @include PC{
+      max-width: 10.13rem;
+      margin: 0.2rem auto 0;
+    }
+    .swiper-wrapper{
+      justify-content: space-between;
+    }
+  }
+  &-top{
+    @include PC{
+      margin: 0.2rem auto 0;
+    }
+    @include SP{
+      margin: 0.1rem auto 0;
+    }
+  }
+  .swiper-container{
+    @include PC{
+      padding-bottom: 0;
+    }
+    @include SP{
+      padding-bottom: 0.1rem;
+    }
+  }
+  .swiper-wrapper{
+    align-items: center;
+  }
+  .swiper-button{
+    @include PC{
+      display: none;
+    }
+  }
+}

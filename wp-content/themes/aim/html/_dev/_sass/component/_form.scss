@@ -1,0 +1,357 @@
+.form {
+  $root: &;
+  @include PC {
+    @include font(20, 28)
+  }
+
+  @include placeholder {
+    @include font(20, 28);
+  }
+
+  select {
+    width: 100%;
+    border: 1px solid rgba(black, 0.5);
+    border-radius: 100px;
+    background: transparent;
+    @include PC {
+      @include font(22, 28);
+      min-height: rem(60);
+    }
+
+    @include SP {
+      @include font(12, 14)
+    }
+  }
+
+  option {
+    @include PC {
+      @include font(20, 28);
+    }
+
+    @include SP {
+      @include font(12, 14)
+    }
+  }
+
+  input[type='search'] {
+    @include PC {
+      @include font(21)
+    }
+
+    @include SP {
+      @include font(12)
+    }
+  }
+
+  input[type='image'] {
+    @include PC {
+      width: rem(22);
+      height: auto;
+      margin-right: 0.1rem;
+    }
+    @include SP {
+      margin-right: 0.04rem;
+      width: 0.1rem;
+    }
+  }
+
+  &-control--search {
+    border: none;
+    flex: 1;
+    @include removeOutline;
+    font-family: $font-family;
+  }
+
+  &-control--sort {
+    @include removeOutline;
+    border: none;
+
+    @include PC {
+      padding: 0.09rem 0.38rem;
+    }
+
+    @include SP {
+      padding: 0.06rem 0.28rem 0.05rem;
+    }
+  }
+  &-group{
+    position: relative;
+    margin-top: 0.1rem;
+    z-index: 1;
+    &.multiple-select{
+      min-height: 0.4rem;
+      border-bottom: 1px solid #C8C8C8;
+      position: relative;
+      z-index: 2;
+      padding: 0.1rem;
+      @include PC{
+        @include font(16)
+      }
+      @include SP{
+        @include font(12)
+      }
+      #{$root}-placeholder{
+        &:before{
+          content: '';
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-color: #C8C8C8 transparent transparent transparent;
+          position: absolute;
+          z-index: -1;
+          top: 50%;
+          transform: translateY(-50%);
+          @include PC{
+            right: 0.1rem;
+            border-width: 0.1rem 0.1rem 0 0.1rem;
+          }
+          @include SP{
+            right: 0.05rem;
+            border-width: 0.05rem 0.05rem 0 0.05rem;
+          }
+        }
+      }
+      .label{
+        text-overflow: ellipsis;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        width: 100%;
+      }
+    }
+  } 
+  &-button{
+    width: 80%;
+
+    @include PC{
+      margin: 0.2rem auto 0;
+      padding: 0.2rem 0.4rem;
+      @include font(24,28);
+      display: block;
+    }
+    @include SP{
+      margin: 0.4rem auto 0;
+      padding: 0.1rem 0.2rem;
+      @include font(12,16);
+    }
+  }
+  &-input{
+    padding: 0.1rem;
+    border: none;
+    width: 100%;
+    background: transparent;
+    border-bottom: 1px solid #C8C8C8;
+    outline: none;
+    &[required]:valid + #{$root}-placeholder{
+      color: transparent;
+      span{
+        color: transparent;
+      }
+    }
+    &[type='email']:focus:invalid + #{$root}-placeholder{
+      color: transparent;
+      span{
+        color: transparent;
+      }
+    }
+    @include PC{
+      @include font(16,19);
+    }
+    @include SP{
+      @include font(12,16);
+    }
+  }
+  &-placeholder{
+    position: absolute;
+    width: 100%;
+    padding-left: 0.1rem;
+    left: 0;
+    top: 50%;
+    color: #C8C8C8;
+    z-index: -1;
+    text-align: left;
+    transform: translateY(-50%);
+    @include PC{
+      @include font(16,19);
+    }
+    @include SP{
+      @include font(10,14);
+    }
+  }
+  &-select{
+    & ~ #{$root}-placeholder{
+      &:before{
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-color: #C8C8C8 transparent transparent transparent;
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        transform: translateY(-50%);
+        @include PC{
+          right: 0.1rem;
+          border-width: 0.1rem 0.1rem 0 0.1rem;
+        }
+        @include SP{
+          right: 0.05rem;
+          border-width: 0.05rem 0.05rem 0 0.05rem;
+        }
+      }
+    }
+  }
+  &-checkbox{
+    display: none;
+    &:checked{
+      & ~  label{
+        &:after{
+          opacity: 1;
+        }
+      }
+    }
+    & ~ label{
+      cursor: pointer;
+      margin-top: 0.2rem;
+      display: block;
+      text-align: left;
+      @include PC{
+        @include font(16,24);
+        padding-left: 0.35rem;
+      }
+      @include SP{
+        @include font(10,13);
+        padding-left: 0.2rem;
+      }
+      &:before{
+        content: "";
+        border: 1px solid #C8C8C8;
+        width: 0.2rem;
+        height: 0.2rem;
+        position: absolute;
+        left: 0;
+        top: 0; 
+        border-radius: 100%;
+        @include SP{
+          width: 0.1rem;
+          height: 0.1rem;
+          top: 0.02rem;
+        }
+      }
+      &:after{
+        opacity: 0;
+        @include transition;
+        transition-property: opacity;
+        content: "";
+        width: 0.14rem;
+        height: 0.14rem;
+        position: absolute;
+        left: 0.04rem;
+        top: 0.04rem; 
+        background: url(../images/icon-checkbox.svg) no-repeat center/ contain;
+        @include SP{
+          width: 0.065rem;
+          height: 0.065rem;
+          left: 0.03rem;
+        }
+      }
+    }
+  }
+  &-area{
+    border: 1px solid #C8C8C8;
+    border-radius: 5px;
+    width: 100%;
+    resize: vertical;
+    outline: none;
+    padding: 0.1rem;
+    font-family: $font-family;
+    color: #000;
+    background: transparent;
+
+    @include PC{
+      @include font(16,19);
+    }
+    @include SP{
+      @include font(10,14);
+    }
+    @include placeholder{
+      color: #C8C8C8;
+      font-family: $font-family;
+      @include PC{
+        @include font(16,19);
+      }
+      @include SP{
+        @include font(10,14);
+      }
+    }
+    #{$root}-group &{
+      margin-top: 0.2rem;
+    }
+    & + #{$root}-placeholder{
+      top: 0.4rem;
+    }
+  }
+  &-inline{
+    @include PC{
+      display: flex;
+      justify-content: space-between;
+      & > .form-group{
+        &:first-child{
+          width: 100%;
+          max-width: 3.92rem;
+        }
+        &:not(:first-child){
+          margin-left: 0.2rem;
+          flex: 1;
+        }
+      }
+    }
+   
+  }
+  &-file{
+    opacity: 0; 
+    position: absolute;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    & + .form-input{
+      min-height: 0.40rem;
+      display: block;
+      & + #{$root}-placeholder{
+        background: url(../images/icon-file.svg) no-repeat right center/0.3rem auto;
+        @include SP{
+          background-size: 0.15rem auto;
+        }
+      }
+    }
+  }
+  &-multiple-select{
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    background: white;
+    height: 2.5rem;
+    overflow-y: scroll;
+
+    input {
+      display: none;
+    }
+    label{
+      cursor: pointer;
+      display: block;
+      padding: 0.1rem;
+      @include PC{
+        @include font(16);
+      }
+      @include SP{
+        @include font(10);
+      }
+      &.active{
+        background: rgba(#C8C8C8, 0.5);
+      }
+    }
+  }
+}

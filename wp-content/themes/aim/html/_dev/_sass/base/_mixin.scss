@@ -1,0 +1,260 @@
+@charset "utf-8";
+
+$breakpoint :1000px;
+
+/* MEDIA QUERIES
+ * -----------------------------------------------*/
+@mixin PC {
+  @media print, (min-width: $breakpoint + 1) {
+    @content;
+  }
+}
+
+@mixin SP {
+  @media only screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin landscape {
+  @media (orientation: landscape) {
+    @content;
+  }
+}
+
+/* function
+ * -----------------------------------------------*/
+$cl1: #e32068;
+$cl2: #f5003b;
+$list: $cl2, $cl1;
+
+@mixin background-gradient($direction) {
+  background: -webkit-linear-gradient($direction, $list);
+  background: -moz-linear-gradient($direction, $list);
+  background: -o-linear-gradient($direction, $list);
+  background: linear-gradient($direction, $list);
+}
+
+@mixin text-gradient($direction) {
+  background: -webkit-linear-gradient($direction, $list);
+  background: -moz-linear-gradient($direction, $list);
+  background: -o-linear-gradient($direction, $list);
+  background: linear-gradient($direction, $list);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
+}
+
+@mixin link($color) {
+  a{
+    color: $color;
+  }
+}
+
+@mixin font($size,$line-height:false) {
+  font-size: $size/100 + rem;
+  @if($line-height){
+    line-height: $line-height/$size;
+  }
+}
+
+@mixin border-gradient($dir, $width) {
+  border-left: $width solid $cl2;
+  border-right: $width solid $cl1;
+  background-image:
+    // Needed for both the top and bottom borders
+    -webkit-linear-gradient($dir, $list),
+    -webkit-linear-gradient($dir, $list);
+  background-size: 100% $width;
+  background-position: 0 100%, 0 0;
+  background-repeat: no-repeat;
+  background-clip: border-box;
+}
+
+@mixin hover-img {
+  img{
+    transition:.3s all ease;
+  }
+  @include PC{
+    &:hover{
+      cursor: pointer;
+      img{
+        opacity:.8;
+      }
+    }
+  }
+}
+
+@mixin  center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+@mixin sticky {
+  position: sticky;
+  -webkit-position:sticky;
+}
+
+@mixin  cutText($pc,$sp:false) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+  @include PC{
+    -webkit-line-clamp: $pc;
+  }
+  @if($sp){
+    @include SP{
+      -webkit-line-clamp: $sp;
+    }
+  }
+}
+
+@mixin clear {
+  &:after{
+    clear: both;
+    display: table;
+    content:''
+  }
+}
+
+@mixin image-fit($pos,$prop:false) {
+  width: 100%;
+  object-position: $pos;
+  @if $prop{
+    object-fit: $prop;
+  }@else{
+    object-fit: cover;
+  }
+}
+
+@mixin  transition {
+  transition: 0.3s all ease;
+}
+
+@mixin font-default {
+  @include PC{
+    @include font(20,28)
+  }
+  @include SP{
+    @include font(12,18)
+  }
+}
+
+@mixin position($position, $args) {
+  @each $o in top right bottom left {
+    $i: index($args, $o);
+    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number {
+      #{$o}: nth($args, $i + 1);
+    }
+  }
+  position: $position;
+}
+
+// Positioning helpers
+@mixin absolute($args: '') {
+  @include position(absolute, $args);
+}
+
+@mixin fixed($args: '') {
+  @include position(fixed, $args);
+}
+
+@mixin relative($args: '') {
+  @include position(relative, $args);
+}
+
+@function rem($size){
+  @return($size/100) * 1rem;
+}
+
+@mixin unvisible {
+  visibility: hidden;
+  z-index: -1;
+  opacity: 0;
+}
+
+@mixin visible {
+  visibility: visible;
+  z-index: 1;
+  opacity: 1;
+}
+
+@mixin hover {
+  @include PC{
+    &:hover{
+      cursor: pointer;
+      @content;
+    }
+  }
+}
+
+@mixin removeOutline {
+  &:focus {
+    box-shadow: none;
+    outline: 0;
+  }
+}
+
+@mixin placeholder {
+  &::placeholder{
+    @content;
+  }
+}
+
+@mixin grid{
+  display: flex;
+  flex-wrap: wrap;
+  @include PC{
+    margin: 0 rem(-19);
+  }
+  @include SP{
+    margin: 0 rem(-10);
+  }
+}
+@mixin grid__item($num){
+  width: calc(100% / #{$num} );
+  @include PC{
+    padding: 0 rem(19);
+  }
+  @include SP{
+    padding:  0 rem(10);
+  }
+  &:nth-child(n + #{$num +1}) {
+    @include PC{
+      margin-top: rem(38);
+    }
+    @include SP{
+      margin-top: 0.3rem;
+    }
+  }
+}
+
+@mixin select-arrow {
+  position: relative;
+  z-index: 1;
+  @include PC {
+    width: rem(523);
+    height: rem(60);
+  }
+  &:before{
+    content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: #C8C8C8 transparent transparent transparent;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    transform: translateY(-50%);
+    @include PC{
+      right: 0.31rem;
+      border-width: 19px 19px 0 19px;
+    }
+    @include SP{
+      right: 0.14rem;
+      border-width: 10px 10px 0 10px;
+    }
+  }
+}

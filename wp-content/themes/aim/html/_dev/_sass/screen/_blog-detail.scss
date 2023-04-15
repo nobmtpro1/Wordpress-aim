@@ -1,0 +1,229 @@
+.blog__detail{
+  &-heading{
+    @include PC{
+      margin-top: 0.5rem;
+      position: relative;
+    }
+   
+    img{
+      height: 0.27rem;
+      width: auto;
+    }
+  }
+  &-info{
+    display: flex;
+    @include PC{
+      justify-content: space-between;
+      @include font(16,20)
+    }
+    @include SP{
+      @include font(10);
+      flex-direction: column-reverse;
+    }
+    a{
+      display: flex;
+      align-items: center;
+      @include SP{
+        margin-bottom: 0.15rem;
+      }
+      img{
+        margin-right: 0.1rem;
+        @include PC{
+          width: 0.3rem;
+        }
+        @include SP{
+          width: 0.18rem;
+        }
+      }
+    }
+  }
+  &-body{
+    @include PC{
+      display: flex;
+      margin-top: 0.3rem;
+    }
+    @include SP{
+      margin-top: 0.15rem;
+    }
+  }
+  &-sidebar{
+    @include PC{
+      width: 3.78rem;
+      margin-left: 0.3rem;
+    }
+    .related-post{
+      @include SP{
+        display: none;
+      }
+    }
+  }
+  &-social{
+    @include PC{
+      @include absolute(right 0 bottom 0);
+      @include font(20);
+    }
+    @include SP{
+      position: absolute;
+      bottom: 0.25rem;
+      left: 0;
+      padding: 0 0.2rem;
+    }
+    img{
+      @include PC{
+        margin: 0 0.05rem;
+      }
+      @include SP{
+        height: 0.19rem;
+        width: auto;
+        margin: 0 0.05rem;
+      }
+    }
+    a{
+      @include hover-img
+    }
+  }
+  &-post{
+    @include PC{
+      flex: 1;
+      @include font(20,24);
+    }
+  }
+  &-image-feature{
+    width: 100%
+  }
+  &-title{
+    @include text-gradient(to left);
+    font-weight: 800;
+    @include PC{
+      @include font(40,46);
+      max-width: calc(100% - 3.98rem);
+    }
+    @include SP{
+      @include font(16,19);
+      margin-top: 0.05rem;
+    }
+  }
+  &-intro{
+    font-style: italic;
+    @include PC{
+      margin-top: 0.3rem;
+    }
+  }
+  &-anchor{
+    background: #f5f5f5;
+    @include PC{
+      padding: 0.2rem 0.5rem;
+      @include font(20,24)
+    }
+    @include SP{
+      @include font(9,14);
+      padding: 0.1rem 0.1rem 0.1rem 0.2rem;
+    }
+    li{
+      text-transform: uppercase;
+      @include PC{
+        padding: 0.05rem 0;
+      }
+      @include SP{
+        padding: 0.02rem 0;
+      }
+      a{
+        font-weight: 500;
+        text-decoration: underline;
+        
+        @include hover{
+          text-decoration: none;
+        }
+      }
+      ul{
+        margin-left: 1em;
+        li{
+          text-transform: none;
+        }
+      }
+    }
+  }
+  &-mainContent{
+    @include PC{
+      margin-top: 0.2rem;
+      @include font(20,24)
+    }
+    @include SP{
+      @include font(10,14)
+    }
+    *{
+      @include PC{
+        margin: 0.15rem 0;
+      }
+      @include SP{
+        margin: 0.05rem 0;
+      }
+    }
+    h2{
+      font-weight: 700;
+      @include text-gradient(to left);
+      @include PC{
+        @include font(24,28);
+      }
+      @include SP{
+        @include font(12,14);
+      }
+    }
+    h3,h4,h5,h6{
+      font-weight: 700;
+    }
+    strong{
+      font-weight: 700;
+    }
+
+  }
+  &-related-course-mobile{
+    @include PC{
+      display: none;
+    }
+    @include SP{
+      border-top: 1px solid #a5a5a5;
+      margin: 0.1rem -0.2rem 0.2rem;
+      padding: rem(15) rem(20) 0;
+    }
+    .interested-course-blog{
+      margin: 0;
+    }
+    .continue-reading{
+      text-align: center;
+      margin-bottom: rem(20);
+      margin-top: rem(20);
+      position: relative;
+      margin: 0 -0.2rem;
+      z-index: 1;
+      span{
+        padding: 0 rem(5);
+        background: white;
+      }
+      &:after{
+        content:'';
+        transform: rotate(90deg) translateX(-50%);
+        transform-origin: bottom center;
+        background: url(../images/arrow-gray.svg) no-repeat center center / rem(15) auto;
+        position: absolute;
+        bottom: rem(-20);
+        left: 50%;
+        margin-left: rem(-20);
+        width: rem(20);
+        height: rem(20);
+      }
+      &:before{
+        content:'';
+        background:  #a5a5a5;
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        transform:translateY(-50%);
+        left: 0;
+        z-index: -1;
+      }
+    }
+  }
+  
+}

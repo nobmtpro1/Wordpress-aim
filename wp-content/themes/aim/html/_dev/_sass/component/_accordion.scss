@@ -1,0 +1,282 @@
+.accordion {
+  $root: &;
+  list-style-position: inside;
+
+  input {
+    opacity: 0;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: pointer;
+
+    @include SP {
+      height: 0.4rem;
+    }
+
+    @include PC {
+      height: 0.7rem;
+    }
+
+    &:checked {
+      & ~ #{$root}__content {
+        display: block;
+      }
+    }
+  }
+
+  &__content {
+    display: none;
+    font-weight: 400;
+
+    @include PC {
+      @include font(16, 20);
+    }
+
+    @include SP {
+      @include font(10, 14);
+    }
+  }
+
+  &__item {
+    list-style-type: upper-roman;
+    position: relative;
+    font-weight: 600;
+    border-radius: 4px;
+    border: 1px solid black;
+
+    @include PC {
+      @include font(24, 28);
+      padding: 0.26rem 0.35rem;
+      background: url(../images/icon-accordion.svg) no-repeat calc(100% - 0.35rem) 0.3rem / 0.2rem auto;
+    }
+
+    @include SP {
+      padding: 0.1rem;
+      @include font(12, 16);
+      background: url(../images/icon-accordion.svg) no-repeat calc(100% - 0.1rem) 0.12rem / 0.1rem auto;
+    }
+    
+    &::marker {
+      font-weight: 600;
+    }
+    span {
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-block;
+      vertical-align: top;
+
+      @include PC {
+        @include font(24, 28);
+        padding-right: 0.35rem;
+        width: calc(100% - 0.8rem);
+      }
+
+      @include SP {
+        @include font(12, 16);
+        width: calc(100% - 0.35rem);
+      }
+    }
+
+    &:not(:last-child) {
+      @include PC {
+        margin-bottom: 0.2rem;
+      }
+
+      @include SP {
+        margin-bottom: 0.1rem;
+      }
+    }
+  }
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    @include PC{
+      margin-top: 0.1rem;
+    }
+    @include SP{
+      margin-top: 0.05rem;
+    }
+    td,th{
+      border: 1px solid black;
+      text-align: center;
+      font-weight: 600;
+      vertical-align: middle;
+    }
+    th{
+      background: #00aeef;
+      color: white;
+      
+      @include PC{
+        @include font(20,24);
+        padding: 0.3rem 0.1rem;
+      }
+      @include SP{
+        @include font(10,12);
+        padding: 0.05rem;
+      }
+    }
+    td{
+      
+      @include PC{
+        @include font(16,19);
+        padding: 0.25rem 0.16rem;
+      }
+      @include SP{
+        @include font(9,12);
+        padding: 0.05rem;
+      }
+    }
+  }
+}
+
+.accordion--privacy-policy {
+  .accordion__item {
+    ul {
+      margin-left: 1em;
+
+      @include SP {
+        margin-top: 0.05rem;
+      }
+
+      @include PC {
+        margin-top: 0.15rem;
+      }
+    }
+
+    p {
+      font-weight: 500;
+      @include SP {
+        margin-top: 0.05rem;
+      }
+
+      @include PC {
+        margin-top: 0.15rem;
+        @include font(16, 22);
+      }
+    }
+
+    li {
+      list-style-type: decimal;
+      font-weight: 500;
+      &::marker{
+        font-weight: 600;
+      }
+
+      &:not(:last-child) {
+        @include PC {
+          margin-bottom: 0.1rem;
+        }
+
+        @include SP {
+          margin-bottom: 0.05rem;
+        }
+      }
+
+      ul {
+        @include SP {
+          margin-top: 0.02rem;
+        }
+
+        @include PC {
+          margin-top: 0.1rem;
+        }
+        li {
+          list-style-type: disc;
+
+          &:not(:last-child) {
+            @include PC {
+              margin-bottom: 0.08rem;
+            }
+
+            @include SP {
+              margin-bottom: 0.04rem;
+            }
+          }
+          ul {
+            margin-left: 0.5em;
+            li {
+              padding-left: 0.5em;
+
+              &::marker {
+                content: "-";
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.accordion--term {
+  .accordion__item {
+    font-weight: 600;
+    ul {
+      counter-reset: listNumber;
+      margin-top: 1em;
+      & > li {
+        list-style-type: none;
+        &:not(:last-child) {
+          @include PC {
+            margin-bottom: 0.15rem;
+          }
+    
+          @include SP {
+            margin-bottom: 0.08rem;
+          }
+        }
+        &:before {
+          content: counter(listNumber, decimal) ") ";
+          counter-increment: listNumber;
+          font-weight: 600;
+        }
+        ul{
+          counter-reset: listAlpha;
+          &> li {
+            list-style-type: none;
+            position: relative;
+            padding-left: 1.2em;
+            &:not(:last-child) {
+              @include PC {
+                margin-bottom: 0.1rem;
+              }
+        
+              @include SP {
+                margin-bottom: 0.05rem;
+              }
+            }
+            &:before {
+              content: counter(listAlpha, lower-alpha) ") ";
+              counter-increment: listAlpha;
+              position: absolute;
+              left: 0;
+              font-weight: 400;
+            }
+            ul{
+              counter-reset: listRoman;
+              &> li {
+                list-style-type: none;
+                &:before {
+                  content: counter(listRoman, lower-roman) ") ";
+                  counter-increment: listRoman;
+                }
+                ul{
+                  counter-reset: none;
+                  &> li {
+                    list-style-type: disc;
+                    padding-left: 0;
+                    &:before {
+                      content:none;
+                    }
+                  }
+                }
+              } 
+            }
+          }
+        }
+      }
+    }
+  }
+}

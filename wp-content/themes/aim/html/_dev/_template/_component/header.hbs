@@ -1,0 +1,165 @@
+<header class="header header--active">
+  <div class="container header__inner">
+    <h1 class="logo">
+      <a href="/">
+        <img class="logo--white" width="179" height="59" src="common/images/logo.svg" alt="logo">
+        <img class="logo--black" width="179" height="59" src="common/images/logo-black.svg" alt="logo">
+      </a>
+    </h1>
+    <ul class="nav__list">
+      {{#each header}}
+      <li class="nav__item{{#if active}} active{{/if}}">
+        
+        <a class="nav__link" href="#">{{item}}</a>
+
+        {{#if menu}}
+        <input class="sp-only" type="checkbox">
+        <em class="nav__item-icon"></em>
+        <div class="nav__menu">
+          <ul class="nav__menu-list">
+
+          {{#each menu}}
+            <li class="nav__menu-item">
+              <a href="#" class="nav__menu-link{{#if active}} active{{/if}} js-nav-content" data-target="{{target}}">{{menu-item}}</a>
+              <i class="icon"></i>
+              <!-- menu child sp -->
+              
+              
+              {{#if list}}
+              <ul class="nav__menu-sp">
+                {{#each list}}
+                <li class="nav__menu-sp__item">
+                  <a class="nav__menu-sp__link" href="#"> {{text}}</a>
+                </li>
+                {{/each}}
+              </ul>
+              {{/if}}
+            </li>
+
+          {{/each}}
+
+          </ul>
+
+          {{#if content}}
+          <div class="nav__content">
+
+            <!-- personal -->
+            <div class="nav__content-list" id="personal">
+              <a class="nav__article" href="#">
+                <img class="nav__article-image" loading="lazy" src="common/images/header/img01.jpg" alt="">
+                <div class="nav__article-body">
+                  <p class="nav__title">Định hướng nghề nghiệp</p>
+                  <p class="nav__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum iusto cum voluptates rem illum hic dolorum optio laboriosam dolore corporis, repellat eligendi, tempore exercitationem, unde enim? Quo aut optio dolor.</p>
+                </div>
+              </a>
+              <a class="nav__article" href="#">
+                <img class="nav__article-image" loading="lazy" src="common/images/header/img02.jpg" alt="">
+                <div class="nav__article-body">
+                  <p class="nav__title">Đánh giá nhu cầu học</p>
+                  <p class="nav__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum iusto cum voluptates rem illum hic dolorum optio laboriosam dolore corporis, repellat eligendi, tempore exercitationem, unde enim? Quo aut optio dolor.</p>
+                </div>
+              </a>
+
+              <div class="nav-endow">
+                <p class="nav-endow__heading">Chính sách ưu đãi</p>
+                <img width="31" height="39" src="common/images/discount-percent.svg" alt="">
+                <ul class="nav-endow__list">
+                  <li>Giảm 10% khi đăng ký trước khai giảng 20 ngày</li>
+                  <li>Giảm 5% khi đăng ký trước khai giảng 15 ngày</li>
+                  <li>Giảm 15% khi đăng ký nhóm 3 người</li>
+                  <li>Giảm 10% khi đăng ký nhóm 2 người</li>
+                  <li>Áp dụng trả góp 0% với thẻ tín dụng của hơn 15 ngân hàng</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- company -->
+            <div class="nav__content-list" id="company">
+              <a class="nav__article" href="#">
+                <img class="nav__article-image" loading="lazy" src="common/images/header/img03.jpg" alt="">
+                <div class="nav__article-body">
+                  <p class="nav__title">Đào tạo cho doanh nghiệp</p>
+                  <p class="nav__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum iusto cum voluptates rem illum hic dolorum optio laboriosam dolore corporis, repellat eligendi, tempore exercitationem, unde enim? Quo aut optio dolor.</p>
+                </div>
+              </a>
+              <a class="nav__article" href="#">
+                <img class="nav__article-image" loading="lazy" src="common/images/header/img04.jpeg" alt="">
+                <div class="nav__article-body">
+                  <p class="nav__title">Hợp tác đào tạo</p>
+                  <p class="nav__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum iusto cum voluptates rem illum hic dolorum optio laboriosam dolore corporis, repellat eligendi, tempore exercitationem, unde enim? Quo aut optio dolor.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- project -->
+            <div class="nav__content-list" id="project">
+              <a class="nav__article" href="#">
+                <img class="nav__article-image" loading="lazy" src="common/images/header/img05.jpeg" alt="">
+                <div class="nav__article-body">
+                  <p class="nav__title">Nhóm môn về Marketing Management</p>
+                  <p class="nav__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum iusto cum voluptates rem illum hic dolorum optio laboriosam dolore corporis, repellat eligendi, tempore exercitationem, unde enim? Quo aut optio dolor.</p>
+                </div>
+              </a>
+              <a class="nav__article" href="#">
+                <img class="nav__article-image" loading="lazy" src="common/images/header/img06.jpg" alt="">
+                <div class="nav__article-body">
+                  <p class="nav__title">Creative/content Development</p>
+                  <p class="nav__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum iusto cum voluptates rem illum hic dolorum optio laboriosam dolore corporis, repellat eligendi, tempore exercitationem, unde enim? Quo aut optio dolor.</p>
+                </div>
+              </a>
+               <a class="nav__article" href="#">
+                <img class="nav__article-image" loading="lazy" src="common/images/header/img07.jpg" alt="">
+                <div class="nav__article-body">
+                  <p class="nav__title">Channel Optimization - Digital</p>
+                  <p class="nav__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum iusto cum voluptates rem illum hic dolorum optio laboriosam dolore corporis, repellat eligendi, tempore exercitationem, unde enim? Quo aut optio dolor.</p>
+                </div>
+              </a>
+              <a class="nav__article" href="#">
+                <img class="nav__article-image" loading="lazy" src="common/images/header/img08.jpg" alt="">
+                <div class="nav__article-body">
+                  <p class="nav__title">Channel Optimization - Others</p>
+                  <p class="nav__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum iusto cum voluptates rem illum hic dolorum optio laboriosam dolore corporis, repellat eligendi, tempore exercitationem, unde enim? Quo aut optio dolor.</p>
+                </div>
+              </a>
+               <a class="nav__article" href="#">
+                <img class="nav__article-image" loading="lazy" src="common/images/header/img09.jpg" alt="">
+                <div class="nav__article-body">
+                  <p class="nav__title">Soft Skills</p>
+                  <p class="nav__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum iusto cum voluptates rem illum hic dolorum optio laboriosam dolore corporis, repellat eligendi, tempore exercitationem, unde enim? Quo aut optio dolor.</p>
+                </div>
+              </a>
+            </div>
+
+            <!-- trainer -->
+            <div class="nav__content-list" id="trainer">
+              <a class="nav__article" href="#">
+                <img class="nav__article-image" loading="lazy" src="common/images/header/img10.jpg" alt="">
+                <div class="nav__article-body">
+                  <p class="nav__title">Giảng viên</p>
+                  <p class="nav__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum iusto cum voluptates rem illum hic dolorum optio laboriosam dolore corporis, repellat eligendi, tempore exercitationem, unde enim? Quo aut optio dolor.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          {{/if}}
+
+        </div>
+        {{/if}}
+      </li>
+      {{/each}}
+    </ul>
+
+    <!-- SP -->
+    <div class="nav-icon sp-only">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="header__lang js-lang-sp sp-only">
+      <a class="active" href="#">VI</a>
+      <a class="" href="#">EN</a>
+    </div>
+    <a href="#" class="header__signin sp-only"></a>
+
+  </div>
+</header>

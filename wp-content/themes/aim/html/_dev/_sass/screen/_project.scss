@@ -1,0 +1,169 @@
+.project {
+  &-toolbar{
+    @include PC{
+      margin-bottom: 0.56rem;
+    }
+    @include SP{
+      margin-bottom: 0.2rem;
+    }
+  }
+  &-form {
+    @include PC {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  &-search {
+    display: flex;
+
+    @include PC {
+      width: rem(812);
+      padding: 0.06rem 0;
+      border-bottom: 1px solid #000;
+    }
+    @include SP{
+      padding: 0.02rem 0.12rem;
+      border: 1px solid black;
+      border-radius: 100px;
+    }
+  }
+
+  &-sort {
+    @include select-arrow;
+    @include SP{
+      margin-top: 0.14rem;
+    }
+  }
+
+  &__list {
+    @include grid;
+  }
+
+  &__item {
+    @include PC{
+      @include grid__item(4);
+    }
+    @include SP{
+      @include grid__item(1);
+    }
+  }
+
+  &__card {
+    position: relative;
+    overflow: hidden;
+
+    @include PC {
+      border-radius: 15px;
+      @include background-gradient(to top);
+      height: 100%;
+
+      &:hover {
+        cursor: pointer;
+        .project__card-footer{
+          opacity: 1;
+        }
+      }
+    }
+    @include SP {}
+
+    img {
+      width: 100%;
+      @include image-fit(center);
+
+      @include PC {
+        height: 4.51rem
+      }
+
+      @include SP {
+        height: 1.78rem;
+        border-radius: 15px;
+        @include background-gradient(to top);
+      }
+    }
+
+    &-body {
+      height: 100%;
+      @include PC {
+        background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0) 30%, rgba(0, 0, 0, 0.7));
+        @include absolute(top 0 left 0 right 0 bottom 0);
+        padding: rem(38) rem(17);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        color: white;
+      }
+      @include SP{
+        text-align: center;
+        padding: 0 rem(23);
+        margin-top: rem(10);
+      }
+    }
+
+    &-title {
+      font-weight: 600;
+      @include PC {
+        @include font(22, 26)
+      }
+      @include SP {
+        @include font(16,19)
+      }
+    }
+
+    &-desc {
+      font-style: italic;
+      display: block;
+      @include PC {
+        @include font(18, 26);
+        margin-top: 0.05rem;
+      }
+      @include SP {
+        @include font(12,19);
+        margin-top: 0.03rem;
+      }
+    }
+
+    &-footer{
+      @include PC{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include transition;
+        z-index: 1;
+        opacity: 0;
+        &:before{
+          content:'';
+          z-index: -1;
+          background: rgba(black,0.5);
+          position: absolute;
+          top: 0;
+          left:0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      @include SP{
+        text-align: center;
+      }
+    }
+
+    &-link{
+      font-weight: 600;
+      @include PC{
+        padding: 0.1rem 0.3rem;
+        @include background-gradient(to right);
+        @include font(18,22);
+      }
+      @include SP{
+        padding: 0.07rem 0.2rem;
+        margin: 0.1rem auto 0;
+      }
+    }
+  }
+}

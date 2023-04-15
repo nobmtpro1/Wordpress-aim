@@ -1,0 +1,22 @@
+<div class="promotion container">
+  <p class="promotion__text" id="timer" data-countdown="Jan 5, 2022 15:37:25">
+    Ưu đãi ... % cho khóa học<br class="sp-only"> Strategic Communication Planning.<br class="sp-only"> Còn <span id="countdown"></span> để đăng ký
+  </p>
+  {{>button
+    href=true 
+    text="Xem ngay" 
+    type="full" 
+    class="promotion__button"
+  }}
+  <div class="promotion__login">
+    {{>button
+      href=true 
+      text="Đăng nhập" 
+      type="border" 
+      border = true
+      class="promotion__button"
+    }}
+    <a class="promotion__lang" href="#">VI</a>
+    <a class="promotion__lang" href="#">EN</a>
+  </div>
+</div>

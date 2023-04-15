@@ -1,0 +1,515 @@
+.header{
+  $root:&;
+
+  width: 100%;
+  z-index: 9999;
+  position: absolute;
+  @include transition;
+  transition-property: background;
+  @include PC{
+    left:0;
+    padding: 0.1rem 0;
+  }
+  @include SP{
+    min-height: 0.55rem;
+  }
+  .body--withoutKV &{
+    border-bottom: 1px solid #f0f0f0;
+    @include SP{
+      background: #f0f0f0;
+    }
+  }
+  &__inner{
+    @include PC{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  &--sticky{
+    top: 0!important;
+    position: fixed;
+    left: 0;
+    @include PC{
+      box-shadow: 0 2px 3px rgba(57, 63, 72, 0.05);
+    }
+    &.open{
+      @include SP{
+        height: 100vh;
+      }
+    }
+  }
+  &--active{
+    background: white;
+    @include transition;
+    transition-property: background;
+    #{$root}__signin{
+      background: url(../images/icon-signin.svg) no-repeat center/contain;
+    }
+    &.open{
+      #{$root}__signin{
+        background: url(../images/icon-signin-white.svg) no-repeat center/contain;
+      }
+    }
+  }
+  &__lang{
+    position: absolute;
+    right: 0.2rem;
+    top: 0.22rem;
+    a{
+      color: white;
+      display: none;
+      &.active{
+        display: block;
+      }
+      .body--withoutKV &{
+        @include text-gradient(to left)
+      }
+      .header--active.open &{
+        -webkit-text-fill-color: white;
+      }
+    }
+  }
+  &__signin{
+    position: absolute;
+    right: 0.5rem;
+    top: 0.19rem;
+    width: 0.16rem;
+    height: 0.16rem;
+    background: url(../images/icon-signin-white.svg) no-repeat center/contain;
+  }
+  &:before{
+    content:'';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0.55rem;
+    width: 100%;
+    @include background-gradient(to left);
+    opacity: 0;
+    @include transition;
+  }
+  &.open{
+    @include SP{
+      min-height: calc(100vh - 1rem);
+      overflow-y: hidden;
+      background: white;
+      &:before{
+        opacity: 1;
+      }
+    }
+    .nav__list{
+      @include SP{
+        display: block;
+      }
+    }
+  }
+}
+.logo{
+  @include PC{
+    width: rem(179);
+    position: relative;
+  }
+  @include SP{
+    width: rem(78);
+  }
+  &--white{
+    @include PC{
+      width: rem(179);
+      opacity: 1;
+      .header--active &{
+        opacity: 0;
+      }
+    }
+    @include SP{
+      position: absolute;
+      width: rem(78);
+      opacity: 1;
+      top: 0.15rem;
+      left: 50%;
+      transform: translateX(-50%);
+      .header--active &{
+        opacity: 0;
+      }
+      .header--active.open &{
+        opacity: 1;
+      }
+    }
+  }
+  &--black{
+    position: absolute;
+    @include PC{
+      left: 0;
+      opacity: 0;
+      .header--active &{
+        opacity: 1;
+      }
+    }  
+    @include SP{
+      top: 0.15rem;
+      left: 50%;
+      transform: translateX(-50%);
+      width: rem(78);
+      opacity: 0;
+      .header--active &{
+        opacity:1;
+      }
+      .header--active.open &{
+        opacity: 0;
+      }
+    }  
+  }
+}
+.nav{
+  $root: &;
+
+  &__list{
+    @include PC{
+      display: flex;
+      align-items: center;
+    }
+    @include SP{
+      display: none;
+      background: white;
+      position: absolute;
+      top: 0.55rem;
+      left: 0;
+      width: 100%;
+      height: calc(100% - 0.55rem);
+      overflow-y:scroll;
+      padding-bottom: 1rem;
+    }
+  }
+  &__item{
+    @include PC{
+      margin: 0 0.15rem;
+      position: relative;
+      padding: 0.16rem 0;
+    }
+    @include SP{
+      border-bottom: 1px solid #c8c8c8;
+      position: relative;
+      input[type='checkbox']{
+        @include SP{
+          width: 0.36rem;
+          height: 0.36rem;
+          padding:  0.18rem;
+          opacity: 0;
+          margin: 0;
+          position: absolute;
+          right: 0;
+          top: 0;
+          z-index: 2;
+          border: none;
+          cursor: pointer;
+        }
+        &:checked{
+          & ~ #{$root}__item-icon{
+            transform: rotate(0deg);
+            transform-origin: center center;
+          }
+          & ~ #{$root}__menu{
+            display: block;
+          }
+        }
+        & ~ #{$root}__item-icon{
+          display: block;
+          background: url(../images/icon-accordion.svg) no-repeat center center / 0.18rem auto ;
+          position: absolute;
+          width: 0.36rem;
+          height: 0.36rem;
+          top: 0;
+          right: 0;
+          z-index: 1;
+          transform: rotate(-90deg);
+          @include transition;
+          transform-origin: center center;
+          
+        }
+      }
+    }
+    @include hover{
+      #{$root}__menu{
+        @include visible;
+      }
+    }
+    &:first-child{
+      #{$root}__menu{
+        @include PC{
+          left: 0;
+          transform: translateX(-50px);
+        }
+        
+        .icon{
+          left: 100px;
+        }
+      }
+    
+    }
+    &:before{
+      content:'';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -0.12rem;
+      height: 0.02rem;
+      width: 100%;
+      opacity: 0;
+      @include transition;
+      transition-property: opacity;
+
+      background: rgb(255,255,255);
+      background: -moz-radial-gradient(circle, rgba(255,255,255,1) 40%, rgba(255,255,255,0) 100%);
+      background: -webkit-radial-gradient(circle, rgba(255,255,255,1) 40%, rgba(255,255,255,0) 100%);
+      background: radial-gradient(circle, rgba(255,255,255,1) 40%, rgba(255,255,255,0) 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
+
+      .body--withoutKV &{
+        @include background-gradient( to left);
+        height: 0.03rem;
+      }
+    }
+    @include hover{
+      &:before{
+        content: '';
+        opacity: 1;
+      }
+    }
+    &.active{
+      position: relative;
+      @include PC{
+        &:before{
+          content: '';
+          opacity: 1;
+        }
+      }
+      @include SP{
+        #{$root}__link{
+          @include text-gradient(to left)
+        }
+      }
+    }
+  }
+  &__link{
+    @include font-default;
+    @include transition;
+    @include hover{
+      text-decoration: none;
+    }
+    @include PC{
+      @include font(20,26);
+      color: white;
+      font-weight: 600;
+    }
+    @include SP{
+      color: black;
+      padding: 0.1rem 0.2rem 0.1rem 0.25rem;
+      display: block;
+      @include font(14,16);
+      font-weight: 600;
+    }
+    .header--active &{
+      color: black;
+      @include transition;
+    }
+  }
+  &__menu{
+    @include PC{
+      position: absolute;
+      top:100%;
+      left:50%;
+      transform:translate(-50%, 0);
+      min-width:3.21rem; 
+      box-sizing:border-box;
+      box-shadow:0 0 6px rgba(0,0,0,0.4);
+      padding: 0.2rem 0;
+      border-radius:8px;
+      background-color: white;
+      z-index:99999999;
+      display: flex;
+      @include unvisible;
+    }
+    @include SP{
+      display: none;
+    }
+    .icon{
+      position:absolute;
+      bottom:100%;
+      left:50%;
+      margin-left:-12px;
+      width:24px;
+      height:12px;
+      overflow:hidden;
+      @include SP{
+        display: none;
+      }
+      &:after {
+        content:'';
+        position:absolute;
+        width:12px;
+        height:12px;
+        left:50%;
+        transform:translate(-50%,50%) rotate(45deg);
+        background-color:white;
+        box-shadow:0 0 6px rgba(0,0,0,0.2);
+      }
+    }
+    &-list{
+      @include PC{
+        min-width: 3.21rem;
+      }
+    }
+    &-item{
+      &:not(:last-child){
+        @include PC{
+          border-bottom: 1px solid #c8c8c8;
+        }
+      }
+      @include SP{
+        position: relative;
+      }
+     
+    }
+    &-sp{
+      @include PC{
+        display: none;
+      }
+      &__item{
+        
+      }
+      &__link{
+        padding: 0.07rem 0.3rem 0.07rem 0.6rem;
+        display: block;
+        font-weight: 500;
+      }
+    }
+    &-link{
+      display: block;
+      font-weight: 600;
+      position: relative;
+      @include PC{
+        @include font(20,24);
+        padding: 0.1rem 0.4rem;
+        white-space: nowrap;
+      }
+      @include SP{
+        padding: 0.07rem 0.3rem 0.07rem 0.4rem;
+      }
+      @include hover{
+        text-decoration: none;
+        @include text-gradient(to left);
+        &:before{
+          opacity: 1;
+        }
+      }
+      &.active{
+        @include text-gradient(to left);
+        &:before{
+          opacity: 1;
+        }
+      }
+      &:before{
+        content:'';
+        height: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        @include background-gradient(to left);
+        opacity: 0;
+        @include PC{
+          width: 0.1rem;
+          @include transition;
+        }
+      }
+    }
+   
+  }
+  &__content{
+    background: white;
+    display: none;
+    @include PC{
+      padding: 0.2rem 0.3rem;
+      min-width: 6.29rem
+    }
+    @include SP{
+      display: none!important;
+    }
+    &.active{
+      display: block;
+    }
+    &-list{
+      display: none;
+    }
+  }
+  &__title{
+    @include text-gradient(to left);
+    font-weight: 600;
+    @include PC{
+      @include font(20,24);
+    }
+  }
+  &__text{
+    @include PC{
+      @include cutText(2);
+      @include font(14,18);
+    }
+  }
+  &__article{
+    display: flex;
+    @include hover{
+      text-decoration: none;
+    }
+    &-image{
+      @include image-fit(center center, cover);
+      height: 0.56rem;
+      width: 1.05rem;
+      margin-right: 0.15rem;
+      border-radius: 3px;
+    }
+    &-body{
+     flex:1
+    }
+    &:not(:last-of-type){
+      margin-bottom: 0.05rem;
+    }
+  }
+  
+}
+
+
+
+.nav-endow{
+  position: relative;
+  float: right;
+  @include PC{
+    max-width: 4.6rem;
+    padding: 0.15rem 0.2rem;
+    border: 1px solid #c8c8c8;
+    border-radius: 15px;
+    margin-top: 0.2rem;
+  }
+
+  &__heading{
+    @include text-gradient(to left);
+    font-weight: 600;
+    @include PC{
+      @include font(20,24);
+    }
+  }
+  img{
+    position: absolute;
+    right: 0.2rem;
+    top: 0.2rem;
+  }
+  &__list{
+    margin-top: 0.1rem;
+    li{
+      padding-left: 1.5em;
+      margin-bottom: 0.5em;
+      background: url(../images/icon-vote.svg) no-repeat left top/ 1.1em auto;
+      @include PC{
+        @include font(14,20);
+      }
+    }
+  }
+}

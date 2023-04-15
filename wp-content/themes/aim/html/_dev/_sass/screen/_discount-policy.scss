@@ -1,0 +1,498 @@
+.discount-policy {
+  $root: &;
+  &__inner {
+    @include PC {
+      max-width: 12.8rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include SP{
+      margin-top: 0.2rem;
+    }
+  }
+  &__section{
+    &:not(:last-of-type){
+      @include PC{
+        margin-bottom: 1rem;
+      }
+      @include SP{
+        margin-bottom: 0.4rem;
+      }
+    }
+  }
+
+  &__heading {
+    text-align: center;
+    @include SP{
+      @include font(16)
+    }
+  }
+
+  &__table {
+    position: relative;
+    width: 100%;
+    display: block;
+    @include PC {
+      margin-top: 1.3rem;
+    }
+    @include SP{
+      margin-top: 0.4rem;
+    }
+    &:after{
+      position: absolute;
+      content:'';
+      top: 100%;
+      z-index: 2;
+      @include background-gradient(to left);
+      @include PC {
+        right:1.8rem;
+        width: 5.5rem;
+        height: 0.12rem;
+        border-radius: 0 0 30px 30px;
+      }
+      @include SP{
+        right: 0;
+        left: 1.9rem;
+        height: 0.05rem;
+        border-radius: 0 0 10px 10px;
+      }
+    }
+    &-button{
+      padding: 0.06rem 0.1rem 0.04rem;
+      @include font(15,18);
+      &:before{
+        background: #ebebeb;
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    width: 100%;
+    @include PC {
+      position: relative;
+      z-index: 1;
+    }
+    &:not(:first-of-type){
+      #{$root}__col{
+        border-top: 1px solid white;
+      }
+     
+    }
+    &:first-of-type{
+      overflow: hidden;
+      @include SP{
+        border-radius: 10px 0px 0 0;
+      }
+      @include PC{
+        border-radius: 10px 10px 0 0;
+      }
+    }
+    &:last-of-type{
+      overflow: hidden;
+      @include PC{
+        border-radius: 0 0 30px 30px;
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    bottom: 100%;
+    z-index: 2;
+    @include PC {
+      right:1.8rem;
+      width: 5.5rem;
+    }
+    @include SP{
+      right: 0;
+      left: 1.9rem;
+    }
+
+    &:after {
+      z-index: -2;
+      content: '';
+      height: 50%;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      @include background-gradient(to left);
+      @include SP{
+        border-radius: 10px 10px 0 0 ;
+      }
+    }
+
+    .heading {
+      z-index: 1;
+      display: block;
+      @include PC {
+        text-align: center;
+        padding: 0.18rem  0.2rem 0.16rem;
+      }
+      @include SP{
+        width: 1.17rem;
+        text-align: center;
+        margin: 0 auto;
+        @include font(14);
+        padding: 0.05rem 0 0.03rem;
+      }
+      &:before{
+        content:'';
+        background: white;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        z-index: -1;
+        border-radius: 400px;
+        left: 0;
+        top: 0;
+        @include PC{
+          box-shadow: 0.02rem 0.02rem 0.06rem rgba($color: #000000, $alpha: 0.45);
+        }
+        @include SP{
+          width: 1.17rem;
+          left: 50%;
+          transform: translateX(-50%);
+          box-shadow: 0.02rem 0.02rem 0.06rem rgba($color: #000000, $alpha: 0.45);
+        }
+      }
+    }
+  }
+
+  &__col {
+    display: flex;
+    align-items: center;
+
+    background: -webkit-linear-gradient(to bottom, #f5f5f5, #e6e6e6);
+    background: -moz-linear-gradient(to bottom, #f5f5f5, #e6e6e6);
+    background: -o-linear-gradient(to bottom, #f5f5f5, #e6e6e6);
+    background: linear-gradient(to bottom, #f5f5f5, #e6e6e6);
+    @include PC{
+      padding: 0.2rem;
+    }
+    @include SP{
+      padding: 0.1rem 0.15rem;
+    }
+
+    &:nth-child(1) {
+      font-weight: 700;
+      @include PC {
+        @include font(22,28);
+        padding: 0.2rem 0.6rem;
+        flex: 1;
+      }
+      @include SP{
+        width: 1.9rem;
+        @include font(10,14);
+      }
+    }
+
+    &:nth-child(2) {
+      justify-content: center;
+      flex-direction: column;
+      @include background-gradient(to left);
+      text-align: center;
+      color: white;
+      position: relative;
+      font-weight: 600;
+      @include PC {
+        width: 5.5rem;
+        @include font(29);
+      }
+      @include SP{
+        width: 1.3rem;
+        @include font(10,14);
+        padding-left: 0.1rem;
+        padding-right: 0.1rem;
+        flex: 1;
+      }
+      .percentage{
+        font-weight: 900;
+        @include PC{
+          @include font(37,41)
+        }
+        @include SP{
+          @include font(14,18)
+        }
+      }
+      a{
+        @include SP{
+          font-style: italic;
+          font-weight: 300;
+          margin-top: 0.05rem;
+          display: inline-block;
+        }
+      }
+    }
+
+    &:nth-child(3) {
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      @include PC{
+        width: 1.8rem;
+      }
+      @include SP {
+        display: none;
+      }
+    }
+  }
+
+  &__recommend{
+    position: relative;
+    @include PC{
+      margin-top: 1rem;
+    }
+    @include SP{
+      margin-top: 0.4rem;
+    }
+    &-list{
+      align-items: stretch;
+      @include PC{
+        margin-top: 0.38rem;
+      }
+      @include SP{
+        margin-top: 0.15rem;
+      }
+    }
+    &-item{
+      height: auto;
+      @include PC{
+        padding: 0 0.05rem;
+      }
+      @include SP{
+        margin-bottom: 0.15rem;
+      }
+    }
+    &-article{
+      height: 100%;
+      display: flex;
+      overflow: hidden;
+      color: white;
+      @include PC{
+        flex-direction: column;
+        border-radius: 10px;
+        position: relative;
+        z-index: 1;
+        padding-bottom: 0.15rem;
+      }
+      @include SP{
+        padding: 0.1rem;
+        @include background-gradient(-120deg);
+        border-radius: 8px;
+        flex-wrap: wrap;
+        padding-bottom: 0.2rem;
+        justify-content: flex-start;
+        flex-shrink: 0;
+      }
+      &:after{
+        @include PC{
+          content: '';
+          @include background-gradient(-30deg);
+          bottom: 0;
+          position: absolute;
+          left: 0;
+          z-index: -1;
+          width: 100%;
+          height: calc( 100% - 2.47rem);
+        }
+      }
+    }
+    &-body{
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      @include PC{
+        padding: 0.15rem;
+      }
+      @include SP{
+        flex: 1;
+      }
+      
+    }
+    &-info{
+      @include PC{
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+      }
+      @include SP{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-start;
+        margin-top: 0.2rem
+      }
+      p{
+        @include PC{
+          @include font(14,18);
+        }
+        @include SP{
+          padding: 0 0.1rem;
+          @include font(12,16);
+        }
+        &:not(:last-child){
+          @include PC{
+            margin-bottom: 0.1rem;
+          }
+          @include SP{
+            border-right: 0.01rem solid white;
+          }
+        }
+      }
+     
+      span{
+        font-weight: 700;
+        display: block;
+        @include PC{
+          @include font(16,22)
+        }
+      }
+    }
+    &-image{
+      @include SP{
+        margin-right: 0.1rem;
+      }
+      img{
+        @include image-fit(center, cover);
+        @include PC{
+          width: 100%;
+          height: 2.47rem;
+        }
+        @include SP{
+          width: 1.26rem;
+          height: 1.26rem;
+          border-radius: 5px;
+        }
+      }
+    } 
+    &-button{
+      font-weight: 700;
+      margin: auto auto 0;
+      @include PC{
+        padding: 0.06rem 0.1rem 0.05rem;
+        @include font(16,19);
+        width: 1.86rem;
+        justify-self: flex-end;
+      }
+      @include SP{
+        width: 1.85rem;
+        padding: 0.03rem 0.1rem ;
+        @include font(14,19);
+        margin-top: 0.15rem;
+        height: 0.24rem;
+      }
+    }
+    &-title{
+      font-weight: 900;
+      @include PC{
+        @include font(28,32);
+        min-height: 64/28 + em;
+      }
+      @include SP{
+        @include font(18,20);
+      }
+    }
+    &-subtitle{
+      font-weight: 900;
+      @include PC{
+        @include font(18,22);
+        min-height: 22/18 + em;
+      }
+      @include SP{
+        @include font(12,20);
+      }
+    }
+    &-content{
+      border-radius: 5px;
+      padding: 0.1rem;
+      text-align: left;
+      list-style-type: disc;
+      @include PC{
+        border: 1px solid white;
+      }
+     
+      &-item{
+        @include PC{
+          @include font(14,18);
+          margin-left: 1.25em;
+        }
+        @include SP{
+          @include font(12,16);
+          margin-left: 0.5em;
+        }
+        &:not(:last-child){
+          @include PC{
+            margin-bottom: 0.05rem
+          }
+          @include SP{
+            margin-bottom: 0.03rem
+          }
+        }
+      }
+    }
+  }
+  &__modal{
+    .modal{
+      &-content{
+        display: block;
+        border-radius: 0.1rem;
+        margin: 0 auto;
+        max-width: 1331px;
+      }
+      &-close{
+        @include SP {
+          z-index: 999;
+          top: .12rem;
+          right: .15rem;
+          width: .1rem;
+      }
+      }
+      &-header{
+        position: relative;
+        padding: 0.12rem 0.34rem 0.1rem;
+        @include text-gradient(to right);
+        font-weight: 700;
+        @include font(18);
+        @include PC{
+          padding: 0.33rem 1.72rem;
+          @include font(69);
+        }
+      }
+      &-body{
+        padding: 0.16rem;
+        font-weight: 100;
+        text-align: left;
+        line-height: 1.5;
+        @include PC{
+          @include font(36,44);
+          padding: 0.6rem 0.9rem;
+        }
+        ul{
+          li{
+            padding-left: 0.2rem;
+            background: url(../images/icon-check.svg) no-repeat left 0.02rem / 0.12rem auto;
+            @include PC{
+              background-size: 00.32rem auto;
+              background-position: left 0.05rem;
+              padding-left: 0.5rem;
+            }
+            &:not(:last-child){
+              margin-bottom: 0.1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .swiper-container{
+    @include PC{
+      padding-bottom: 0.2rem;
+    }
+  }
+  .swiper-button{
+    @include SP{
+      display: none;
+    }
+  }
+}

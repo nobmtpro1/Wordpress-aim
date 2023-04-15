@@ -1,0 +1,79 @@
+.statistic {
+  @include PC {
+    padding: .30rem 0;
+  }
+  @include SP{
+    padding: .10rem 0;
+  }
+
+  &__inner {
+    max-width: 13.10rem;
+
+    @include SP {
+      padding: 0 .40rem;
+    }
+  }
+
+  &__list {
+    @include PC {
+      display: flex;
+      flex: 1 1 1;
+      margin: 0 -.20rem;
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    display: flex;
+    @include PC {
+      padding: 0 .20rem;
+    }
+    @include SP{
+      &:not(:last-child){
+        margin-bottom: .10rem;
+      }
+    }
+  }
+
+  &__image {
+    width: auto;
+
+    @include PC {
+      height: .75rem;
+      margin-right: .20rem;
+    }
+
+    @include SP {
+      height: .39rem;
+      margin-right: .15rem;
+      margin-top:.05rem;
+    }
+
+  }
+
+  &__content {}
+
+  &__title {
+    font-weight: 700;
+    display: block;
+    @include text-gradient(to left);
+
+    @include PC {
+      @include font(35, 42)
+    }
+
+    @include SP {
+      @include font(20, 24)
+    }
+  }
+
+  &__text {
+    @include PC {
+      @include font(16, 19)
+    }
+
+    @include SP {
+      @include font(12, 16)
+    }
+  }
+}

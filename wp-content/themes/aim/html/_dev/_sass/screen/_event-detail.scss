@@ -1,0 +1,141 @@
+.event-detail {
+  $root: &;
+  &__wrap {
+    @include PC {
+      display: flex;
+      max-width: 12.8rem;
+      margin: 0.5rem auto 0;
+      padding-bottom: 0.5rem;
+    }
+  }
+  &__sidebar {
+    @include PC {
+      width: 3.57rem;
+    }
+    img {
+      border-radius: 6px;
+    }
+  }
+  &__regis {
+    @include PC {
+      margin-top: 0.44rem;
+    }
+    @include SP {
+      display: none;
+    }
+  }
+  &__content {
+    @include PC {
+      flex: 1;
+      margin-left: 0.46rem;
+    }
+    @include SP {
+      margin-top: 0.15rem;
+    }
+  }
+  &__cat {
+    font-weight: 500;
+    @include PC {
+      @include font(16);
+      margin-bottom: 0.06rem;
+    }
+    @include SP {
+      @include font(10);
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &__tag {
+    color: white;
+    background: -webkit-linear-gradient(to right, #009efd, #2af598);
+    background: -moz-linear-gradient(to right, #009efd, #2af598);
+    background: -o-linear-gradient(to right, #009efd, #2af598);
+    background: linear-gradient(to right, #009efd, #2af598);
+    @include PC {
+      padding: 0.03rem 0.05rem 0.02rem;
+      margin-left: 0.1rem;
+      @include font(11);
+    }
+    @include SP {
+      padding: 0.03rem 0.08rem 0.02rem;
+      margin-right: 0.05rem;
+      @include font(9);
+    }
+  }
+  &__heading {
+    @include PC {
+      @include font(42);
+    }
+    @include SP {
+      text-align: center;
+      line-height: 1.2;
+      margin-top: 0.1rem;
+    }
+  }
+  &__info {
+    @include font-default;
+    @include PC {
+      margin-top: 0.1rem;
+    }
+  }
+  &__title {
+    text-transform: uppercase;
+    @include font-default;
+    @include PC {
+      margin-top: 0.4rem;
+      font-weight: 700;
+    }
+    @include SP {
+      margin-top: 0.2rem;
+      font-weight: 600;
+    }
+    &--color {
+      @include text-gradient(to left);
+    }
+  }
+  .paragraph {
+    @include PC {
+      margin-top: 0.03rem;
+      line-height: 1.5;
+    }
+  }
+  &__body {
+    @include PC {
+      margin-top: 0.5rem;
+    }
+    @include SP {
+      margin-top: 0.32rem;
+    }
+    #{$root}__title {
+      position: relative;
+      @include PC {
+        padding-bottom: 0.1rem;
+        border-bottom: 1px solid rgba(#000, 0.5);
+        margin: 0 0 0.16rem;
+      }
+      @include SP {
+        padding-bottom: 0.05rem;
+        margin: 0 0 0.1rem;
+        &:after {
+          content: "";
+          width: 0.64rem;
+          height: 1px;
+          @include background-gradient(to left);
+          @include absolute(left 0 bottom 0);
+        }
+      }
+    }
+  }
+  &__button {
+    @include PC {
+      display: none;
+    }
+    @include SP {
+      padding: 0.06rem 0.13rem 0.05rem;
+      margin: 0.13rem auto 0.15rem;
+      display: table;
+    }
+  }
+}

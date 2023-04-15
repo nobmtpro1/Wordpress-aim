@@ -1,0 +1,63 @@
+<section class="kv kv-business">
+  <div class="container kv__inner">
+    <h1 class="kv__title">
+      ĐÀO TẠO<br>THEO YÊU CẦU
+    </h1>
+    <p class="kv__text">Chương trình đào tạo Marketing & Communication<br class="pc-only">được thiết kế riêng<br class="sp-only"> theo nhu cầu của từng doanh nghiệp </p>
+    <img class="kv__image pc-only" width="366" height="500" src="common/images/kv/kv-business.png"
+      alt="">
+    {{>button href="#" text="Gửi yêu cầu đào tạo" type="white" class="kv__button"}}
+  </div>
+</section>
+
+<main class="main for-business">
+  <div class="container">
+    
+    {{> statistic customStatisticClass="for-business__statistic"}}
+
+    {{>box customBoxClass ="for-business__box"
+      title="ĐÀO TẠO <br class='sp-only'> CHO DOANH NGHIỆP"
+      text=" Cập nhật kiến thức để theo kịp sự phát triển công nghệ và thay đổi hành vi<br class='pc-only'>người tiêu dùng là mấu chốt để doanh nghiệp chiếm lợi thế trong cuộc đua.<br class='pc-only'> AIM Academy sẽ đồng hành cùng bạn với các chương trình đào tạo ngay tại<br class='pc-only'>văn phòng doanh nghiệp, nội dung học được điều chỉnh linh hoạt."
+    }}
+
+    <!-- Slider main container -->
+    <div class="swiper-container for-business__swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        {{#each forBusiness}}
+        <div class="swiper-slide">
+          <article class="for-business__article">
+            <img class="for-business__article-bg" width="413" height="294" src={{background}} alt="">
+            <figure class="for-business__article-logo">
+              <img src={{logo}} alt="">
+              <figcaption class="for-business__article-caption">
+                <h3 class="for-business__article-title">{{{title}}}</h3>
+                <span class="for-business__article-desc">{{{desc}}}</span>
+                <span class="for-business__article-text">{{{text}}}</span>
+              </figcaption>
+            </figure>
+          </article>
+        </div>
+        {{/each}}
+      </div>
+      <div class="swiper-pagination"></div>
+      <a class="for-business__link" href="#">xem hình ảnh đào tạo <img loading="lazy" width="300" height="31" src="common/images/icon-arrow.svg" alt=""></a>
+    </div>
+
+    {{>box customBoxClass ="for-business__box"
+      title="HỢP TÁC ĐÀO TẠO"
+      text="AIM Academy tự hào là đại diện đào tạo của Facebook, thực hiện các chương trình huấn luyện<br class='pc-only'> về sản phẩm và dịch vụ của Facebook đến các media và digital agency tại Việt Nam."
+    }}
+
+    <img class="for-business__feature" src="common/images/business/img-edu.jpg" alt="">
+
+    {{>box customBoxClass ="for-business__box"
+      title="KHÁCH HÀNG CHIA SẺ"
+    }}
+
+    {{>testimonial customClass="for-business__testimonial"}}
+  </div>
+</main>
+
+{{> footer-front}}

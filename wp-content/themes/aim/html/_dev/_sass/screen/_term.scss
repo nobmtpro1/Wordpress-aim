@@ -1,0 +1,115 @@
+.term {
+  &__inner {
+    @include PC {
+      padding: 0 0.2rem;
+      max-width: 12.8rem;
+      margin: 0 auto;
+    }
+  }
+  &__info {
+    @include PC {
+      margin-bottom: 0.3rem;
+    }
+    @include SP {
+      margin-bottom: 0.1rem;
+    }
+    &-heading {
+      @include text-gradient(to left);
+      font-weight: 900;
+      text-transform: uppercase;
+      @include PC {
+        @include font(30, 40);
+        margin-bottom: 0.13rem;
+      }
+      @include SP {
+        @include font(14, 20);;
+        margin-bottom: 0.05rem;
+      }
+    }
+    * :not(:last-child) {
+      margin-bottom: 0.13rem;
+    }
+    &-body {
+      @include PC {
+        @include font(16, 24);
+      }
+      @include SP {
+        @include font(10, 14);
+      }
+    }
+    &-item {
+      padding-left: 1.7em;
+      background: url(../images/icon-vote.svg) no-repeat left 0.1em/ 1.1em auto;
+      &:not(:last-child) {
+        margin-bottom: 0.06rem;
+      }
+    }
+  }
+  &__note{
+    @include PC {
+      @include font(16, 24);
+      margin-bottom: 0.2rem
+    }
+    @include SP {
+      @include font(10, 14);
+      margin-bottom: 0.1rem
+    }
+  }
+  &__tab {
+    display: flex;
+    @include PC {
+      margin: 0 -0.15rem;
+    }
+    @include SP {
+      margin: 0 -0.05rem;
+    }
+    &-item {
+      width: percentage(1/3);
+      @include PC {
+        padding: 0 0.15rem;
+      }
+      @include SP {
+        padding: 0 0.05rem;
+      }
+    }
+    &-link {
+      text-align: center;
+      border: 1px solid #000;
+      font-weight: 800;
+      display: block;
+      border-radius: 5px;
+      @include PC {
+        @include font(24);
+        padding: 0.12rem 0.1rem 0.1rem;
+        border-radius: 200px;
+      }
+      @include SP {
+        @include font(12,16);
+        padding: 0.07rem 0.05rem 0.07rem;
+      }
+      @include hover {
+        text-decoration: none;
+        @include background-gradient(to left);
+        color: white;
+        border-color: transparent;
+      }
+      &.active {
+        @include background-gradient(to left);
+        color: white;
+        border-color: transparent;
+      }
+    }
+    &-content{
+      display: none;
+      @include SP{
+        margin-top: 0.2rem;
+      }
+      @include PC{
+        margin-top: 0.36rem;
+      }
+      &.active{
+        display: block;
+      }
+    }
+  }
+}

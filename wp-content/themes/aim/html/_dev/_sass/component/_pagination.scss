@@ -1,0 +1,71 @@
+.pagination{
+  @include PC{
+    margin-top: 0.5rem;
+  }
+  @include SP{
+    margin-top: 0.2rem;
+  }
+  &__list{
+    display: flex;
+    justify-content: center;
+  }
+  &__item{
+    @include PC{
+      margin: 0 0.05rem;
+    }
+    @include SP{
+      margin: 0 0.05rem;
+    }
+  }
+  &__link{
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #707070;
+    font-weight: 700;
+    @include SP{
+      width: .2rem;
+      height: .2rem;
+      @include font(12)
+    }
+    @include PC{
+      width: .3rem;
+      height: .3rem;
+      @include font(16);
+      
+      &:hover{
+        text-decoration: none;
+      }
+    }
+    &--active{
+      @include background-gradient(to left);
+      color: white;
+      border: none;
+    }
+    &--next{
+      background: url(../images/ico-pagination-next.svg) no-repeat center/contain;
+      border:none;
+      @include PC{
+        transform: scale(0.8);
+      }
+      @include SP{
+        transform: scale(0.8);
+      }
+    }
+    &--prev{
+      background: url(../images/ico-pagination-prev.svg) no-repeat center/contain;
+      border:none;
+      @include PC{
+        transform: scale(0.8);
+      }
+      @include SP{
+        transform: scale(0.8);
+      }
+    }
+    &--disable{
+      display: none;
+    }
+  }
+  
+}

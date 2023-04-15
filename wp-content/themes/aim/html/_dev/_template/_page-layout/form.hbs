@@ -1,0 +1,978 @@
+<!-- Only use button tag setting to call modal  -->
+<div style="min-height:500px; padding-top:100px">
+  <ul class="container" style="display:flex;flex-direction:column">
+    <li style="padding-top:10px">
+      {{>button text="Đăng ký làm bài test" attr="data-toggle='modal' data-target='#form-test'" type="full"}}
+    </li>
+    <li style="padding-top:10px">
+      {{>button text="Đăng ký nhận ebook" attr="data-toggle='modal' data-target='#form-ebook'" type="full"}}
+    </li>
+    <li style="padding-top:10px">
+      {{>button text="Đăng ký tải brochure" attr="data-toggle='modal' data-target='#form-brochure'" type="full"}}
+    </li>
+    <li style="padding-top:10px">
+      {{>button text="Đăng ký tải đồ án" attr="data-toggle='modal' data-target='#form-project'" type="full"}}
+    </li>
+    <li style="padding-top:10px">
+      {{>button text="Đăng ký xem video" attr="data-toggle='modal' data-target='#form-video'" type="full"}}
+    </li>
+    <li style="padding-top:10px">
+      {{>button text="Đăng ký tư vấn từng môn học" attr="data-toggle='modal' data-target='#form-marketing'" type="full"}}
+    </li>
+    <li style="padding-top:10px">
+      {{>button text="Đăng ký sự kiện" attr="data-toggle='modal' data-target='#form-event'" type="full"}}
+    </li>
+    <li style="padding-top:10px">
+      {{>button text="Đăng ký tư vấn customize training" attr="data-toggle='modal' data-target='#form-edu'" type="full"}}
+    </li>
+    <li style="padding-top:10px">
+      {{>button text="Đăng ký ứng tuyển giảng viên" attr="data-toggle='modal' data-target='#form-trainer'" type="full"}}
+    </li>
+    <li style="padding-top:10px">
+      {{>button text="Đăng ký tư vấn định hướng nghề nghiệp" attr="data-toggle='modal' data-target='#form-career'" type="full"}}
+    </li>
+    <li style="padding-top:10px">
+      {{>button text="Đăng ký tư vấn public training" attr="data-toggle='modal' data-target='#form-public-training'" type="full"}}
+    </li>
+    <li style="padding-top:10px">
+      {{>button text="Đăng ký tư vấn combo" attr="data-toggle='modal' data-target='#form-combo'" type="full"}}
+    </li>
+    <li style="padding-top:10px">
+      {{>button text="Fundiin" attr="data-toggle='modal' data-target='#form-fundiin'" type="full"}}
+    </li>
+  </ul>
+</div>
+<!-- end -->
+
+<!-- Modal Form Test-->
+<div class="modal fade" id="form-test" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-full-sp">
+    <div class="modal-content">
+      <img class="modal-close sp-only" src="common/images/icon-close-red.svg" aria-label="Close" alt=""
+        aria-hidden="true" data-dismiss="modal" aria-label="Close">
+      <div class="modal-body">
+        <img class="modal-logo sp-only" src="common/images/logo-black.svg" alt="">
+
+        <h3 class="heading modal-heading">ĐĂNG KÝ<br>LÀM BÀI TEST</h3>
+        <p class="modal-desc">Vui lòng để lại thông tin bên dưới.<br class="sp-only"> Bạn sẽ nhận được bài test qua
+          email.</p>
+        <form class="modal-form" action="/">
+          <div class="form-group">
+            <input class="form-input" type="text" required="required">
+            <label class="form-placeholder">Họ Tên<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="email" required="required">
+            <label class="form-placeholder">Email<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="tel" required="required">
+            <label class="form-placeholder">Số điện thoại<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Công việc hiện tại của bạn?<span class="text-red">*</span></label>
+          </div>
+           <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Bạn đang sống và làm việc tại tỉnh/thành nào?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" class="form-checkbox" name="" id="checkbox-test" checked>
+            <label for="checkbox-test">
+              Bằng cách nhấn GỬI ĐĂNG KÝ, tôi đồng ý với <a class="text-underline" href="#">Chính sách bảo mật<span
+                  class="text-red">*</span></a>
+            </label>
+          </div>
+          {{>button text='GỬI ĐĂNG KÝ' attr='submit' type="full" class='form-button'}}
+        </form>
+      </div>
+      <div class="modal-footer">
+        <img class="modal-logo" src="common/images/logo.svg" alt="">
+        <img class="modal-close" src="common/images/icon-close.svg" aria-label="Close" alt="" aria-hidden="true"
+          data-dismiss="modal" aria-label="Close">
+        <img class="modal-background" src="common/images/form/digital.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Form Ebook-->
+<div class="modal fade" id="form-ebook" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-full-sp">
+    <div class="modal-content">
+      <img class="modal-close sp-only" src="common/images/icon-close-red.svg" aria-label="Close" alt=""
+        aria-hidden="true" data-dismiss="modal" aria-label="Close">
+      <div class="modal-body">
+        <img class="modal-logo sp-only" src="common/images/logo-black.svg" alt="">
+
+        <h3 class="heading modal-heading">ĐĂNG KÝ EBOOK</h3>
+        <p class="modal-desc">Vui lòng để lại thông tin bên dưới.<br class="sp-only"> Bạn sẽ nhận được ebook qua email.
+        </p>
+        <form class="modal-form" action="/">
+          <div class="form-group">
+            <input class="form-input" type="text" required="required">
+            <label class="form-placeholder">Họ Tên<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="email" required="required">
+            <label class="form-placeholder">Email<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="tel" required="required">
+            <label class="form-placeholder">Số điện thoại<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Công việc hiện tại của bạn?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Bạn đang sống và làm việc tại tỉnh/thành nào?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" class="form-checkbox" name="" id="checkbox-ebook" checked>
+            <label for="checkbox-ebook">
+              Bằng cách nhấn GỬI ĐĂNG KÝ, tôi đồng ý với <a class="text-underline" href="#">Chính sách bảo mật<span
+                  class="text-red">*</span></a>
+            </label>
+          </div>
+          {{>button text='GỬI ĐĂNG KÝ' attr='submit' type="full" class='form-button'}}
+        </form>
+      </div>
+      <div class="modal-footer">
+        <img class="modal-logo" src="common/images/logo.svg" alt="">
+        <img class="modal-close" src="common/images/icon-close.svg" aria-label="Close" alt="" aria-hidden="true"
+          data-dismiss="modal" aria-label="Close">
+        <img class="modal-background" src="common/images/form/ebook.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Form Brochure-->
+<div class="modal fade" id="form-brochure" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-full-sp">
+    <div class="modal-content">
+      <img class="modal-close sp-only" src="common/images/icon-close-red.svg" aria-label="Close" alt=""
+        aria-hidden="true" data-dismiss="modal" aria-label="Close">
+      <div class="modal-body">
+        <img class="modal-logo sp-only" src="common/images/logo-black.svg" alt="">
+
+        <h3 class="heading modal-heading">ĐĂNG KÝ TẢI BROCHURE<br>HANDS-ON MARKETING</h3>
+        <p class="modal-desc">Vui lòng để lại thông tin bên dưới để nhận brochure.</p>
+        <form class="modal-form" action="/">
+          <div class="form-group">
+            <input class="form-input" type="text" required="required">
+            <label class="form-placeholder">Họ Tên<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="email" required="required">
+            <label class="form-placeholder">Email<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="tel" required="required">
+            <label class="form-placeholder">Số điện thoại<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Công việc hiện tại của bạn?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Nhu cầu của bạn khi tìm hiểu khóa học?<span
+                class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Bạn đang sống và làm việc tại tỉnh/thành nào?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" class="form-checkbox" name="" id="checkbox-brochure" checked>
+            <label for="checkbox-brochure">
+              Bằng cách nhấn GỬI ĐĂNG KÝ, tôi đồng ý với <a class="text-underline" href="#">Chính sách bảo mật<span
+                  class="text-red">*</span></a>
+            </label>
+          </div>
+          {{>button text='GỬI ĐĂNG KÝ' attr='submit' type="full" class='form-button'}}
+        </form>
+      </div>
+      <div class="modal-footer">
+        <img class="modal-logo" src="common/images/logo.svg" alt="">
+        <img class="modal-close" src="common/images/icon-close.svg" aria-label="Close" alt="" aria-hidden="true"
+          data-dismiss="modal" aria-label="Close">
+        <img class="modal-background" src="common/images/form/brochure.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Form Đồ án-->
+<div class="modal fade" id="form-project" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-full-sp">
+    <div class="modal-content">
+      <img class="modal-close sp-only" src="common/images/icon-close-red.svg" aria-label="Close" alt=""
+        aria-hidden="true" data-dismiss="modal" aria-label="Close">
+      <div class="modal-body">
+        <img class="modal-logo sp-only" src="common/images/logo-black.svg" alt="">
+
+        <h3 class="heading modal-heading">ĐĂNG KÝ<br>XEM ĐỒ ÁN TỐT NGHIỆP</h3>
+        <p class="modal-desc">Vui lòng để lại thông tin bên dưới.<br class="sp-only">Bạn sẽ nhận được ebook qua email.
+        </p>
+        <form class="modal-form" action="/">
+          <div class="form-group">
+            <input class="form-input" type="text" required="required">
+            <label class="form-placeholder">Họ Tên<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="email" required="required">
+            <label class="form-placeholder">Email<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="tel" required="required">
+            <label class="form-placeholder">Số điện thoại<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Công việc hiện tại của bạn?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Bạn đang sống và làm việc tại tỉnh/thành nào?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" class="form-checkbox" name="" id="checkbox-project" checked>
+            <label for="checkbox-project">
+              Bằng cách nhấn GỬI ĐĂNG KÝ, tôi đồng ý với <a class="text-underline" href="#">Chính sách bảo mật<span
+                  class="text-red">*</span></a>
+            </label>
+          </div>
+          {{>button text='GỬI ĐĂNG KÝ' attr='submit' type="full" class='form-button'}}
+        </form>
+      </div>
+      <div class="modal-footer">
+        <img class="modal-logo" src="common/images/logo.svg" alt="">
+        <img class="modal-close" src="common/images/icon-close.svg" aria-label="Close" alt="" aria-hidden="true"
+          data-dismiss="modal" aria-label="Close">
+        <img class="modal-background" src="common/images/form/project.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Form Video-->
+<div class="modal fade" id="form-video" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-full-sp">
+    <div class="modal-content">
+      <img class="modal-close sp-only" src="common/images/icon-close-red.svg" aria-label="Close" alt=""
+        aria-hidden="true" data-dismiss="modal" aria-label="Close">
+      <div class="modal-body">
+        <img class="modal-logo sp-only" src="common/images/logo-black.svg" alt="">
+
+        <h3 class="heading modal-heading">ĐĂNG KÝ XEM VIDEO<br>ĐỊNH HƯỚNG NGHỀ NGHIỆP</h3>
+        <p class="modal-desc">Vui lòng để lại thông tin bên dưới. <br class="sp-only"> Bạn sẽ nhận được video qua email.
+        </p>
+        <form class="modal-form" action="/">
+          <div class="form-group">
+            <input class="form-input" type="text" required="required">
+            <label class="form-placeholder">Họ Tên<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="email" required="required">
+            <label class="form-placeholder">Email<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="tel" required="required">
+            <label class="form-placeholder">Số điện thoại<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Công việc hiện tại của bạn?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Bạn đang sống và làm việc tại tỉnh/thành nào?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" class="form-checkbox" name="" id="checkbox-video" checked>
+            <label for="checkbox-video">
+              Bằng cách nhấn GỬI ĐĂNG KÝ, tôi đồng ý với <a class="text-underline" href="#">Chính sách bảo mật<span
+                  class="text-red">*</span></a>
+            </label>
+          </div>
+
+          {{>button text='GỬI ĐĂNG KÝ' attr='submit' type="full" class='form-button'}}
+        </form>
+      </div>
+      <div class="modal-footer">
+        <img class="modal-logo" src="common/images/logo.svg" alt="">
+        <img class="modal-close" src="common/images/icon-close.svg" aria-label="Close" alt="" aria-hidden="true"
+          data-dismiss="modal" aria-label="Close">
+        <img class="modal-background" src="common/images/form/video.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Form DKTV từng môn học-->
+<div class="modal fade" id="form-marketing" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-full-sp">
+    <div class="modal-content">
+      <img class="modal-close sp-only" src="common/images/icon-close-red.svg" aria-label="Close" alt=""
+        aria-hidden="true" data-dismiss="modal" aria-label="Close">
+      <div class="modal-body">
+        <img class="modal-logo sp-only" src="common/images/logo-black.svg" alt="">
+
+        <h3 class="heading modal-heading">ĐĂNG KÝ TƯ VẤN KHÓA HỌC<br>HANDS-ON MARKETING</h3>
+        <p class="modal-desc">Hãy để lại thông tin bên dưới, bộ phận Tư vấn sẽ chủ động liên hệ và trao đổi cùng bạn
+          trong 24 giờ.</p>
+        <form class="modal-form" action="/">
+          <div class="form-group">
+            <input class="form-input" type="text" required="required">
+            <label class="form-placeholder">Họ Tên<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="email" required="required">
+            <label class="form-placeholder">Email<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="tel" required="required">
+            <label class="form-placeholder">Số điện thoại<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Công việc hiện tại của bạn?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Nhu cầu của bạn khi đăng ký khóa học?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Bạn đang sống và làm việc tại tỉnh/thành nào?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Nhân viên tư vấn đã từng trao đổi tại AIM Academy (nếu có)</label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" class="form-checkbox" name="" id="checkbox-marketing" checked>
+            <label for="checkbox-marketing">
+              Bằng cách nhấn GỬI ĐĂNG KÝ, tôi đồng ý với <a class="text-underline" href="#">Chính sách bảo mật<span
+                  class="text-red">*</span></a>
+            </label>
+          </div>
+          {{>button text='GỬI ĐĂNG KÝ' attr='submit' type="full" class='form-button'}}
+        </form>
+      </div>
+      <div class="modal-footer">
+        <img class="modal-logo" src="common/images/logo.svg" alt="">
+        <img class="modal-close" src="common/images/icon-close.svg" aria-label="Close" alt="" aria-hidden="true"
+          data-dismiss="modal" aria-label="Close">
+        <img class="modal-background" src="common/images/form/brochure.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Form Event-->
+<div class="modal fade" id="form-event" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-full-sp">
+    <div class="modal-content">
+      <img class="modal-close sp-only" src="common/images/icon-close-red.svg" aria-label="Close" alt=""
+        aria-hidden="true" data-dismiss="modal" aria-label="Close">
+      <div class="modal-body">
+        <img class="modal-logo sp-only" src="common/images/logo-black.svg" alt="">
+
+        <h3 class="heading modal-heading">ĐĂNG KÝ<br>THAM DỰ SỰ KIỆN</h3>
+        <p class="modal-desc">Vui lòng để lại thông tin bên dưới. <br class="sp-only">Bạn sẽ nhận được email xác nhận từ
+          BTC nếu đăng ký thành công.</p>
+        <form class="modal-form" action="/">
+          <div class="form-group">
+            <input class="form-input" type="text" required="required">
+            <label class="form-placeholder">Họ Tên<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="email" required="required">
+            <label class="form-placeholder">Email<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="tel" required="required">
+            <label class="form-placeholder">Số điện thoại<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Công việc hiện tại của bạn?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Bạn đang sống và làm việc tại tỉnh/thành nào?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <textarea class="form-area" rows="3" id="" cols="30" rows="10"
+              placeholder="Câu hỏi bạn muốn đặt cho diễn giả"></textarea>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="text">
+            <label class="form-placeholder">Bạn có mong đợi gì khi tham gia sự kiện</label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" class="form-checkbox" name="" id="checkbox-event" checked>
+            <label for="checkbox-event">
+              Bằng cách nhấn GỬI ĐĂNG KÝ, tôi đồng ý với <a class="text-underline" href="#">Chính sách bảo mật<span
+                  class="text-red">*</span></a>
+            </label>
+          </div>
+
+          {{>button text='GỬI ĐĂNG KÝ' attr='submit' type="full" class='form-button'}}
+        </form>
+      </div>
+      <div class="modal-footer">
+        <img class="modal-logo" src="common/images/logo.svg" alt="">
+        <img class="modal-close" src="common/images/icon-close.svg" aria-label="Close" alt="" aria-hidden="true"
+          data-dismiss="modal" aria-label="Close">
+        <img class="modal-background" src="common/images/form/event.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Form Customize Training-->
+<div class="modal fade" id="form-edu" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-full-sp">
+    <div class="modal-content">
+      <img class="modal-close sp-only" src="common/images/icon-close-red.svg" aria-label="Close" alt=""
+        aria-hidden="true" data-dismiss="modal" aria-label="Close">
+      <div class="modal-body">
+        <img class="modal-logo sp-only" src="common/images/logo-black.svg" alt="">
+
+        <h3 class="heading modal-heading">ĐĂNG KÝ TƯ VẤN <br> ĐÀO TẠO THEO YÊU CẦU</h3>
+        <p class="modal-desc">Hãy để lại thông tin bên dưới, bộ phận Tư vấn sẽ chủ động liên hệ và trao đổi cùng bạn
+          trong 24 giờ.</p>
+        <form class="modal-form" action="/">
+          <div class="form-group">
+            <input class="form-input" type="text" required="required">
+            <label class="form-placeholder">Họ tên người liên hệ<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="text" required="required">
+            <label class="form-placeholder">Chức vụ<span class="text-red">*</span></label>
+          </div>
+          <div class="form-inline">
+            <div class="form-group">
+              <input class="form-input" type="email" required="required">
+              <label class="form-placeholder">Email<span class="text-red">*</span></label>
+            </div>
+            <div class="form-group">
+              <input class="form-input" type="tel" required="required">
+              <label class="form-placeholder">Số điện thoại<span class="text-red">*</span></label>
+            </div>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="text" required="required">
+            <label class="form-placeholder">Công ty<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <textarea class="form-area" required="required" rows="3" id="" cols="30" rows="10"></textarea>
+            <label class="form-placeholder">Nhu cầu đào tạo<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" class="form-checkbox" name="" id="checkbox-edu" checked>
+            <label for="checkbox-edu">
+              Bằng cách nhấn GỬI ĐĂNG KÝ, tôi đồng ý với <a class="text-underline" href="#">Chính sách bảo mật<span
+                  class="text-red">*</span></a>
+            </label>
+          </div>
+
+          {{>button text='GỬI ĐĂNG KÝ' attr='submit' type="full" class='form-button'}}
+        </form>
+      </div>
+      <div class="modal-footer">
+        <img class="modal-logo" src="common/images/logo.svg" alt="">
+        <img class="modal-close" src="common/images/icon-close.svg" aria-label="Close" alt="" aria-hidden="true"
+          data-dismiss="modal" aria-label="Close">
+        <img class="modal-background" src="common/images/form/edu.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Form Trainer-->
+<div class="modal fade" id="form-trainer" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-full-sp">
+    <div class="modal-content">
+      <img class="modal-close sp-only" src="common/images/icon-close-red.svg" aria-label="Close" alt=""
+        aria-hidden="true" data-dismiss="modal" aria-label="Close">
+      <div class="modal-body">
+        <img class="modal-logo sp-only" src="common/images/logo-black.svg" alt="">
+
+        <h3 class="heading modal-heading">ĐĂNG KÝ <br>TƯ VẤN NGHỀ NGHIỆP</h3>
+        <p class="modal-desc">Hãy để lại thông tin bên dưới, bộ phận Tư vấn sẽ chủ động liên hệ và trao đổi cùng bạn trong 24 giờ.</p>
+        <form class="modal-form" action="/">
+          <div class="form-group">
+            <input class="form-input" type="text" required="required">
+            <label class="form-placeholder">Họ Tên<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="email" required="required">
+            <label class="form-placeholder">Email<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="tel" required="required">
+            <label class="form-placeholder">Số điện thoại<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Khóa học bạn muốn giảng dạy?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-file" type="file" name="" id="">
+            <p class="form-input"></p>
+            <label class="form-placeholder">CV (Curriculum Vitae) của bạn<span class="text-red">*</span></label>
+          </div>
+          
+          <div class="form-group">
+            <input type="checkbox" class="form-checkbox" name="" id="checkbox-trainer" checked>
+            <label for="checkbox-trainer">
+              Bằng cách nhấn GỬI ĐĂNG KÝ, tôi đồng ý với <a class="text-underline" href="#">Chính sách bảo mật<span
+                  class="text-red">*</span></a>
+            </label>
+          </div>
+
+          {{>button text='GỬI ĐĂNG KÝ' attr='submit' type="full" class='form-button'}}
+        </form>
+      </div>
+      <div class="modal-footer">
+        <img class="modal-logo" src="common/images/logo.svg" alt="">
+        <img class="modal-close" src="common/images/icon-close.svg" aria-label="Close" alt="" aria-hidden="true"
+          data-dismiss="modal" aria-label="Close">
+        <img class="modal-background" src="common/images/form/trainer.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Form Career-->
+<div class="modal fade" id="form-career" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-full-sp">
+    <div class="modal-content">
+      <img class="modal-close sp-only" src="common/images/icon-close-red.svg" aria-label="Close" alt=""
+        aria-hidden="true" data-dismiss="modal" aria-label="Close">
+      <div class="modal-body">
+        <img class="modal-logo sp-only" src="common/images/logo-black.svg" alt="">
+
+        <h3 class="heading modal-heading">ĐĂNG KÝ <br>TƯ VẤN NGHỀ NGHIỆP</h3>
+        <p class="modal-desc">Hãy để lại thông tin bên dưới, bộ phận Tư vấn sẽ chủ động liên hệ và trao đổi cùng bạn trong 24 giờ.</p>
+        <form class="modal-form" action="/">
+          <div class="form-group">
+            <input class="form-input" type="text" required="required">
+            <label class="form-placeholder">Họ Tên<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="email" required="required">
+            <label class="form-placeholder">Email<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="tel" required="required">
+            <label class="form-placeholder">Số điện thoại<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Công việc hiện tại của bạn?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Bạn đang quan tâm đến lĩnh vực/ vị trí nào trong Marketing & Communication?<span class="text-red">*</span></label>
+          </div>
+           <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Bạn đang sống và làm việc tại tỉnh/thành nào?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Nhân viên tư vấn đã từng trao đổi tại Aim Academy (nếu có)</label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" class="form-checkbox" name="" id="checkbox-career" checked>
+            <label for="checkbox-career">
+              Bằng cách nhấn GỬI ĐĂNG KÝ, tôi đồng ý với <a class="text-underline" href="#">Chính sách bảo mật<span
+                  class="text-red">*</span></a>
+            </label>
+          </div>
+
+          {{>button text='GỬI ĐĂNG KÝ' attr='submit' type="full" class='form-button'}}
+        </form>
+      </div>
+      <div class="modal-footer">
+        <img class="modal-logo" src="common/images/logo.svg" alt="">
+        <img class="modal-close" src="common/images/icon-close.svg" aria-label="Close" alt="" aria-hidden="true"
+          data-dismiss="modal" aria-label="Close">
+        <img class="modal-background" src="common/images/form/video.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Form Public Training-->
+<div class="modal fade" id="form-public-training" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-full-sp">
+    <div class="modal-content">
+      <img class="modal-close sp-only" src="common/images/icon-close-red.svg" aria-label="Close" alt=""
+        aria-hidden="true" data-dismiss="modal" aria-label="Close">
+      <div class="modal-body">
+        <img class="modal-logo sp-only" src="common/images/logo-black.svg" alt="">
+
+        <h3 class="heading modal-heading">ĐĂNG KÝ <br>TƯ VẤN KHÓA HỌC</h3>
+        <p class="modal-desc">Hãy để lại thông tin bên dưới, bộ phận Tư vấn sẽ chủ động liên hệ và trao đổi cùng bạn trong 24 giờ.</p>
+        <form class="modal-form" action="/">
+          <div class="form-group">
+            <input class="form-input" type="text" required="required">
+            <label class="form-placeholder">Họ Tên<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="email" required="required">
+            <label class="form-placeholder">Email<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="tel" required="required">
+            <label class="form-placeholder">Số điện thoại<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Công việc hiện tại của bạn?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Nhu cầu của bạn khi đăng ký khóa học<span class="text-red">*</span></label>
+          </div>
+           <div class="form-group multiple-select js-multiple-select">
+            <span class="label"></span>
+            <div class="form-multiple-select">
+              <label><input type="checkbox">Option 1</label>
+              <label><input type="checkbox">Option 2</label>
+              <label><input type="checkbox">Option 3</label>
+            </div>
+            <label class="form-placeholder">Khóa học bạn quan tâm<span class="text-red">*</span></label>
+          </div>
+           <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Bạn đang sống và làm việc tại tỉnh/thành nào?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Nhân viên tư vấn đã từng trao đổi tại Aim Academy (nếu có)</label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" class="form-checkbox" name="" id="checkbox-public-training" checked>
+            <label for="checkbox-public-training">
+              Bằng cách nhấn GỬI ĐĂNG KÝ, tôi đồng ý với <a class="text-underline" href="#">Chính sách bảo mật<span
+                  class="text-red">*</span></a>
+            </label>
+          </div>
+
+          {{>button text='GỬI ĐĂNG KÝ' attr='submit' type="full" class='form-button'}}
+        </form>
+      </div>
+      <div class="modal-footer">
+        <img class="modal-logo" src="common/images/logo.svg" alt="">
+        <img class="modal-close" src="common/images/icon-close.svg" aria-label="Close" alt="" aria-hidden="true"
+          data-dismiss="modal" aria-label="Close">
+        <img class="modal-background" src="common/images/form/public-training.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Form Combo-->
+<div class="modal fade" id="form-combo" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-full-sp">
+    <div class="modal-content">
+      <img class="modal-close sp-only" src="common/images/icon-close-red.svg" aria-label="Close" alt=""
+        aria-hidden="true" data-dismiss="modal" aria-label="Close">
+      <div class="modal-body">
+        <img class="modal-logo sp-only" src="common/images/logo-black.svg" alt="">
+
+        <h3 class="heading modal-heading">ĐĂNG KÝ TƯ VẤN COMBO <br>START-UP (DO IT YOURSELF)</h3>
+        <p class="modal-desc">Hãy để lại thông tin bên dưới, bộ phận Tư vấn sẽ chủ động liên hệ và trao đổi cùng bạn trong 24 giờ.</p>
+        <form class="modal-form" action="/">
+          <div class="form-group">
+            <input class="form-input" type="text" required="required">
+            <label class="form-placeholder">Họ Tên<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="email" required="required">
+            <label class="form-placeholder">Email<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <input class="form-input" type="tel" required="required">
+            <label class="form-placeholder">Số điện thoại<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Công việc hiện tại của bạn?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Nhu cầu của bạn khi đăng ký khóa học<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select" required="required">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Bạn đang sống và làm việc tại tỉnh/thành nào?<span class="text-red">*</span></label>
+          </div>
+          <div class="form-group">
+            <select class="form-input form-select">
+              <option value="" selected disabled hidden></option>
+              <option value="1">Option 1</option>
+              <option value="1">Option 2</option>
+              <option value="1">Option 3</option>
+              <option value="1">Option 4</option>
+            </select>
+            <label class="form-placeholder">Nhân viên tư vấn đã từng trao đổi tại Aim Academy (nếu có)</label>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" class="form-checkbox" name="" id="checkbox-combo" checked>
+            <label for="checkbox-combo">
+              Bằng cách nhấn GỬI ĐĂNG KÝ, tôi đồng ý với <a class="text-underline" href="#">Chính sách bảo mật<span
+                  class="text-red">*</span></a>
+            </label>
+          </div>
+
+          {{>button text='GỬI ĐĂNG KÝ' attr='submit' type="full" class='form-button'}}
+        </form>
+      </div>
+      <div class="modal-footer">
+        <img class="modal-logo" src="common/images/logo.svg" alt="">
+        <img class="modal-close" src="common/images/icon-close.svg" aria-label="Close" alt="" aria-hidden="true"
+          data-dismiss="modal" aria-label="Close">
+        <img class="modal-background" src="common/images/form/combo.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Fundiin-->
+<div class="modal fade" id="form-fundiin" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-full-sp">
+    <div class="modal-content">
+      <img class="modal-close sp-only" src="common/images/icon-close-red.svg" aria-label="Close" alt=""
+        aria-hidden="true" data-dismiss="modal" aria-label="Close">
+      <div class="modal-body">
+        <img class="modal-logo sp-only" src="common/images/logo-black.svg" alt="">
+        <img class="modal-logo fundiin sp-only" src="common/images/Form/logo-fundiin2.png" alt="">
+
+        <h3 class="heading modal-heading">SHOPING TRẢ SAU <br>LUÔN LUÔN MIỄN LÃI</h3>
+        <div>
+          <b class="label">Lợi ích khác biệt</b>
+          <ul class="benefit">
+            <li><b>Không</b> lãi suất</li>
+            <li><b>Không</b> chênh lệch giá</li>
+            <li><b>Không</b> thủ tục phức tạp</li>
+            <li><b>Không</b> mất phí hồ sơ</li>
+            <li><b>Không</b> cần thẻ tín dụng</li>
+          </ul>
+          <b class="label">Các bước mua sắm sau 5 giây</b>
+          <ul class="steps">
+            <li>
+              <img src="common/images/Form/fundiin_1.svg" alt="">
+              <p>Chọn giỏ sản phẩm yêu thích</p>
+            </li>
+             <li>
+              <img src="/common/images/Form/fundiin_2.svg" alt="">
+              <p>Chọn Fundiin ở bước thanh toán</p>
+            </li>
+             <li>
+              <img src="common/images/Form/fundiin_3.svg" alt="">
+              <p>Nhận SMS đăng ký tài khoản mới và thanh toán Kỳ 1</p>
+            </li>
+             <li>
+              <img src="common/images/Form/fundiin_4.svg" alt="">
+              <p>Nhận hàng và thanh toán 2 Kỳ sau mỗi 30 ngày</p>
+            </li>
+          </ul>
+        </div>
+        <p class="modal-desc">Bạn cần phải trên 18 tuổi, là công dân Việt Nam, sở hữu số điện thoại chính chủ từ các nhà mạng Viettel, Mobifone, Vinaphone, và một số tiêu chí khác để được duyệt.</p>
+      </div>
+      <div class="modal-footer">
+        <img class="modal-logo" src="common/images/logo.svg" alt="">
+        <img class="modal-logo fundiin pc" src="common/images/Form/logo-fundiin.png" alt="">
+        <img class="modal-close" src="common/images/icon-close.svg" aria-label="Close" alt="" aria-hidden="true"
+          data-dismiss="modal" aria-label="Close">
+        <img class="modal-background" src="common/images/Form/fundiin.jpg" alt="">
+      </div>
+    </div>
+  </div>
+</div>

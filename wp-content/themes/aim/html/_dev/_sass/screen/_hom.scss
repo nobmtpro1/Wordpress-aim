@@ -1,0 +1,141 @@
+.hom {
+  $root: &;
+
+  @include PC {
+    padding-top: 0;
+  }
+
+  &__statistic {
+    @include PC {
+      padding-bottom: 0;
+    }
+    @include SP{
+      display: none;
+    }
+  }
+
+  &__content{
+    @include PC{
+      display: flex;
+      margin-top: 0.6rem;
+    }
+  }
+
+  &__sidebar{
+    font-weight: 500;
+
+    @include PC{
+      width: 4.3rem;
+      @include font(16,19);
+    }
+    .regis-box{
+      @include PC{
+        padding: 0.4rem 0.3rem;
+        position: relative;
+        top: 0;
+      }
+    }
+    table{
+      text-align: left;
+      td{
+        @include PC{
+          padding: 0.05rem 0;
+        }
+        @include SP{
+          line-height: 1.5;
+        }
+        &:nth-child(1){
+          padding-right: 0.05rem;
+        }
+        &:nth-child(2){
+        }
+      }
+    }
+    .button{
+      display: table;
+      margin-left: auto;
+      margin-right: auto;
+      @include PC{
+        padding: 0.1rem 0.2rem 0.08rem;
+      }
+    }
+    .price{
+      border: 1px solid #000;
+      border-radius: 3px;
+      position: relative;
+      display: table;
+      margin-left: auto;
+      margin-right: auto;
+      @include PC{
+        padding: 0.2rem 0.3rem;
+        margin-top: 0.3rem;
+      }
+      @include SP{
+        padding: 0.1rem 0.15rem;
+        margin-top: 0.2rem;
+      }
+      span{
+        display: block;
+        text-align: center;
+      }
+      &__label{
+        background: #f5f5f5;
+        padding: 0 0.1rem;
+        position: absolute;
+        top: -0.5em;
+        left: 50%;
+        transform: translateX(-50%);
+        @include PC{
+          @include font(16)
+        }
+        @include SP{
+          @include font(12)
+        }
+      }
+      &__total{
+        font-weight: 700;
+        @include text-gradient(to left);
+        @include PC{
+          @include font(30,36)
+        }
+        @include SP{
+          @include font(22,26)
+        }
+      }
+      &__discount{
+        font-weight: 600;
+        text-decoration: line-through;
+        @include PC{
+          @include font(20,24)
+        }
+        @include SP{
+          @include font(14,17)
+        }
+      }
+    }
+    .note{
+      font-style: italic;
+      @include PC{
+        margin-top: 0.1rem;
+        @include font(16,22);
+      }
+      @include SP{
+        margin-top: 0.1rem;
+        line-height: 1.2;
+      }
+    }
+  }
+  
+  &__body{
+    @include PC{
+      flex: 1;
+      margin-left: 0.15rem;
+    }
+    @include SP{
+      margin-top: 0.2rem;
+    }
+    .testimonial{
+      max-width: 10rem;
+    }
+  }
+}

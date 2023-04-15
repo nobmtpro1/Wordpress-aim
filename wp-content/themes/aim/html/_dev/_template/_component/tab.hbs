@@ -1,0 +1,7 @@
+<ul class="tab{{#if center}} tab--center{{/if}}{{#if customClass}} {{customClass}}{{/if}}">
+  {{#each data}}
+  <li class="tab__item">
+    <a class="tab__link{{#if active}} tab__link--active{{/if}}" href="#">{{text}}</a>
+  </li>
+  {{/each}}
+</ul>

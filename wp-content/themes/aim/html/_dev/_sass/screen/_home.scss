@@ -1,0 +1,714 @@
+.home-educate {
+  $root: &;
+
+  @include PC {
+    max-width: 13.2rem;
+    display: flex;
+    justify-content: space-between;
+    margin-top: .29rem;
+  }
+
+  @include SP {
+    margin-top: 0.03rem;
+  }
+
+  &__item {
+    position: relative;
+    z-index: 1;
+    @include background-gradient(to right);
+
+    @include SP {
+      padding: .20rem.2rem.13rem;
+      border-radius: 10px;
+
+      &:not(:last-child) {
+        margin-bottom: .17rem;
+      }
+    }
+
+    @include PC {
+      max-width: 6.13rem;
+      padding: .30rem .40rem.4rem;
+      border-radius: 15px;
+      width: 49%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &:before {
+      content: '';
+      width: calc(100% - 2px);
+      height: calc(100% - 2px);
+      position: absolute;
+      z-index: -1;
+      background: white;
+      top: 1px;
+      left: 1px;
+
+      @include SP {
+        border-radius: 10px;
+      }
+
+      @include PC {
+        border-radius: 15px;
+      }
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: flex-start;
+
+    @include PC {
+      margin-bottom: .16rem
+    }
+  }
+
+  &__body {
+    @include PC {
+      @include font(20, 24);
+    }
+
+    @include SP {
+      @include font(12, 14);
+    }
+  }
+
+  &__image {
+    @include SP {
+      width: .36rem;
+      margin-right: .15rem;
+    }
+
+    @include PC {
+      width: .60rem;
+      margin-right: .32rem;
+      margin-top: .11rem;
+    }
+  }
+
+  &__footer {
+    display: flex;
+
+    @include PC {
+      margin-top: auto;
+      align-self: flex-end;
+      width: 100%;
+      padding-left: 0.78rem;
+    }
+
+    @include SP {
+      margin-top: .05rem;
+      justify-content: center;
+    }
+  }
+
+  &__title {
+    @include PC{
+      line-height: 1.2;
+      margin-bottom: 0.15rem
+    }
+    @include SP {
+      @include font(18, 24);
+      margin-bottom: .05rem;
+    }
+  }
+
+  &__button {
+    @include PC {
+      @include font(20, 24);
+      padding: .15rem .20rem;
+      min-width: 1.64rem;
+      margin: 0 .12rem;
+      font-weight: 600;
+    }
+
+    @include SP {
+      @include font(12, 14);
+      padding: .05rem .15rem;
+      margin: .10rem.04rem 0;
+      min-width: 1.04rem;
+    }
+    &:last-child{
+      @include PC{
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.home-competition {
+  @include PC {
+    padding-top: 0.56rem;
+  }
+
+  @include SP {
+    margin-top: 0.2rem;
+  }
+
+  &__swiper {
+    @include PC {
+      margin-top: 0.7rem;
+    }
+
+    @include SP {
+      margin-top: 0.12rem;
+    }
+  }
+
+  .swiper-pagination {
+    @include PC {
+      display: none;
+    }
+  }
+  
+}
+
+.home-career {
+  overflow: hidden;
+
+  @include PC {
+    padding-bottom: 0.56rem;
+  }
+
+  @include SP {
+    padding-top: 0.16rem;
+    padding-bottom: 0.25rem;
+  }
+
+  &__list {
+    max-width: 12.8rem;
+    display: flex;
+    align-items: stretch;
+
+    @include PC {
+      margin: .58rem auto 0;
+      justify-content: space-between;
+    }
+
+    @include SP {
+      margin: 0.1rem -.04rem 0;
+    }
+  }
+
+  &__item {
+    @include SP {
+      padding: 0.04rem;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    text-align: center;
+
+    @include SP {
+      @include font(12, 14)
+    }
+
+    @include PC {
+      @include font(28, 34)
+    }
+  }
+
+  &__text {
+    @include cutText(8);
+
+    @include SP {
+      @include font(12, 14)
+    }
+
+    @include PC {
+      @include font(20, 24);
+      margin-top: .35rem
+    }
+  }
+
+  &__heading {
+    @include text-gradient(to left);
+    font-weight: 800;
+    text-align: center;
+
+    @include SP {
+      @include font(12, 14);
+      white-space: nowrap;
+      margin-top: .08rem
+    }
+
+    @include PC {
+      @include font(30, 36);
+      margin-top: 0.3rem;
+    }
+  }
+
+  &__link {
+    position: relative;
+    display: block;
+    height: 100%;
+
+    @include SP {
+      height: 1.46rem;
+    }
+
+    @include PC {
+      height: 4.2rem;
+      width: 6.14rem;
+
+      &:hover {
+        figcaption {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  img {
+    object-fit: cover;
+    height: 100%;
+  }
+
+  figure {
+    height: 100%
+  }
+
+  figcaption {
+    @include background-gradient(-45deg);
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    opacity: 0;
+
+    @include PC {
+      padding: .79rem.3rem.3rem;
+      transition: .3s all ease;
+    }
+  }
+
+  .swiper-container {
+    @include PC {
+      max-width: 12.7rem;
+    }
+  }
+}
+
+.home-blog {
+  $root: &;
+  background: #efefef;
+
+  @include PC {
+    padding-top: 0.5rem;
+  }
+
+  @include SP {
+    padding: 0.23rem 0.1rem 0.05rem;
+  }
+
+  &__heading {
+    text-align: center;
+  }
+
+  &__list {
+    @include PC {
+      margin-top: 0.42rem;
+    }
+
+    @include SP {
+      margin-top: 0.08rem;
+    }
+  }
+
+  &__item {
+    @include PC {
+      padding: 0.08rem 0.08rem 0;
+    }
+  }
+
+  &__article {
+    background: white;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    height: 100%;
+
+    @include PC {
+      border-radius: 20px;
+      padding: 0.12rem 0.12rem 0.24rem;
+    }
+
+    @include SP {
+      border-radius: 12px;
+      padding: 0.08rem 0.08rem 0.23rem;
+    }
+  }
+
+  &__image {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+
+    @include PC {
+      border-radius: 15px;
+    }
+
+    @include SP {
+      border-radius: 13px;
+    }
+
+    &:before {
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: 0.3s all ease;
+      background: -webkit-linear-gradient(to top, $cl2, transparent);
+      background: -moz-linear-gradient(to top, $cl2, transparent);
+      background: -o-linear-gradient(to top, $cl2, transparent);
+      background: linear-gradient(to top, $cl2, transparent);
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+      object-position: center;
+
+      @include SP {
+        height: 1.91rem;
+      }
+
+      @include PC {
+        height: 2.63rem;
+      }
+    }
+  }
+
+  &__body {
+    @include PC {
+      padding: 0 0.2rem;
+      margin-top: 0.25rem;
+    }
+
+    @include SP {
+      margin-top: 0.2rem;
+      padding: 0 0.18rem;
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+
+    @include PC {
+      @include font(30, 36);
+    }
+
+    @include SP {
+      @include font(20, 24);
+    }
+  }
+
+  &__text {
+    text-align: justify;
+    text-justify: inter-character;
+    @include cutText(5,7);
+
+    @include PC {
+      @include font(20, 24);
+      margin-top: 0.15rem;
+      margin-bottom: 0.18rem
+    }
+
+    @include SP {
+      @include font(12, 14);
+      margin-top: 0.18rem;
+      margin-bottom: 0.28rem
+    }
+  }
+
+  &__button {
+    margin-top: auto;
+
+    @include PC {
+      justify-self: flex-end;
+      padding: 0.15rem;
+      @include font(22, 27);
+      width: 2.4rem;
+      margin-left: auto;
+      margin-right: auto;
+      cursor: pointer;
+
+      &:hover {
+        &~#{$root}__image {
+          &:before {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+
+    @include SP {
+      @include font(12, 14);
+      width: 1rem;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 0.04rem;
+    }
+  }
+
+  &__viewmore {
+    @include text-gradient(to left);
+    margin-left: auto;
+    display: block;
+    float: right;
+    font-weight: 600;
+
+    @include PC {
+      @include font(20, 24);
+      margin: 0 0.78rem 0.47rem 0;
+    }
+
+    @include SP {
+      @include font(12, 14);
+      margin:  0 0 0.1rem;
+    }
+
+    img {
+      vertical-align: middle;
+
+      @include PC {
+        width: 0.63rem;
+        margin-left: 0.1rem;
+      }
+
+      @include SP {
+        width: 0.31rem;
+      }
+    }
+  }
+
+  &__swiper {
+    position: relative;
+  }
+
+  .container {
+    @include clear;
+  }
+
+  .swiper-button {
+    @include SP {
+      display: none;
+    }
+  }
+
+  .swiper-container {
+    @include PC {
+      max-width: 12.98rem;
+    }
+  }
+
+  .swiper-pagination {
+    @include PC {
+      display: none;
+    }
+  }
+
+  .swiper-slide {
+    height: auto;
+  }
+}
+
+.home-ebook{
+  @include PC{
+    background: #efefef;
+    padding-bottom: 0.8rem;
+  }
+  @include SP{
+    background:  white;
+    padding-top: 0.215rem;
+  }
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    @include PC{
+      max-width: 13rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @include SP{
+      margin: 0 -0.04rem;
+    }
+  }
+  &__item{
+    @include PC{
+      width: 25%;
+      padding: 0 0.08rem;
+    }
+    @include SP{
+      width: 50%;
+      padding: 0 .04rem;
+      &:nth-child(n+3){
+        margin-top: 0.09rem;
+      }
+    }
+  }
+  &__link{
+    display: block;
+    height: 100%;
+    background: white;
+    @include PC{
+      @include transition;
+      &:hover{
+        transform: translateY(-5px);
+        text-decoration: none;
+        box-shadow: 0 2px 6px rgba($color: #000000, $alpha: 0.1)
+      }
+    }
+    @include SP{
+      
+    }
+  }
+  &__image{
+    @include image-fit(center);
+    @include PC{
+      height: 2.25rem;
+    }
+    @include SP{
+      height: 1.13rem;
+    }
+  }
+  &__title{
+    text-align: center;
+    @include font-default;
+    font-weight: 900;
+    @include text-gradient(to left);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include PC{
+      height: 0.95rem;
+    }
+    @include SP{
+      height: 0.48rem;
+    }
+  }
+}
+
+.home-event{
+  @include PC {
+    padding: 0.71rem 0 0.62rem;
+  }
+  @include SP {
+    padding-top: rem(23);
+    padding-bottom: 0.25rem;
+  }
+
+  &__article{
+    @include PC{
+      padding-left: 50.4%;
+      position: relative;
+      min-height: 4.61rem;
+      text-align: left;
+    }
+  }
+
+  &__image{
+    @include PC{
+      position: absolute;
+      left: 0;
+      top: 0;
+      @include image-fit(center);
+      width: 6.14rem;
+      height: 100%;
+    }
+    @include SP{
+      margin-top: 0.1rem;
+    }
+  }
+
+  &__cat{
+    @include PC{
+      @include font(20,24)
+    }
+    @include SP{
+      @include font(12,14);
+      font-weight: 600;
+    }
+  }
+
+  &__title{
+    font-weight: 700;
+    @include PC{
+      @include font(38,45);
+      margin-top: 0.05rem;
+    }
+    @include SP{
+      @include font(20,24);
+      margin-top: 0.09rem
+    }
+  }
+
+  &__text{
+    @include font-default;
+    @include cutText(7,7);
+    @include PC{
+      margin-top: 0.1rem;
+    }
+    @include SP{
+      display: none;
+    }
+  }
+  &__button{
+    font-weight: 600;
+    @include PC{
+      margin-top: rem(40) ;
+      padding: rem(13) rem(20);
+      min-width: rem(185);
+      @include font(20);
+    }
+    @include SP{
+      margin-top: 0.16rem;
+      padding: 0.06rem;
+    }
+  }
+
+  &__swiper {
+    position: relative;
+    .swiper-container{
+      @include PC{
+        padding-bottom: 0
+      }
+    }
+  }
+
+  .container {
+    @include clear;
+  }
+
+  .swiper-button {
+    @include SP {
+      display: none;
+    }
+  }
+
+  .swiper-container {
+    @include PC {
+      max-width: 12.8rem;
+    }
+    @include SP{
+      padding-bottom: 0;
+    }
+  }
+
+  .swiper-pagination {
+    @include PC {
+      display: none;
+    }
+  }
+
+  .swiper-slide {
+    height: auto;
+  }
+}

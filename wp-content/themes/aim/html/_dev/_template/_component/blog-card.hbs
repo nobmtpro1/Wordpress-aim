@@ -1,0 +1,32 @@
+{{#if data}}
+<article
+  href="#" class="blog-card
+  {{#if background}} blog-card--{{background}}{{/if}}
+  {{#if big}} blog-card--big{{/if}}
+  {{#if small}} blog-card--small{{/if}}" 
+  >
+  {{#if big}}
+  <div href="#" class="blog-card__article">
+    <div class="blog-card__image">
+      <img src={{img}}  alt="">
+    </div>
+    <div class="blog-card__body">
+      <p class="blog-card__topic">{{topic}}</p>
+      <h3 class="blog-card__title">{{{title}}}</h3>
+      <a class="viewmore" href="#">Đọc thêm <img src="common/images/arrow-gradient-green.svg" alt=""></a>
+    </div>
+  </div>
+  {{else}}
+  <a href="#" class="blog-card__article">
+    <div class="blog-card__image">
+      <img src={{img}}  alt="">
+    </div>
+    <div class="blog-card__body">
+      <p class="blog-card__topic">{{topic}}</p>
+      <h3 class="blog-card__title">{{{title}}}</h3>
+    </div>
+  </a>
+  {{/if}}
+  {{>button text="Đọc thêm" type="full" href="#" class="blog-card__button"}}
+</article>
+{{/if}}

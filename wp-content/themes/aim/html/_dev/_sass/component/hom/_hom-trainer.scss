@@ -1,0 +1,8 @@
+.hom-trainer{
+  .trainer__item{
+    @include PC{
+      width: percentage(1/3);
+      @include grid__item(3)
+    }
+  }
+}

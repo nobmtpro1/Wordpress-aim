@@ -1,0 +1,81 @@
+<section class="kv kv-course-recommend">
+  <div class="container kv__inner">
+    <h1 class="kv__title">
+      ĐÁNH GIÁ <br>NHU CẦU HỌC
+    </h1>
+    <p class="kv__text">Bạn phân vân không biết nên lựa chọn <br class="sp-only">môn nào <br class="pc-only">trong 20 môn học Marketing & <br class="sp-only">Communication <br class="pc-only">tại AIM Academy?</p>
+    <p class="kv__text">Hãy trả lời những câu hỏi sau đây để <br class="sp-only">hệ thống <br class="pc-only">đánh giá và gợi ý các môn <br class="sp-only">phù hợp với bạn.</p>
+    <img class="kv__image pc-only" width="575" height="814" src="common/images/kv/kv-course-recommendation.png" alt="">
+   
+  </div>
+</section>
+
+<main class="main course-recommend" >
+  <div class="container">
+    <div class="course-recommend__toolbar">
+      <div class="col">
+        <p class="label">Công việc hiện tại của bạn</p>
+        <div class="form course-recommend__sort">
+          <select class="form-control--sort" id="">
+            <option value="1">Sinh viên/Mới tốt nghiệp</option>
+            <option value="1">Sinh viên/Mới tốt nghiệp</option>
+            <option value="1">Sinh viên/Mới tốt nghiệp</option>
+            <option value="1">Sinh viên/Mới tốt nghiệp</option>
+          </select>
+        </div>
+      </div>
+      <div class="col">
+        <p class="label">Nhu cầu của bạn khi đăng ký khóa học</p>
+        <div class="form course-recommend__sort">
+          <select class="form-control--sort" id="">
+            <option value="">Ứng tuyển công việc marketing ở client</option>
+            <option value="">Ứng tuyển công việc marketing ở client</option>
+            <option value="">Ứng tuyển công việc marketing ở client</option>`
+            <option value="">Ứng tuyển công việc marketing ở client</option>
+          </select>
+        </div>
+      </div>
+      <div class="col">
+      {{>button class="course-recommend__btn" text="GỢI Ý KHÓA HỌC" type="full"}}
+      </div>
+    </div>
+    <div class="course-recommend__wrapper">
+      <section class="course-recommend__content">
+        {{#each courseRecommend}}
+            <h2 class="course-recommend__heading">
+              {{heading}}
+              {{#if subheading}}
+              <span class="course-recommend__subheading">{{subheading}}</span>
+              {{/if}}
+            </h2>
+            <ul class="course-recommend__list">
+              {{#each list}}
+              <li class="course-recommend__item">
+                <h3 class="course-recommend__title">{{title}}</h3>
+                <div class="course-recommend__info">
+                  <span class="course-recommend__date">{{date}}</span>
+                  <span class="course-recommend__total">{{total}}</span>
+                  <span class="course-recommend__time">{{time}}</span>
+                  <span class="course-recommend__status">{{status}}</span>
+                  <a href="#" target="_blank"><img width="119" height="150" loading="lazy" src="common/images/icon-download.svg" alt="">BROCHURE</a>
+                  <a href="#">ĐĂNG KÝ</a>
+                </div>
+              </li>
+              {{/each}}
+            </ul>
+        {{/each}}
+      </section>
+      <aside class="course-recommend__sidebar">
+        {{>regis-box
+          text="Bạn đang theo đuổi<br>nghề Marketing và muốn<br>tìm hiểu về các khóa học<br>tại AIM Academy?" 
+          button="TƯ VẤN MIỄN PHÍ</small>"
+          customClass="course-recommend__regis"
+        }}
+      </aside>
+    </div>
+  </div>
+</main>
+
+{{>advisor class="course-recommend__advisor"}}
+
+{{> footer-front}}

@@ -1,0 +1,52 @@
+.box {
+  $root: &;
+  text-align: center;
+
+  &__text {
+    @include PC {
+      @include font(20, 24);
+      margin: .15rem auto 0;
+    }
+
+    @include SP {
+      @include font(12, 14);
+      padding: 0 .20rem;
+      margin: .08rem auto 0;
+    }
+  }
+  &__subtitle {
+    @include text-gradient(to left);
+    font-weight: 600;
+    font-style: italic;
+    @include PC {
+      @include font(24,28);
+      margin: 0.05rem auto;
+    }
+    @include SP {
+      @include font(16,21);
+      padding: 0 .20rem;
+      margin: 0.02rem auto;
+    }
+  }
+  &__button {
+    @include PC {
+      @include font(24, 28);
+      padding: .15rem .20rem;
+      margin-top: .45rem;
+    }
+
+    @include SP {
+      @include font(12, 14);
+      padding: .05rem .15rem;
+      margin-top: .10rem;
+    }
+    #{$root} &{
+      @include PC{
+        min-width: 2.50rem;
+      }
+      @include SP{
+        min-width: 1.04rem;
+      }
+    }
+  }
+}

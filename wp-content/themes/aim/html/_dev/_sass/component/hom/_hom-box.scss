@@ -1,0 +1,89 @@
+.hom-box{
+  @include SP{
+    margin-bottom: 0.2rem;
+  }
+  @include PC{
+    margin-top: 0.2rem;
+  }
+  &__item{
+    margin-bottom: 0.2rem;
+    @include background-gradient(to left);
+    color: white;
+    @include SP{
+      @include font(12,16);
+      margin-bottom: 0.2rem;
+      text-align: center;
+      padding: 0.2rem 0.1rem 0.2rem;
+    }
+    @include PC{
+      padding: 0.3rem;
+      position: relative;
+    }
+  }
+  &__heading{
+    font-weight: 900;
+    @include SP{
+      @include font(22)
+    }
+  }
+  &__subtitle{
+    @include PC{
+      display: none;
+    }
+   @include SP{
+     font-weight: 600;
+     @include font(12)
+   }
+  }
+  &__title{
+    font-weight: 900;
+    @include SP{
+      @include font(21,36)
+    }
+    @include PC{
+      @include font(18,24)
+    }
+  }
+  &__schedule{
+    @include SP{
+      @include font(12,20)
+    }
+    @include PC{
+      @include font(16,22);
+      max-width: 60%;
+    }
+  }
+  &__button-group{
+    display: flex;
+    justify-content: center;
+   @include SP{
+     margin-top: 0.1rem;
+   }
+  }
+  &__button{
+    margin: 0 0.05rem;
+    border: 1px solid white;
+    border-radius: 100px;
+    padding: 00.05rem 0.1rem;
+    font-weight: 500;
+    @include transition;
+    @include hover{
+      text-decoration: none;
+      background: white;
+      color: $cl2;
+    }
+    @include SP{
+      margin: 0 0.1rem 0;
+    }
+    @include PC{
+      position: absolute;
+      right: 0.3rem;
+      bottom: 0.3rem;
+    }
+    &:last-child{
+      @include PC{
+        display: none;
+      }
+    }
+  }
+}

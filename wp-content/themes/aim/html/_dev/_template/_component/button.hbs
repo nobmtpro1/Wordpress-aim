@@ -1,0 +1,9 @@
+{{#if href}}
+<a href="#" class="button button--{{type}} {{class}}" {{attr}}>
+  <span>{{{text}}}</span>
+</a>
+{{else}}
+<button {{{attr}}} class="button button--{{type}} {{class}}" {{attr}}>
+  <span>{{{text}}}</span>
+</button>
+{{/if}}

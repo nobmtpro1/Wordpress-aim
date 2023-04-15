@@ -1,0 +1,152 @@
+.interested-course {
+  $root: &;
+  &__heading{
+    font-weight: 700;
+    @include PC{
+      @include font(20,24);
+    }
+  }
+  &__button{
+    border-radius: 100px;
+    color: #a5a5a5;
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+    border: 1px solid #a5a5a5;
+    text-align: center;
+    justify-content: center;
+
+    @include PC {
+      padding: 0.1rem 0.2rem;
+      @include transition;
+      height: 0.4rem;
+      @include font(16, 19);
+      width: 2.14rem;
+      margin: 0.3rem auto 0;
+    }
+    @include SP{
+      @include font(12,16);
+      padding: 0.05rem 0.2rem;
+      width: 2rem;
+      margin: 0.2rem auto;
+    }
+    
+    @include hover {
+      background: rgba(#a5a5a5, 0.8);
+      color: white;
+      text-decoration: none;
+    }
+  }
+  &__list{
+    @include PC{
+      margin-top: 0.1rem;
+    }
+  }
+  &__item{
+    &:not(:last-child){
+      @include PC{
+        margin-bottom: 0.15rem;
+      }
+    }
+  }
+  &__article {
+    $article: &;
+    @include PC {
+      display: flex;
+    }
+    @include hover{
+      text-decoration: none;
+    }
+
+    &-image {
+      border-radius: 5px;
+      border: 1px solid #ebebf2;
+      overflow: hidden;
+      z-index: 1;
+      @include PC {
+        position: relative;
+        width: rem(115);
+        height: rem(122);
+        padding: 0.2rem 0.25rem 0
+      }
+      &:before {
+        content: '';
+        @include absolute(top 0 left 0);
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: url(../images/decor.svg) no-repeat center top/ 80% auto;
+      }
+
+      img {
+        @include image-fit(top center, cover);
+
+        @include PC {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+    }
+
+    &--hot {
+      #{$article}-image {
+        border: none;
+
+        &:before {
+          background-image: url(../images/decor-white.svg);
+        }
+
+        &:after {
+          content: '';
+          @include absolute(top 0 left 0);
+          width: 100%;
+          height: 100%;
+          z-index: -2;
+          @include background-gradient(to left)
+        }
+      }
+    }
+
+    &-body {
+      @include PC {
+        margin-left: 0.15rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-right: 0.13rem;
+      }
+    }
+
+    &-title {
+      @include text-gradient(to left);
+      font-weight: 900;
+
+      @include PC {
+        @include font(20,24);
+        margin-bottom: 0.05rem;
+      }
+    }
+
+    &-info {
+      font-weight: 600;
+      @include PC {
+        @include font(16, 19);
+      }
+    }
+    
+    &-button {
+      @include PC{
+        justify-self: flex-end;
+        margin-top: auto;
+        text-align: right;
+        width: 1.35rem;
+        text-align: center;
+        padding: 0.07rem 0.1rem;
+        @include font(16, 19);
+      }
+      
+    }
+  }
+}

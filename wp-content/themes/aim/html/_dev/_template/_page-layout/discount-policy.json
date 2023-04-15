@@ -1,0 +1,197 @@
+[
+  {
+    "image":"common/images/discount-policy/img-01.jpg",
+    "title":"START-UP",
+    "subtitle":"(Do It Yourself)",
+    "info":[
+      {"text":"Marketing For MSME Startup"},
+      {"text":"Facebook Marketing"},
+      {"text":"Writing For Ideas"}
+    ],
+    "price":"26,300,000",
+    "discount":"3,945,000",
+    "total":"22,355,000"
+  },
+  {
+    "image":"common/images/discount-policy/img-02.jpg",
+    "title":"START-UP",
+    "subtitle":"(Manage)",
+    "info":[
+      {"text":"Marketing For MSME Startup"},
+      {"text":"Digital Platform Management"},
+      {"text":"Performance Digital Marketing"}
+    ],
+    "price":"25,300,000",
+    "discount":"3,795,000",
+    "total":"21,505,000"
+  },
+  {
+    "image":"common/images/discount-policy/img-03.jpg",
+    "title":"CREATIVE",
+    "subtitle":"",
+    "info":[
+      {"text":"Content Marketing"},
+      {"text":"Writing For Ideas"},
+      {"text":"Design For Marketers"}
+    ],
+    "price":"25,700,000",
+    "discount":"3,855,000",
+    "total":"21,845,000"
+  },
+  {
+    "image":"common/images/discount-policy/img-04.jpg",
+    "title":"PLANNER",
+    "subtitle":"(Beginner)",
+    "info":[
+      {"text":"Strategic Communication Planning"},
+      {"text":"Hands-on Marketing"},
+      {"text":"Digital Platform Management"}
+    ],
+    "price":"23,000,000",
+    "discount":"3,450,000",
+    "total":"19,550,000"
+  },
+  {
+    "image":"common/images/discount-policy/img-05.jpg",
+    "title":"PLANNER",
+    "subtitle":"(Experience)",
+    "info":[
+      {"text":"Strategic Communication Planning"},
+      {"text":"Digital Planning"},
+      {"text":"Market Insights"}
+    ],
+    "price":"28,500,000",
+    "discount":"4,275,000",
+    "total":"24,225,000"
+  },
+  {
+    "image":"common/images/discount-policy/img-06.jpg",
+    "title":"ACCOUNT",
+    "subtitle":"",
+    "info":[
+      {"text":"Account Management"},
+      {"text":"Digital Platform Management"},
+      {"text":"Hands-on Marketing"}
+    ],
+    "price":"21,500,000",
+    "discount":"3,225,000",
+    "total":"18,275,000"
+  },
+  {
+    "image":"common/images/discount-policy/img-07.jpg",
+    "title":"EVENT",
+    "subtitle":"",
+    "info":[
+      {"text":"Event Activation Management"},
+      {"text":"Account Management"},
+      {"text":"Hands-on Marketing"}
+    ],
+    "price":"23,500,000",
+    "discount":"3,525,000",
+    "total":"19,975,000"
+  },
+  {
+    "image":"common/images/discount-policy/img-08.jpg",
+    "title":"PR",
+    "subtitle":"",
+    "info":[
+      {"text":"Modern PR"},
+      {"text":"Hands-on Marketing"},
+      {"text":"Digital Platform Management"}
+    ],
+    "price":"20,200,000",
+    "discount":"3,030,000",
+    "total":"17,170,000"
+  },
+  {
+    "image":"common/images/discount-policy/img-09.jpg",
+    "title":"DIGITAL",
+    "subtitle":"(Beginner)",
+    "info":[
+      {"text":"Digital Platform Management"},
+      {"text":"Facebook Marketing"},
+      {"text":"Google Ads All In One"}
+    ],
+    "price":"24,500,000",
+    "discount":"3,675,000",
+    "total":"20,825,000"
+  },
+  {
+    "image":"common/images/discount-policy/img-10.jpg",
+    "title":"DIGITAL",
+    "subtitle":"(Peformance)",
+    "info":[
+      {"text":"Facebook Marketing"},
+      {"text":"Google Ads All In One"},
+      {"text":"Performance Digital Marketing"}
+    ],
+    "price":"27,000,000",
+    "discount":"4,050,000",
+    "total":"22,950,000"
+  },
+  {
+    "image":"common/images/discount-policy/img-11.jpg",
+    "title":"DIGITAL PANNING",
+    "subtitle":"",
+    "info":[
+      {"text":"Digital Planning"},
+      {"text":"Content Marketing"},
+      {"text":"Brand Management Excellence"}
+    ],
+    "price":"32,000,000",
+    "discount":"4,800,000",
+    "total":"27,200,000"
+  },
+  {
+    "image":"common/images/discount-policy/img-12.jpg",
+    "title":"RESEARCH",
+    "subtitle":"",
+    "info":[
+      {"text":"Market Insights"},
+      {"text":"Data Analytics For Marketers"},
+      {"text":"Hands-on Marketing"}
+    ],
+    "price":"24,000,000",
+    "discount":"3,600,000",
+    "total":"20,400,000"
+  },
+  {
+    "image":"common/images/discount-policy/img-13.jpg",
+    "title":"BRAND",
+    "subtitle":"(Beginner)",
+    "info":[
+      {"text":"Hands-on Marketing"},
+      {"text":"Digital Platform Management"},
+      {"text":"Winning At E-commerce"}
+    ],
+    "price":"20,000,000",
+    "discount":"3,000,000",
+    "total":"17,000,000"
+  },
+  {
+    "image":"common/images/discount-policy/img-14.jpg",
+    "title":"BRAND",
+    "subtitle":"(Experience)",
+    "info":[
+      {"text":"Brand Management Excellence"},
+      {"text":"Digital Planning"},
+      {"text":"Data Analytics For Marketers"}
+    ],
+    "price":"31,000,000",
+    "discount":"4,650,000",
+    "total":"26,350,000"
+  },
+  {
+    "image":"common/images/discount-policy/img-15.jpg",
+    "title":"E-COMMERCE",
+    "subtitle":"",
+    "info":[
+      {"text":"Winning At E-commerce"},
+      {"text":"Tiktok Marketing"},
+      {"text":"Facebook Marketing"}
+    ],
+    "price":"19,800,000",
+    "discount":"2,970,000",
+    "total":"16,830,000"
+  }
+]

@@ -1,0 +1,114 @@
+.trainer{
+  $root: &;
+  &-toolbar{
+    @include SP{
+      padding: 0 0.2rem
+    }
+  }
+  &-sort{
+    @include select-arrow;
+  }
+  &__regis{
+    @include SP{
+      display: none;
+    }
+    .regis-box__text{
+      @include PC{
+        font-size: 0.26rem;
+        font-weight: 700;
+      }
+    }
+  }
+  &__content{
+    @include PC{
+      display: flex;
+      margin-top: 0.37rem;
+      padding-bottom: 0.5rem;
+    }
+    @include SP{
+      margin-top: 0.2rem;
+    }
+  }
+  &__body{
+    @include PC{
+      flex: 1;
+    }
+  }
+  &__sidebar{
+    @include PC{
+      width: 4.23rem;
+      margin-left: 0.32rem;
+    }
+  }
+  &__list{
+    @include grid;
+    @include SP{
+      margin-bottom: 0.3rem;
+    }
+  }
+  
+  &__item{
+    @include PC{
+      @include grid__item(4)
+    }
+    @include SP{
+      @include grid__item(2)
+    }
+  }
+  &__image{
+    border-radius: 100%;
+    border: 1px solid #8C8C8C;
+    overflow: hidden;
+    margin: 0 auto;
+    @include PC{
+      width: 1.87rem;
+      height: 1.87rem
+    }
+    @include SP{
+      width: 1.19rem;
+      height: 1.19rem
+    }
+    img{
+      @include image-fit(top);
+      height: 100%;
+    }
+  }
+  &__info{
+    text-align: center;
+    @include PC{
+      margin-top: 0.24rem;  
+    }
+    @include SP{
+      margin-top: 0.19rem;  
+    }
+  }
+  &__name{
+    @include text-gradient(to left);
+    font-weight: 900;
+    @include PC{
+      @include font(14,22)
+    }
+    @include SP{
+      @include font(9,15)
+    }
+  }
+  &__company{
+    font-weight: 700;
+    @include PC{
+      @include font(12,14);
+      margin-top: 0.03rem
+    }
+    @include SP{
+      @include font(8,12)
+    }
+  }
+  &__position{
+    @include PC{
+      @include font(12,14);
+      margin-top: 0.03rem
+    }
+    @include SP{
+      @include font(8,12)
+    }
+  }
+}

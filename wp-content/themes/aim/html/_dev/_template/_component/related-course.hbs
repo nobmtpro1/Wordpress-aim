@@ -1,0 +1,19 @@
+<section class="related-course">
+  <h3 class="related-course__heading">KHÓA HỌC LIÊN QUAN</h3>
+  <ul class="related-course__list">
+    {{#each relatedCourse}}
+    <li class="related-course__item">
+      <h3 class="related-course__title">{{title}}</h3>
+      <div class="related-course__info">
+        <span class="related-course__date">{{date}}</span>
+        <span class="related-course__total">{{total}}</span>
+        <span class="related-course__time">{{time}}</span>
+        <span class="related-course__status">{{status}}</span>
+        <a href="#" target="_blank"><img width="119" height="150" loading="lazy" src="common/images/icon-download.svg" alt="">BROCHURE</a>
+        <a href="#">ĐĂNG KÝ</a>
+      </div>
+    </li>
+    {{/each}}
+  </ul>
+ <a class="interested-course__button" href="#">Xem tất cả khóa học</a>
+</section>

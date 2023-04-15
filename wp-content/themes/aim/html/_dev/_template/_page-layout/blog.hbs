@@ -1,0 +1,77 @@
+---
+dataMenu : [
+  {'text':'All','active':true},
+  {'text':'Maketing Management'},
+  {'text':'Creative/Content Development'},
+  {'text':'Channel Optimization - Digital'},
+  {'text':'Channel Optimization - Others'},
+  {'text':'Soft Skills'},
+]
+
+dataYear : [2000,2001,2002,2003,2004]
+
+---
+<main class="main main--without-kv blog">
+  <div class="container">
+
+    <!-- Menu -->
+    <ul class="blog__menu">
+      {{#each dataMenu as |item|}}
+      <li class="blog__menu-item">
+        <a class="blog__menu-link{{#if active}} blog__menu-link--active{{/if}}" href="#">{{item.text}}</a>
+      </li>
+      {{/each}}
+    </ul>
+
+    <!-- Toolbar -->
+    <div class="form ">
+      <div class="blog-sort sp-only">
+        <select class="form-control--sort">
+          <option value="" selected disabled hidden>Tất cả chủ đề</option>
+          {{#each dataMenu as |item|}}
+            <option>{{item.text}}</option>
+          {{/each}}
+        </select>
+      </div>
+      <div class="blog-time">
+        <select class="form-control--sort">
+          {{#each dataYear as |item|}}
+            <option>{{item}}</option>
+          {{/each}}
+        </select>
+      </div>
+    </div>
+
+
+    <!-- Top section -->
+    <div class="pc-only blog__top">
+      <div class="blog__top-feature">
+        {{#each blog.big as |item|}}
+        {{>blog-card big="true" data = item}}
+        {{/each}}
+      </div>
+      <ul class="blog__top-aside">
+        {{#each blog.small as |item|}}
+        <li class="blog__top-aside-item">
+          {{>blog-card small="true" data=item}}
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+
+    <!-- List section -->
+    <ul class="blog__list">
+      {{#each blog.list as |item|}}
+        <li class="blog__item">
+          {{>blog-card background="gray" data=item}}
+        </li>
+      {{/each}}
+    </ul>
+    {{>pagination}}
+
+  </div>
+
+  
+</main>
+
+{{>advisor}}

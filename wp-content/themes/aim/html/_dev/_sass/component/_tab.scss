@@ -1,0 +1,48 @@
+.tab{
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #F0F0F0;
+  @include SP{
+    justify-content: space-between;
+  }
+ 
+  &__item{
+    @include PC{
+      min-width:0.5rem;
+      margin-right: 0.5rem;
+    }
+  }
+  &__link{
+    display: block;
+    @include PC{
+      font-weight: 500;
+      @include font(20,28);
+      padding: 0.14rem 0;
+      &:hover{
+        text-decoration: none
+      }
+    }
+    @include SP{
+      @include font(12,28);
+    }
+    &--active{
+      position: relative;
+      &:before{
+        content:'';
+        height: 1px;
+        width: 100%;
+        @include background-gradient(to right);
+        @include absolute(left 0 bottom 0);
+        z-index: 1;
+        @include PC{
+          height: 2px;
+        }
+      }
+    }
+  }
+
+  &--center{
+    justify-content: center;
+    border-bottom: none;
+  }
+}

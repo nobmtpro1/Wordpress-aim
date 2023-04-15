@@ -1,0 +1,17 @@
+{
+  "short_name": "aim-academy",
+  "name": "This is official page of Aim Academy",
+  "icons": [
+    {
+      "src": "common/images/favicon_aim-1-192x192.png",
+      "sizes": "192x192",
+      "type": "image/x-icon",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "prefer_related_applications": true
+}

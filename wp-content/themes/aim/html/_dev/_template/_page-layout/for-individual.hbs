@@ -1,0 +1,100 @@
+<section class="kv kv-for-individual">
+  <div class="container kv__inner">
+    <h1 class="kv__title">
+      ĐÀO TẠO ĐẠI CHÚNG
+    </h1>
+    <p class="kv__text">Chương trình đào tạo đại chúng dành cho cá nhân<br>và nhân viên được công ty cử đi đào tạo</p>
+    <p class="kv__text">Bạn đã có định hướng nghề nghiệp trong tương lai, hay <br class="pc-only">đã biết đâu là khóa học mình cần? Nếu
+      chưa, hãy cùng <br class="pc-only">AIM Academy tìm hiểu rõ hơn nhu cầu của bản thân</p>
+    <img class="kv__image pc-only" width="486" height="635" src="common/images/kv/kv-for-individual.png" alt="">
+
+    <div class="kv__button-group">
+      {{>button href="#" text="Định hướng nghề nghiệp" type="white" class="kv__button"}}
+      {{>button href="#" text="Đánh giá nhu cầu học" type="white" class="kv__button"}}
+    </div>
+  </div>
+</section>
+
+<main class="main for-individual">
+  <div class="container">
+
+    {{> statistic customStatisticClass="for-individual__statistic"}}
+
+    <div class="for-individual__wrapper">
+      <section class="for-individual__content">
+        <div class="for-individual__heading">
+          <h2 class="heading">KHÓA HỌC SẮP KHAI GIẢNG</h2>
+          <a href="#" class="button viewall">
+            <span>Xem tất cả</span><em class="icon"></em>
+          </a>
+        </div>
+        <ul class="for-individual__list">
+          {{#each forIndividual}}
+            <li class="for-individual__item">
+              <article class="for-individual__article{{#if label}} for-individual__article--hot{{/if}}">
+                <div class="for-individual__article-image">
+                  <img src={{img}} alt="">
+                </div>
+
+                <div class="for-individual__article-body">
+                  {{#if label}}
+                    <span class="for-individual__article-label">{{label}}</span>
+                  {{/if}}
+                  <h3 class="for-individual__article-title">
+                    {{title}}
+                  </h3>
+                  <p class="info">Khai giảng: {{schedule}} 
+                    <span class="pc-only"> | </span> <br class="sp-only">
+                    Thời lượng: {{time}}</p>
+                  <p class="info">Thời gian: {{start}}</p>
+
+                  <p class="for-individual__article-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum
+                    optio nihil assumenda similique, vitae quos voluptatibus ipsum deleniti eligendi delectus, commodi
+                    consequuntur aspernatur. Similique accusantium ipsa iste. Officia, iure explicabo! Lorem ipsum dolor
+                    sit amet consectetur adipisicing elit. Animi officiis et facere amet illo? Consequatur temporibus
+                    rem exercitationem, veritatis expedita iure aliquam totam voluptates qui eveniet laboriosam, fugiat
+                    iusto ipsam!</p>
+                </div>
+                <div class="for-individual__article-footer">
+                  <div class="top">
+                    <img class="sp-only label" src="common/images/hocphi.svg" alt="">
+                    <p class="price">{{price}}<small>VND</small></p>
+                    <p class="discount">{{discount}}</p>
+                  </div>
+                  <p class="info">{{info}}</p>
+                  <p class="note">
+                    Đăng kí trước ngày 24.03.2021<br>
+                    (*) Áp dụng trả góp 0% (3 tháng)
+                  </p>
+
+                  <div class="for-individual__article-btn-group">
+                    <a href="#" class="button button--border ">
+                      <span>CHI TIẾT </span><em class="icon"></em>
+                    </a>
+                    <a href="#" class="button button--full btn-download" download>
+                      <span>DOWNLOAD BROCHURE</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+
+            </li>
+          {{/each}}
+
+        </ul>
+        {{>pagination}}
+      </section>
+      <aside class="for-individual__sidebar">
+        {{>regis-box
+          text="Bạn đang theo đuổi<br>nghề Marketing và muốn<br>tìm hiểu về các khóa học<br>tại AIM Academy?" 
+          button="TƯ VẤN MIỄN PHÍ</small>"
+          customClass="for-individual__regis"
+        }}
+      </aside>
+    </div>
+  </div>
+</main>
+
+{{>advisor class="test-digital__advisor"}}
+
+{{> footer-front}}

@@ -1,0 +1,259 @@
+@charset "utf-8";
+
+body {
+  &.modal-open {
+    position: fixed;
+    width: 100%;
+  }
+}
+
+.modal {
+  z-index: 9999;
+  background: rgba(255, 255, 255, .86);
+  padding: .18rem;
+  @include SP{
+    padding-left: 0.18rem!important;
+  }
+
+  &-dialog {
+    z-index: 1;
+    max-width: 100%;
+
+    @include PC {
+      max-width: 16.02rem;
+    }
+
+    @include SP {
+      max-width: 3.6rem;
+    }
+
+    &.modal-dialog-centered {
+      margin: auto;
+      min-height: 100%;
+    }
+  }
+
+  &-content {
+    background: white;
+    border: none;
+    overflow: hidden;
+    position: relative;
+    @include PC {
+      box-shadow: 0px 0px 28px 14px rgba(0, 0, 0, 0.23);
+      -webkit-box-shadow: 0px 0px 28px 14px rgba(0, 0, 0, 0.23);
+      -moz-box-shadow: 0px 0px 28px 14px rgba(0, 0, 0, 0.23);
+      flex-direction: row;
+      align-items: stretch;
+      border-radius: .5rem;
+    }
+
+    @include SP {
+      box-shadow: 8px -13px 38px 22px rgba(0, 0, 0, 0.12);
+      -webkit-box-shadow: 8px -13px 38px 22px rgba(0, 0, 0, 0.12);
+      -moz-box-shadow: 8px -13px 38px 22px rgba(0, 0, 0, 0.12);
+      border-radius: .2rem;
+      text-align: center;
+    }
+  }
+
+  &-body {
+    background: white;
+    @include PC {
+      padding: .4rem 1.2rem;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: center;
+      flex-shrink: 0;
+      flex: 1;
+    }
+    @include SP {
+      padding: .3rem .2rem;
+    }
+  }
+  &-footer{
+    position: relative;
+    padding: 0;
+    border-radius: 0;
+    border-top: none;
+    *{
+      margin: 0;
+    }
+    @include SP{
+      display: none;
+    }
+    @include PC{
+      display: block;
+      width: 6.33rem;
+      overflow: hidden;
+    }
+  }
+  &-heading{
+    @include SP{
+      margin-top: 0.4rem;
+    }
+    small{
+      @include PC{
+        @include font(24,28)
+      }
+      @include SP{
+        @include font(16,20)
+      }
+    }
+  }
+  &-background{
+    @include image-fit(top center,cover);
+    @include PC{
+      // height: 7.61rem
+      height: 100%;
+    }
+  }
+  &-logo{
+    @include PC{
+      position: absolute;
+      width: 1.79rem;
+      top: 0.42rem;
+      left: 0.6rem;
+    }
+    @include SP{
+      width: 0.89rem;
+    }
+    &.fundiin{
+      @include PC{
+        width: rem(146);
+        height: auto;
+        left: rem(275);
+        top:rem(56)
+      }
+      @include SP{
+        vertical-align: top;
+        height: rem(20);
+        margin-left: rem(20);
+        margin-top: rem(5);
+        width: auto;
+      }
+    }
+  }
+  &-close{
+    position: absolute;
+    cursor: pointer;
+    z-index: 2;
+    @include PC{
+      top: 0.4rem;
+      right: 0.4rem;
+      width: 0.2rem;
+    }
+    @include SP{
+      z-index: 999;
+      top: 0.2rem;
+      right: 0.2rem;
+      width: 0.1rem;
+    }
+  }
+  &-desc{
+    @include PC{
+      @include font(16,19);
+      margin-top: 0.1rem;
+      max-width: 4.7rem
+    }
+    @include SP{
+      @include font(10,14);
+      margin-top: 0.05rem;
+    }
+  }
+  &-form{
+    @include PC{
+      max-width: 6.98rem;
+      width: 100%;
+      margin-top: .15rem;
+    }
+    @include SP{
+      margin-top: 0.3rem;
+    }
+  }
+}
+
+#form-fundiin{
+
+  .modal-desc{
+    max-width: 100%;
+    margin-top: rem(30);
+  }
+  .modal-body{
+    padding: 0.4rem 0.75rem;
+    @include SP{
+      padding: 0.2rem;
+    }
+  }
+  .label{
+    @include font(22,27);
+    margin-top: rem(30);
+    margin-bottom: rem(20);
+    display: block;
+    @include SP{
+      text-transform: uppercase;
+      @include font(16,19);
+    }
+  }
+  ul{
+    @include PC{
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &.benefit{
+      li{
+        background: #eeeeee;
+        border-radius: rem(6);
+        padding: rem(14);
+        margin: rem(10) rem(10) 0 0;
+        @include font(16,19);
+        @include SP{
+          margin-right: 0;
+        }
+      }
+    }
+    &.steps{
+      @include PC{
+        justify-content: space-between;
+      }
+      li{
+        background: #eeeeee;
+        border-radius: rem(12);
+        text-align: center;
+        margin: rem(10) rem(10) 0 0;
+        @include font(16,19);
+        width: rem(182);
+        padding: 0.2rem 0.15rem;
+        font-weight: 500;
+        @include SP{
+          display: flex;
+          width: 100%;
+          align-items: center;
+        }
+       
+        img{
+          @include image-fit(center center, contain);
+          width: rem(71);
+          height: rem(71);
+          display: block;
+          margin: 0 auto;
+          @include SP{
+            width: rem(41);
+            height: rem(41);
+            margin-right: rem(10);
+          }
+        }
+        p{
+          margin-top: rem(10);
+          @include SP{
+            flex: 1;
+            text-align: left;
+            @include font(14,16);
+            font-weight: 400;
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+}

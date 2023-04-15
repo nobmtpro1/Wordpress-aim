@@ -1,0 +1,45 @@
+.related-post{
+  $root: &;
+
+  background: #f5f5f5;
+  @include PC{
+    padding: 0.2rem 0 ;
+  }
+  &__card{
+    display: block;
+    @include PC{
+      padding: 0.1rem 0.3rem;
+      @include transition
+    }
+    @include hover{
+      text-decoration: none;
+      background: #e3e3e3;
+    }
+  }
+  &__heading{
+    font-weight: 700;
+    @include PC{
+      @include font(20,24);
+      padding: 0 0.3rem;
+    }
+  }
+  &__title{
+    font-weight: 600;
+    @include PC{
+      @include font(20,24);
+      @include transition
+    }
+  }
+  &__topic{
+    font-weight: 500;
+    @include text-gradient(to left);
+    @include PC{
+      @include font(16,20)
+    }
+  }
+  &__list{
+    @include PC{
+      margin-top: 0.15rem;
+    }
+  }
+}

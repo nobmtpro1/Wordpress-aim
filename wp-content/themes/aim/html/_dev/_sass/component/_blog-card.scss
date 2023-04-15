@@ -1,0 +1,171 @@
+.blog-card{
+  $root: &;
+  @include PC{
+    height: 100%;
+    box-shadow: 0 0 2px rgba(black, 0.5);
+    @include transition
+  }
+  a{
+    @include hover{
+      text-decoration: none;
+      
+    }
+  }
+  &__article{
+    @include PC{
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__topic{
+    @include text-gradient(to left);
+    font-weight: 500;
+    @include PC{
+      @include font(14,19);
+      margin-top: auto;
+      justify-content: flex-end;
+    }
+    @include SP{
+      text-align: center;
+      @include font(10)
+    }
+  }
+  &__button{
+    @include PC{
+      display: none;
+    }
+    @include SP{
+      display: block;
+      width: 1.6rem;
+      text-align: center;
+      margin:0.1rem auto 0;
+      @include font(12);
+      padding: 0.06rem 0.05rem 0.07rem;
+    }
+  }
+  &__title{
+    font-weight: 600;
+    @include PC{
+      @include font(36,42);
+      margin-bottom: 0.2rem;
+    }
+    @include SP{
+      @include font(16,19);
+      margin-top: 0.05rem;
+      text-align: center;
+    }
+  }
+  &__image{
+    @include PC{
+      height: rem(210);
+    }
+    @include SP{
+      height: rem(150);
+    }
+    img{
+      @include image-fit(center,cover);
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &__body{
+    @include PC{
+      padding: 0.25rem 0.39rem;
+      display: flex;
+      flex-direction: column-reverse;
+      flex: 1;
+    }
+    @include SP{
+      margin-top: 0.1rem;
+    }
+  }
+  &--gray{
+    background: #F5F5F5;
+    @include SP{
+      background: transparent;
+    }
+    @include hover{
+      box-shadow: 7px 7px 7px rgba(black, 0.1);
+      transform: translateY(-2px);
+    }
+  }
+  &--big{
+    @include PC{
+      box-shadow: none;
+      height: auto;
+    }
+    #{$root}__image{
+      @include PC{
+        height: rem(439);
+      }
+    }
+    #{$root}__body{
+      @include PC{
+        padding: 0.25rem 0 0;
+        flex-direction: column;
+      }
+    }
+    #{$root}__topic{
+      @include PC{
+        @include font(16,20)
+      }
+    }
+    #{$root}__title{
+      @include PC{
+        @include font(40,44);
+        margin-top: 0.05rem;
+      }
+    }
+    .viewmore{
+      @include PC{
+        @include font(20,28);
+        font-weight: 600;
+        display: flex;
+      }
+      img{
+        @include PC{
+          width: 0.3rem;
+          margin-left: 0.1rem;
+        }
+      }
+    }
+  }
+  &--small{
+    @include PC{
+      box-shadow: none;
+      height: auto;
+    }
+    #{$root}__article{
+      @include PC{
+        flex-direction: row-reverse;
+      }
+    }
+    #{$root}__image{
+      @include PC{
+        height: rem(86);
+        width: rem(184);
+        margin-left: 0.35rem;
+      }
+    }
+    #{$root}__body{
+      @include PC{
+        padding: 0;
+        flex-direction: column;
+      }
+    }
+    #{$root}__title{
+      @include PC{
+        @include font(18,22);
+        margin-top: 0.05rem;
+        margin-bottom: 0;
+        @include cutText(3)
+      }
+    }
+    #{$root}__topic{
+      @include PC{
+        margin-top: 0;
+      }
+    }
+  }
+}

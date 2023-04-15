@@ -1,0 +1,200 @@
+.event{
+  $root: &;
+
+  &__menu{
+    @include SP{
+      display: none;
+    }
+  }
+  &__list {
+    @include grid;
+    @include PC{
+      margin-top: 0.48rem
+    }
+    @include SP{
+      margin-top: 0.28rem
+    }
+  }
+  &__item {
+    @include PC{
+      @include grid__item(4);
+    }
+    @include SP{
+      @include grid__item(2);
+    }
+  }
+  &__card {
+    display: flex;
+    flex-direction: column-reverse;
+    @include hover{
+      #{$root}__image{
+        &:after{
+          opacity: 1;
+        }
+        #{$root}__button-group{
+          opacity: 1;
+        }
+      }
+    }
+  }
+  &__image{
+    position: relative;
+    cursor: pointer;
+    @include PC{
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    @include hover{
+      &:after{
+        opacity: 1;
+      }
+      #{$root}__button-group{
+        opacity: 1;
+      }
+    }
+    &:after{
+      content:'';
+      background: rgba(black,0.5);
+      position: absolute;
+      top: 0;
+      left:0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      @include transition
+    }
+    img {
+      width: 100%;
+      @include image-fit(center);
+
+      @include PC {
+        height: 4.51rem
+      }
+
+      @include SP {
+        height: 2.23rem;
+        border-radius: 4px;
+        @include background-gradient(to top);
+      }
+    }
+  }
+  &__button-group{
+    position: relative;
+    z-index: 1;
+
+    @include PC{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 100%;
+      width: 100%;
+      transform: translate(-50%,-50%);
+      opacity: 0;
+      @include transition;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    @include SP{
+      display: none;
+    }
+  }
+  &__button{
+    font-weight: 600;
+    @include PC{
+      padding: 0.1rem 0.3rem 0.08rem;
+      @include font(18,22);
+      white-space: nowrap;
+      margin: 0.05rem auto;
+      text-transform: uppercase;
+    }
+  }
+  &__body {
+    display: block;
+    @include hover{
+      text-decoration: none;
+    }
+    @include PC{
+      margin-top: 0.15rem;
+    }
+    @include SP{
+      margin-top: 0.1rem;
+      text-align: center;
+    }
+  }
+  &__cat{
+    font-weight: 500;
+    @include PC {
+      @include font(14, 18);
+    }
+    @include SP {
+      @include font(10);
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  &__tag{
+    color: white;
+    background: -webkit-linear-gradient(to right, #009EFD,#2AF598);
+    background: -moz-linear-gradient(to right, #009EFD,#2AF598);
+    background: -o-linear-gradient(to right, #009EFD,#2AF598);
+    background: linear-gradient(to right, #009EFD,#2AF598);
+    @include PC{
+      padding: 0.03rem 0.05rem 0.02rem;
+      margin-left: 0.1rem;
+      @include font(11)
+    }
+    @include SP{
+      padding: 0.03rem 0.03rem 0.01rem;
+      margin-right: 0.05rem;
+      @include font(10)
+    }
+  }
+  &__title {
+    font-weight: 900;
+    @include text-gradient(to left);
+    text-transform: uppercase;
+    @include PC {
+      @include font(18, 22);
+      margin-top: 0.05rem;
+    }
+    @include SP {
+      @include font(10,14);
+      margin-top: 0.08rem;
+    }
+  }
+  &__date {
+    display: block;
+    @include PC {
+      @include font(14, 18);
+      margin-top: 0.05rem;
+      letter-spacing: 0.05em;
+    }
+    @include SP {
+      @include font(10,14);
+      margin-top:0.05rem;
+    }
+  }
+  &__swiper{
+    @include PC{
+      margin: 0.38rem 0 0;
+    }
+    img{
+      width: 100%;
+    }
+    .swiper-pagination{
+      @include PC{
+        display: block;
+      }
+    }
+  }
+ 
+  &__tab{
+    @include SP{
+      margin-top: 0.05rem;
+    }
+  }
+}

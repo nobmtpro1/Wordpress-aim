@@ -1,0 +1,17 @@
+.heading{
+  font-weight: 900;
+  @include text-gradient(to left);
+  text-transform: uppercase;
+  @include PC{
+    @include font(40,56)
+  }
+  @include SP{
+    @include font(20,28)
+  }
+  &--medium{
+    font-weight: 600;
+    @include SP{
+      @include font(12,14)
+    }
+  }
+}

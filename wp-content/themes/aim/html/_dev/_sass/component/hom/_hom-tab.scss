@@ -1,0 +1,52 @@
+.hom-tab {
+  &__list {
+    @include PC {
+      display: flex;
+      align-items: stretch;
+      margin: 0 -0.05rem;
+    }
+    @include SP{
+      display: none;
+    }
+  }
+  &__item {
+    @include PC {
+      padding: 0.05rem;
+      width: 20%;
+    }
+  }
+  &__link {
+    font-weight: 700;
+    @include PC {
+      @include font(18, 21);
+      padding: 0.12rem 0.05rem 0.1rem;
+      display: block;
+      border: 1px solid black;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border-radius: 3px;
+      @include transition;
+      transition-property: background;
+    }
+    @include hover{
+      text-decoration: none;
+    }
+    &.active{
+      @include PC{
+        @include background-gradient(to left);
+        color: white;
+        border: none;
+      }
+    }
+    @include hover{
+      @include PC{
+        @include background-gradient(to left);
+        color: white;
+        border: none;
+      }
+    }
+  }
+}

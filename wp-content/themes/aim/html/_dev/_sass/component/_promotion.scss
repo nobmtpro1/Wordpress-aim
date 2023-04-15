@@ -1,0 +1,75 @@
+.promotion{
+  $root: &;
+  position: relative;
+  z-index: 1;
+
+  @include PC{
+    background: white;
+    justify-content: center;
+    align-items: center;
+    padding-top: .06rem;
+    padding-bottom: .05rem;
+    display: flex;
+  }
+  @include SP{
+    padding-top: .15rem;
+    padding-bottom:.15rem;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .body--withoutKV &{
+    &:before{
+      content:'';
+      @include PC{
+        background: #f0f0f0;
+        width: 300%;
+        height: 100%;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        z-index: -1;
+      }
+    }
+  }
+  &__text{
+    font-weight: 800;
+    @include PC{
+      @include font(17,20);
+      margin-right: .10rem
+    }
+    @include SP{
+      @include font(12,15);
+      text-align: center;
+    }
+  }
+  &__button{
+    @include PC{
+      @include font(17);
+      padding:.09rem .10rem;
+      margin:.09rem;
+    }
+    @include SP{
+      @include font(12);
+      padding:.04rem .10rem.05rem;
+      margin:.09rem auto 0;
+    }
+  }
+  &__login{
+    @include PC{
+      display: flex;
+      align-items: center;
+    }
+    @include SP{
+      position: absolute;
+      display: none;
+    }
+  }
+  &__lang{
+    padding: 0.05rem;
+    @include PC{
+      @include font(16)
+    }
+  }
+}

@@ -1,0 +1,18 @@
+<div class="box{{#if customBoxClass}} {{customBoxClass}}{{/if}}">
+  <h2 class="heading">
+    {{{title}}}
+  </h2>
+  {{#if subtitle}}
+  <p class="box__subtitle">
+    {{{subtitle}}}
+  </p>
+  {{/if}}
+  {{#if text}}
+  <p class="box__text">
+    {{{text}}}
+  </p>
+  {{/if}}
+  {{#if buttonText}}
+  {{> button href=true text=buttonText class='box__button' type="border"}}
+  {{/if}}
+</div>

@@ -1,0 +1,111 @@
+---
+dataTabKV : [
+  { 'text':'Sự kiện'},
+  {'text':'Hình ảnh',
+    'active':true
+  },
+]
+
+dataTab : [
+  { 'text':'Lớp học',
+    'active':true
+  },
+  {'text':'Sự kiện'},
+  {'text':'Đào tạo cho doanh nghiệp'}
+]
+---
+<main class="gallery main main--without-kv">
+  <div class="container">
+
+    {{>tab data = dataTabKV center=true customClass="gallery__menu"}}
+    
+    <!-- Slider main container -->
+    <div class="swiper-container gallery__swiper">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img loading="lazy" width="1430" height="547" src="common/images/kv/kv-gallery-img.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img loading="lazy" width="1430" height="547" src="common/images/kv/kv-gallery-img.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img loading="lazy" width="1430" height="547" src="common/images/kv/kv-gallery-img.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img loading="lazy" width="1430" height="547" src="common/images/kv/kv-gallery-img.jpg" alt="">
+        </div>
+        <div class="swiper-slide">
+          <img loading="lazy" width="1430" height="547" src="common/images/kv/kv-gallery-img.jpg" alt="">
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    {{>tab data = dataTab customClass="gallery__tab"}}
+    <ul class="gallery__list">
+      <li class="gallery__item">
+        <figure class="gallery__card">
+          <img src="common/images/gallery/img-01.jpg" width="2048" height="1365" loading="lazy" alt=""/>
+          <div class="gallery__card-body">
+            <h3 class="gallery__title">Seminar Livestream Commerce - Chìa Khóa Vàng Cho 2021</h3>
+            <p class="gallery__date">16/01/2021</p>
+            <div class="gallery__card-footer">
+            {{>button href="#" class="gallery__button" type="border" text="Xem thêm"}}
+            </div>
+          </div>
+        </figure>
+      </li>
+      <li class="gallery__item">
+        <figure class="gallery__card">
+          <img src="common/images/gallery/img-01.jpg" width="2048" height="1365" loading="lazy" alt=""/>
+          <div class="gallery__card-body">
+            <h3 class="gallery__title">Seminar Livestream Commerce - Chìa Khóa Vàng Cho 2021</h3>
+            <p class="gallery__date">16/01/2021</p>
+            <div class="gallery__card-footer">
+            {{>button href="#" class="gallery__button" type="border" text="Xem thêm"}}
+            </div>
+          </div>
+        </figure>
+      </li>
+      <li class="gallery__item">
+        <figure class="gallery__card">
+          <img src="common/images/gallery/img-01.jpg" width="2048" height="1365" loading="lazy" alt=""/>
+          <div class="gallery__card-body">
+            <h3 class="gallery__title">Seminar Livestream Commerce - Chìa Khóa Vàng Cho 2021</h3>
+            <p class="gallery__date">16/01/2021</p>
+            <div class="gallery__card-footer">
+            {{>button href="#" class="gallery__button" type="border" text="Xem thêm"}}
+            </div>
+          </div>
+        </figure>
+      </li>
+      <li class="gallery__item">
+        <figure class="gallery__card">
+          <img src="common/images/gallery/img-01.jpg" width="2048" height="1365" loading="lazy" alt=""/>
+          <div class="gallery__card-body">
+            <h3 class="gallery__title">Seminar Livestream Commerce - Chìa Khóa Vàng Cho 2021</h3>
+            <p class="gallery__date">16/01/2021</p>
+            <div class="gallery__card-footer">
+            {{>button href="#" class="gallery__button" type="border" text="Xem thêm"}}
+            </div>
+          </div>
+        </figure>
+      </li>
+      <li class="gallery__item">
+        <figure class="gallery__card">
+          <img src="common/images/gallery/img-01.jpg" width="2048" height="1365" loading="lazy" alt=""/>
+          <div class="gallery__card-body">
+            <h3 class="gallery__title">Seminar Livestream Commerce - Chìa Khóa Vàng Cho 2021</h3>
+            <p class="gallery__date">16/01/2021</p>
+            <div class="gallery__card-footer">
+            {{>button href="#" class="gallery__button" type="border" text="Xem thêm"}}
+            </div>
+          </div>
+        </figure>
+      </li>
+    </ul>
+    {{>pagination}}
+  </div>
+</main>

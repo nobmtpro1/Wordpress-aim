@@ -1,0 +1,46 @@
+.regis-box{
+  text-align: center;
+  position: relative;
+  background: #F5F5F5;
+  @include PC{
+    padding: 0.3rem 0.2rem;
+    position: sticky;
+    top: 100px;
+  }
+  @include SP{
+    padding: 0.2rem 0.2rem;
+  }
+  &:before{
+    content:'';
+    @include absolute( top 0 left 0);
+    width: 100%;
+    @include background-gradient(to left);
+    @include PC{
+      height: 0.06rem
+    }
+    @include SP{
+      height: 0.04rem
+    }
+  }
+  &__text{
+    @include PC{
+      @include font(16,24);
+    }
+    @include SP{
+      @include font(12,16);
+    }
+  }
+  &__button{
+    font-weight: 600;
+    @include PC{
+      @include font(20,24);
+      padding: 0.16rem 0.23rem;
+      margin-top: 0.2rem;
+    }
+    @include SP{
+      @include font(12,16);
+      padding: 0.06rem 0.1rem;
+      margin-top: 0.1rem;
+    }
+  }
+}

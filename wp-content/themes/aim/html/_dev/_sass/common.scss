@@ -1,0 +1,71 @@
+@charset "utf-8";
+@import 'base/font';
+@import 'base/variable';
+
+@import 'base/mixin';
+@import 'base/reset';
+@import 'base/general'; 
+
+// component
+@import 'component/box';
+@import 'component/title';
+@import 'component/button';
+@import 'component/heading';
+@import 'component/swiper';
+@import 'component/pagination';
+@import 'component/form';
+@import 'component/tab';
+@import 'component/regis-box';
+@import 'component/accordion';
+@import 'component/advisor';
+@import 'component/bootstrap_modal';
+@import 'component/modal';
+@import 'component/nav-icon';
+
+@import 'component/footer-front';
+@import 'component/footer';
+@import 'component/header';
+@import 'component/promotion';
+@import 'component/kv';
+@import 'component/statictis';
+@import 'component/testimonial';
+@import 'component/blog-card';
+@import 'component/related-post';
+@import 'component/interested-course';
+@import 'component/interested-course-blog';
+@import 'component/related-course';
+
+
+@import 'component/hom/hom-tab';
+@import 'component/hom/hom-button';
+@import 'component/hom/hom-trainer';
+@import 'component/hom/hom-detail';
+@import 'component/hom/hom-content';
+@import 'component/hom/hom-box';
+
+// screen
+@import 'screen/home';
+@import 'screen/thankyou';
+@import 'screen/project';
+@import 'screen/gallery';
+@import 'screen/event';
+@import 'screen/event-detail';
+@import 'screen/trainer';
+@import 'screen/privacy-policy';
+@import 'screen/for-business';
+@import 'screen/course';
+@import 'screen/ebook';
+@import 'screen/digital';
+@import 'screen/competition-award';
+@import 'screen/discount-policy';
+@import 'screen/for-individual';
+@import 'screen/course-recommend';
+@import 'screen/term';
+@import 'screen/blog';
+@import 'screen/blog-detail';
+@import 'screen/career-orientation';
+@import 'screen/hom';
+
+
+
+

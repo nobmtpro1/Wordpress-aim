@@ -1,0 +1,94 @@
+<section class="kv kv-hom">
+  <div class="container kv__inner">
+    <h1 class="kv__title">
+      HANDS-ON<br>MARKETING
+    </h1>
+    <p class="kv__text">Ứng dụng marketing chuẩn mực quốc tế<br>cho mọi loại hình doanh nghiệp<br>từ vừa và nhỏ đến quy mô lớn</p>
+    <img class="kv__image pc-only" width="529" height="566"  src="common/images/kv/kv-hom.png" alt="">
+  </div>
+  <ul class="kv__list">
+    <li class="kv__item">
+      <a class="kv__item-link" href="#">DOWNLOAD <br class="sp-only">ĐỒ ÁN<br class="pc-only"> TỐT NGHIỆP</a>
+    </li>
+    <li class="kv__item">
+      <a class="kv__item-link" href="#">EBOOK</a>
+    </li>
+    <li class="kv__item">
+      <a class="kv__item-link" href="#">XEM VIDEO NGHỀ</a>
+    </li>
+    <li class="kv__item">
+      <a class="kv__item-link" href="#">LÀM BÀI TEST</a>
+    </li>
+  </ul>
+</section>
+
+<main class="main hom">
+  <div class="container">
+    {{> statistic customStatisticClass="for-individual__statistic"}}
+ 
+    <div class="hom__content">
+      <aside class="hom__sidebar">
+        <div class="regis-box">
+          <table>
+            <tr>
+              <td>Khai giảng</td>
+              <td>: 13/04/2021</td>
+            </tr>
+            <tr>
+              <td>Tốt nghiệp dự kiến</td>
+              <td>: 04/05/2021</td>
+            </tr>
+            <tr>
+              <td>Lịch học</td>
+              <td>: Th 3 - 5 (19:00 – 21:30)<br> Th 7 (14:00 – 16:30)</td>
+            </tr>
+            <tr>
+              <td>Thời lượng</td>
+              <td>: 8 buổi</td>
+            </tr>
+            <tr>
+              <td>Cấp độ</td>
+              <td>:Chưa có kinh nghiệm</td>
+            </tr>
+          </table>
+          <div class="price">
+            <span class="price__label">Học phí</span>
+            <span class="price__total">5.850.000 VND</span>
+            <span class="price__discount">6.500.000 VND</span>
+          </div>
+          <p class="note" class="ta-c">Học phí ưu đãi được áp dụng khi<br>đăng kí trước ngày 24.03.2021<br>Áp dụng trả góp 0% (3 tháng)</p>
+          {{>button href="#" type="full" text="ĐĂNG KÝ" class="regis-box__button" }}
+          {{>button href="#" type="border" text="DOWNLOAD BROCHURE" class="regis-box__button" }}
+        </div>
+
+        {{>hom-box class='pc-only'}}
+        
+      </aside>
+
+      <div class="hom__body">
+
+        {{>hom-tab}}
+
+
+        {{>hom-benefit}}
+
+        {{>hom-object}}
+
+        {{>hom-content}}
+
+        {{>hom-necessary}}
+
+        {{>hom-trainer}}
+
+        {{>hom-box class='sp-only'}}
+
+        {{>related-course}}
+
+        <h3 class="heading ta-c">HỌC VIÊN CHIA SẺ</h3>
+        {{>testimonial}}
+      </div>
+    </div>
+  </div>
+</main>
+
+

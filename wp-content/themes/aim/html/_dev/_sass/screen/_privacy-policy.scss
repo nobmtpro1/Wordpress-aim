@@ -1,0 +1,50 @@
+.privacy-policy{
+  &__inner{
+    @include PC{
+      padding: 0 0.2rem;
+      max-width: 12.8rem;
+      margin: 0 auto
+    }
+  
+  }
+  &__info{
+
+    @include PC{
+      margin-bottom: 0.3rem
+    }
+    @include SP{
+      margin-bottom: 0.1rem
+    }
+    &-heading{
+      @include text-gradient(to left);
+      font-weight: 900;
+      text-transform: uppercase;
+      @include PC{
+        @include font(30,40);
+        margin-bottom: 0.1rem;
+      }
+      @include SP{
+        @include font(14,20);
+      }
+    }
+    * :not(:last-child){
+      margin-bottom: 0.13rem;
+    }
+    &-body{
+      font-weight: 400;
+      @include PC{
+        @include font(16,24);
+      }
+      @include SP{
+        @include font(10,14);
+      }
+    }
+    &-item{
+      padding-left: 1.7em;
+      background: url(../images/icon-vote.svg) no-repeat  left 0.1em/ 1.1em auto;
+      &:not(:last-child){
+        margin-bottom: 0.06rem;
+      }
+    }
+  }
+}

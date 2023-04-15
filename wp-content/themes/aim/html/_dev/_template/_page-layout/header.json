@@ -1,0 +1,70 @@
+[
+  {
+    "item":"Skill Training",
+    "active":true,
+    "menu":[
+      {
+        "menu-item":"Dành cho cá nhân",
+        "target":"personal",
+        "list": [
+          {"text": "Định hướng nghề nghiệp"},
+          {"text": "Đánh giá nhu cầu học"},
+          {"text": "Chính sách ưu đãi"}
+        ]
+      },
+      {"menu-item":"Dành cho doanh nghiệp",
+        "target":"company",
+        "list": [
+          {"text": "Đào tạo cho doanh nghiệp"},
+          {"text": "Hợp tác đào tạo"}
+        ]
+      },
+      {"menu-item":"Các môn học",
+        "target":"project",
+        "list": [
+          {"text": "Nhóm môn về Maketing Management"},
+          {"text": "Creative/Content Development"},
+          {"text": "Chanel Optimization - Digital"},
+          {"text": "Chanel Optimization - Others"},
+          {"text": "Soft Skill"}
+        ]
+      },
+      {"menu-item":"Giảng viên",
+        "target":"trainer",
+        "list": [
+          {"text": "Giảng viên"}
+        ]
+      }
+    ],
+    "content":[
+      {
+        "content-title":"Dành cho cá nhân",
+        "content-image":""
+      }
+    ]
+  },
+  {
+    "item":"Competition & Awards"
+  },
+  {
+    "item":"Job Matching"
+  },
+  {
+    "item":"Blogs & Documents",
+    "menu":[
+      {"menu-item":"Blog","active":true},
+      {"menu-item":"Kho Ebook"},
+      {"menu-item":"Video định hướng nghề nghiệp"},
+      {"menu-item":"Digital test"},
+      {"menu-item":"Đồ án tốt nghiệp"},
+      {"menu-item":"Vietnam Young Lions Treasure"}
+    ]
+  },
+  {
+    "item":"Events & Images",
+    "menu":[
+      {"menu-item":"Events"},
+      {"menu-item":"Images"}
+    ]
+  }
+]

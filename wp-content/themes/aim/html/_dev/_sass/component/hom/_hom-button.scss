@@ -1,0 +1,17 @@
+.hom-buttons{
+  @include PC{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.2rem;
+  }
+  @include SP{
+    display: none;
+  }
+  .button{
+    margin: 0 0.1rem;
+    @include PC{
+      padding: 0.1rem 0.2rem 0.08rem;
+    }
+  }
+}
