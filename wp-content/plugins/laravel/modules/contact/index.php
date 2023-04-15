@@ -1,7 +1,7 @@
 <?php
 require plugin_dir_path(__FILE__) . 'Table.php';
 require plugin_dir_path(__FILE__) . 'metabox-p1.php';
-
+require plugin_dir_path(__FILE__) . 'request.php';
 function wpbc_admin_menu()
 {
     add_menu_page(__('AIM', 'wpbc'), __('AIM', 'wpbc'), 'activate_plugins', 'contacts', 'wpbc_contacts_page_handler', 'dashicons-admin-generic', 50);

@@ -200,7 +200,7 @@ class Elementor_mentors_Widget extends \Elementor\Widget_Base
                             bạn trong 24 giờ.</p>
 
                         <form id="form" class="modal-form" method="post" action="<?php echo admin_url('admin-post.php'); ?>">
-                            <?= wp_nonce_field('a', 'a'); ?>
+                            <?= wp_nonce_field(); ?>
                             <!-- <input type="hidden" id="my_nonce" name="my_nonce" value="973f3e1829">
                         <input type="hidden" name="_wp_http_referer" value="/aim/trainer/"> -->
                             <div class="form-group">
