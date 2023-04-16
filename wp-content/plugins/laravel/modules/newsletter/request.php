@@ -7,12 +7,12 @@ use Illuminate\Support\Facades\Http;
 
 add_action('wp_ajax_edit_newsletter', ['modules\newsletter\request\NewsletterRequest', 'edit_newsletter']);
 add_action('wp_ajax_nopriv_edit_newsletter', ['modules\newsletter\request\NewsletterRequest', 'edit_newsletter']);
+add_action('wp_ajax_delete_newsletter', ['modules\newsletter\request\NewsletterRequest', 'delete_newsletter']);
 add_action('wp_ajax_sync_newsletter', ['modules\newsletter\request\NewsletterRequest', 'sync_newsletter']);
 
 
 class NewsletterRequest
 {
-
     static public function edit_newsletter()
     {
         $validator = Validator::make($_POST, [
@@ -45,6 +45,13 @@ class NewsletterRequest
                 'name' => $newsletter->name,
             ]);
         }
+        return wp_send_json_success('Success');
+    }
+
+    static public function delete_newsletter()
+    {
+        $newsletter = Newsletter::find(@$_REQUEST['id']);
+        $newsletter ? $newsletter->delete() : '';
         return wp_send_json_success('Success');
     }
 }

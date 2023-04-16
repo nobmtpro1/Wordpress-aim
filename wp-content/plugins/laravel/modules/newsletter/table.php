@@ -64,7 +64,7 @@ class NewsletterTable extends \WP_List_Table
         $id = $item['id'];
         $actions = array(
             'edit' => "<a href='?page=newsletters&my_action=edit&id={$id}'>Edit</a>",
-            'delete' => "<a href='?page=newsletters&my_action=delete&id={$id}'>Delete</a>",
+            'delete' => '<a href="javascript:" data-id="' . $id . '" class="delete-newsletter">Delete</a>',
         );
 
         return sprintf(

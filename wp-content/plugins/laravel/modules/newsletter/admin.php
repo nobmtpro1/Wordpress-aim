@@ -15,8 +15,6 @@ class NewslettersAdmin
                 return self::edit();
             case 'edit':
                 return self::edit();
-            case 'delete':
-                return self::delete();
             default:
                 return self::list();
         }
@@ -61,6 +59,24 @@ class NewslettersAdmin
                             alert(res?.data)
                         })
                 }
+                if (element.target && element.target.classList?.contains("delete-newsletter")) {
+                    if (confirm("Are you sure?")) {
+                        let data = new FormData();
+                        data.append("action", "delete_newsletter");
+                        data.append("id", element.target?.getAttribute("data-id"));
+                        fetch('<?= admin_url('admin-ajax.php') ?>', {
+                            method: 'POST',
+                            body: data
+                        }).then(res => res.json())
+                            .then(res => {
+                                if (res?.success) {
+                                    window.location.href = window.location.href
+                                } else {
+                                    alert(res?.data)
+                                }
+                            })
+                    }
+                }
             })
         </script>
         <?php
@@ -79,19 +95,12 @@ class NewslettersAdmin
                 <input type="hidden" name="id" value="<?= @$newsletter->id ?>">
                 <table class="form-table" role="presentation">
                     <tbody>
-                        <tr class="form-field form-required">
-                            <th scope="row"><label for="user_login">
-                                    Name
-                                    <span class="description">
-                                        (required)
-                                    </span>
-                                </label>
-                            </th>
-                            <td>
-                                <input name="name" type="text" value="<?= @$newsletter->name ?>">
-                            </td>
+
+                        <tr>
+                            <th scope="row"><label for="blogname"> Name<span class="description">(required)</span></label></th>
+                            <td><input name="name" type="text" value="<?= @$newsletter->name ?>" class="regular-text"></td>
                         </tr>
-                        <tr class="form-field form-required">
+                        <tr>
                             <th scope="row">
                                 <label for="email">
                                     Email
@@ -101,7 +110,7 @@ class NewslettersAdmin
                                 </label>
                             </th>
                             <td>
-                                <input name="email" type="email" value="<?= @$newsletter->email ?>">
+                                <input name="email" type="email" class="regular-text" value="<?= @$newsletter->email ?>">
                             </td>
                         </tr>
                         <tr>
@@ -149,15 +158,6 @@ class NewslettersAdmin
                     })
             })
         </script>
-        <?php
-    }
-
-    static public function delete()
-    {
-        $newsletter = Newsletter::find(@$_REQUEST['id']);
-        $newsletter ? $newsletter->delete() : '';
-        ?>
-        <script>window.location.href = '<?= admin_url('admin.php?page=newsletters') ?>'</script>
         <?php
     }
 }
