@@ -4,9 +4,9 @@ namespace modules\newsletter\admin;
 use App\Models\Newsletter;
 use modules\newsletter\table\NewsletterTable;
 
-class NewslettersPage
+class NewslettersAdmin
 {
-    public function index()
+    static public function index()
     {
         $my_action = @$_REQUEST['my_action'] ?? null;
 

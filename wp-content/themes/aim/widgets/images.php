@@ -28,7 +28,7 @@ class Elementor_images_Widget extends \Elementor\Widget_Base
                 'hide_empty' => false,
             )
         );
-        $page = @sanitize_post($GLOBALS['wp_the_query']->get_queried_object());
+        $page = @sanitize_post(@$GLOBALS['wp_the_query']->get_queried_object());
         global $wp_query;
         $posts = $wp_query->posts;
         // dd($posts);
@@ -79,7 +79,7 @@ class Elementor_images_Widget extends \Elementor\Widget_Base
                 <ul class="tab gallery__tab">
                     <?php foreach ($categories as $category): ?>
                         <li class="tab__item">
-                            <a class="tab__link <?= $page->slug == $category->slug ? 'tab__link--active' : '' ?> "
+                            <a class="tab__link <?= @$page->slug == @$category->slug ? 'tab__link--active' : '' ?> "
                                 href="<?= get_term_link($category) ?>"><?= $category->name ?></a>
                         </li>
                     <?php endforeach ?>
