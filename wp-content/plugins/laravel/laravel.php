@@ -15,8 +15,8 @@
 
 defined('ABSPATH') or die('¡Sin trampas!');
 
-require plugin_dir_path(__FILE__) . '/vendor/autoload.php';
-require plugin_dir_path(__FILE__) . '/bootstrap/app.php';
+require plugin_dir_path(__FILE__) . '/src/vendor/autoload.php';
+require plugin_dir_path(__FILE__) . '/src/bootstrap/app.php';
 
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
