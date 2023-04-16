@@ -28,3 +28,4 @@ function wpbc_contacts_page_handler()
     </div>
     <?php
 }
+

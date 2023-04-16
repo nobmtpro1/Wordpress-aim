@@ -27,3 +27,14 @@ $response = $kernel->handle(
 );
 
 require plugin_dir_path(__FILE__) . '/modules/contact/index.php';
+require plugin_dir_path(__FILE__) . '/modules/newsletter/index.php';
+
+function wpbc_admin_menu()
+{
+    add_menu_page(__('Features', 'wpbc'), __('Features', 'wpbc'), 'activate_plugins', 'contacts', 'wpbc_contacts_page_handler', 'dashicons-admin-generic', 50);
+    add_submenu_page('contacts', __('Contacts', 'wpbc'), __('Contacts', 'wpbc'), 'activate_plugins', 'contacts', 'wpbc_contacts_page_handler');
+
+    add_submenu_page('contacts', __('Newsletters', 'wpbc'), __('Newsletters', 'wpbc'), 'activate_plugins', 'newsletters', ['modules\newsletter\admin\NewslettersPage' ,'index']);
+}
+
+add_action('admin_menu', 'wpbc_admin_menu');
