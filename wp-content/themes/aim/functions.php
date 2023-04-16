@@ -10,7 +10,6 @@ function disable_plugin_deactivation($actions, $plugin_file, $plugin_data, $cont
                 'elementor/elementor.php',
                 'pro-elements/pro-elements.php',
                 'pods/init.php',
-                'wp-optimize/wp-optimize.php',
                 'wp-mail-smtp/wp_mail_smtp.php',
             )
         )
