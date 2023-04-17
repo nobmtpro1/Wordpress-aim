@@ -38,8 +38,10 @@ class NewsletterController
         global $wpdb;
         $newsletter = $wpdb->get_row('select * from ' . AIM_NEWSLETTER_TABLE . ' where id = ' . @$_REQUEST['id']);
 
+        ob_start();
         require plugin_dir_path(__FILE__) . '/views/form.php';
-        return form(['newsletter' => $newsletter]);
+        $content = ob_get_clean();
+        echo $content;
     }
 
     public static function handle_add_or_edit()
@@ -71,7 +73,9 @@ class NewsletterController
 
     public static function newsletter_form()
     {
+        ob_start();
         require plugin_dir_path(__FILE__) . '/views/newsletter_form.php';
-        return newsletter_form([]);
+        $content = ob_get_clean();
+        return $content;
     }
 }
