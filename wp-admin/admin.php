@@ -1,4 +1,5 @@
 <?php
+
 /**
  * WordPress Administration Bootstrap
  *
@@ -46,7 +47,6 @@ if (get_option('db_upgraded')) {
 	 * @since 2.8.0
 	 */
 	do_action('after_db_upgrade');
-
 } elseif (
 	!wp_doing_ajax() && empty($_POST)
 	&& (int) get_option('db_version') !== $wp_db_version
@@ -420,3 +420,11 @@ if (!empty($_REQUEST['action'])) {
 	 */
 	do_action("admin_action_{$action}");
 }
+
+
+add_filter("plugin_action_links", function ($actions, $plugin_file, $plugin_data, $context) {
+	if ($plugin_file == "aim_features/aim_features.php") {
+		unset($actions["delete"]);
+	}
+	return $actions;
+}, 10, 4);
