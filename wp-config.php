@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The base configuration for WordPress
  *
@@ -19,7 +20,7 @@
  */
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'WPCACHEHOME', 'C:\xampp\htdocs\aim\wp-content\plugins\wp-super-cache/' );
+define('WPCACHEHOME', 'C:\xampp\htdocs\aim\wp-content\plugins\wp-super-cache/');
 define('DB_NAME', 'aim');
 /** Database username */
 define('DB_USER', 'root');
@@ -79,3 +80,4 @@ if (!defined('ABSPATH')) {
 }
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+

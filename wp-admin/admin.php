@@ -420,12 +420,3 @@ if (!empty($_REQUEST['action'])) {
 	 */
 	do_action("admin_action_{$action}");
 }
-
-
-// add_filter("plugin_action_links", function ($actions, $plugin_file, $plugin_data, $context) {
-// 	if ($plugin_file == "laravel/laravel.php") {
-// 		unset($actions["delete"]);
-// 		unset($actions["deactivate"]);
-// 	}
-// 	return $actions;
-// }, 10, 4);
