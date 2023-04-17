@@ -1,6 +1,8 @@
 {
     "require": {
-        "symfony/var-dumper": "^5.4"
+        "symfony/var-dumper": "^5.4",
+        "rakit/validation": "^1.4",
+        "eftec/bladeone": "^4.8"
     },
     "autoload": {
         "psr-4": {

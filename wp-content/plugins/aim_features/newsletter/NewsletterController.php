@@ -3,11 +3,11 @@
 namespace aim_features\newsletter;
 
 use aim_features\newsletter\NewsletterTable;
+use Rakit\Validation\Validator;
 
 class NewsletterController
 {
-
-    static public function index()
+    public static function index()
     {
         switch (@$_REQUEST['my_action']) {
             case 'add_or_edit':
@@ -17,7 +17,7 @@ class NewsletterController
         }
     }
 
-    static public function list()
+    public static function list()
     {
         $table = new NewsletterTable();
         $table->prepare_items();
@@ -27,39 +27,36 @@ class NewsletterController
             $message = '<div class="updated below-h2" id="message"><p>' . sprintf(__('Items deleted: %d', 'wpbc'), '1') . '</p></div>';
         }
 
+        ob_start();
         require plugin_dir_path(__FILE__) . '/views/list.php';
+        $content = ob_get_clean();
+        echo $content;
     }
 
-    static public function add_or_edit()
+    public static function add_or_edit()
     {
         global $wpdb;
         $newsletter = $wpdb->get_row('select * from ' . AIM_NEWSLETTER_TABLE . ' where id = ' . @$_REQUEST['id']);
+
         require plugin_dir_path(__FILE__) . '/views/form.php';
+        return form(['newsletter' => $newsletter]);
     }
 
-    static public function handle_add_or_edit()
+    public static function handle_add_or_edit()
     {
-        // dd(123);
         $id = @$_REQUEST['id'];
         $name = @$_REQUEST['name'];
         $email = @$_REQUEST['email'];
         $is_marketing = @$_REQUEST['is_marketing'];
 
-        $error_message = [];
-        if (!$name) {
-            $error_message[] = "Name is required";
-        }
-        if (strlen($name) > 100) {
-            $error_message[] = "Name is too long";
-        }
-        if (!$email) {
-            $error_message[] = "Email is required";
-        }
-        if (strlen($email) > 100) {
-            $error_message[] = "Email is too long";
-        }
-        if (count($error_message) > 0) {
-            return wp_send_json_error($error_message[0]);
+        $validator = new Validator();
+        $validation = $validator->make($_POST, [
+            'name' => 'required|max:100',
+            'email' => 'required|email|max:100',
+        ]);
+        $validation->validate();
+        if ($validation->fails()) {
+            return wp_send_json_error(array_values($validation->errors()->firstOfAll())[0]);
         }
 
         global $wpdb;
@@ -70,5 +67,11 @@ class NewsletterController
         }
 
         return wp_send_json_success('Success');
+    }
+
+    public static function newsletter_form()
+    {
+        require plugin_dir_path(__FILE__) . '/views/newsletter_form.php';
+        return newsletter_form([]);
     }
 }
