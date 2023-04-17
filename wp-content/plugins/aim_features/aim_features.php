@@ -22,5 +22,6 @@ add_action('admin_menu', function () {
 });
 
 add_action('wp_ajax_aim_newsletter_handle_add_or_edit', ['aim_features\newsletter\NewsletterController', 'handle_add_or_edit']);
+add_action('wp_ajax_nopriv_aim_newsletter_handle_add_or_edit', ['aim_features\newsletter\NewsletterController', 'handle_add_or_edit']);
 
 add_shortcode('newsletter_form', ['aim_features\newsletter\NewsletterController','newsletter_form']);

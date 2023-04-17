@@ -1,5 +1,5 @@
 <form action="" id="form-newsletter">
-    <input type="hidden" name="action" value="edit_newsletter">
+    <input type="hidden" name="action" value="aim_newsletter_handle_add_or_edit">
     <input type="text" name="name" id="" placeholder="Họ và tên*">
     <input type="text" name="email" id="" placeholder="Email*">
     <p>Bạn có đang làm trong ngành Marketing & Communication không?*</p>
