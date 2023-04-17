@@ -1,13 +1,12 @@
 <div class="wrap">
     <h2>
-        Newsletters <a class="add-new-h2" href="<?= admin_url('admin.php') ?>?page=newsletters">Back</a>
+        Newsletters <a class="add-new-h2" href="<?= admin_url('admin.php') ?>?page=aim_newsletter">Back</a>
     </h2>
     <form method="post" name="createuser" id="form" class="validate" novalidate="novalidate" action="<?= admin_url('admin-post.php') ?>">
-        <input type="hidden" name="action" value="aim_newsletter_handle_edit">
+        <input type="hidden" name="action" value="aim_newsletter_handle_add_or_edit">
         <input type="hidden" name="id" value="<?= @$newsletter->id ?>">
         <table class="form-table" role="presentation">
             <tbody>
-
                 <tr>
                     <th scope="row"><label for="blogname"> Name<span class="description">(required)</span></label></th>
                     <td><input name="name" type="text" value="<?= @$newsletter->name ?>" class="regular-text"></td>
@@ -44,7 +43,7 @@
             </tbody>
         </table>
         <p class="submit">
-            <input type="submit" class="button button-primary" value="Add New User">
+            <input type="submit" class="button button-primary" value="Save">
         </p>
     </form>
 </div>

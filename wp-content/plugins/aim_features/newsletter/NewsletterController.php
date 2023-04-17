@@ -4,14 +4,14 @@ namespace aim_features\newsletter;
 
 use aim_features\newsletter\NewsletterTable;
 
-class NewslettersController
+class NewsletterController
 {
 
     static public function index()
     {
         switch (@$_REQUEST['my_action']) {
-            case 'add':
-                return self::add();
+            case 'add_or_edit':
+                return self::add_or_edit();
             default:
                 return self::list();
         }
@@ -30,21 +30,14 @@ class NewslettersController
         require plugin_dir_path(__FILE__) . '/views/list.php';
     }
 
-    static public function add()
-    {
-        $newsletter = null;
-        require plugin_dir_path(__FILE__) . '/views/form.php';
-    }
-
-    static public function edit()
+    static public function add_or_edit()
     {
         global $wpdb;
         $newsletter = $wpdb->get_row('select * from ' . AIM_NEWSLETTER_TABLE . ' where id = ' . @$_REQUEST['id']);
-        // dd($newsletter);
         require plugin_dir_path(__FILE__) . '/views/form.php';
     }
 
-    static public function handle_edit()
+    static public function handle_add_or_edit()
     {
         // dd(123);
         $id = @$_REQUEST['id'];
@@ -70,7 +63,11 @@ class NewslettersController
         }
 
         global $wpdb;
-        $wpdb->update(AIM_NEWSLETTER_TABLE, ['name' => $name, 'email' => $email, 'is_marketing' =>  $is_marketing], ['id' => $id]);
+        if ($id) {
+            $wpdb->update(AIM_NEWSLETTER_TABLE, ['name' => $name, 'email' => $email, 'is_marketing' =>  $is_marketing], ['id' => $id]);
+        } else {
+            $wpdb->insert(AIM_NEWSLETTER_TABLE, ['name' => $name, 'email' => $email, 'is_marketing' =>  $is_marketing]);
+        }
 
         return wp_send_json_success('Success');
     }
