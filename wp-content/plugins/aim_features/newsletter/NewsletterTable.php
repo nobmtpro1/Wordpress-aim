@@ -9,7 +9,7 @@ if (!class_exists('WP_List_Table')) {
 
 class NewsletterTable extends \WP_List_Table
 {
-    function __construct()
+    public function __construct()
     {
         global $status, $page;
 
@@ -41,7 +41,7 @@ class NewsletterTable extends \WP_List_Table
         if (!empty($_REQUEST['detached'])) {
             echo '<input type="hidden" name="detached" value="' . esc_attr($_REQUEST['detached']) . '" />';
         }
-?>
+        ?>
         <p class="search-box">
             <label class="screen-reader-text" for="<?php echo esc_attr($input_id); ?>"><?php echo $text; ?>:</label>
             <input type="search" id="<?php echo esc_attr($input_id); ?>" name="s" value="<?php _admin_search_query(); ?>" />
@@ -51,12 +51,12 @@ class NewsletterTable extends \WP_List_Table
     }
 
 
-    function column_default($item, $column_name)
+    public function column_default($item, $column_name)
     {
         return $item[$column_name];
     }
 
-    function column_name($item)
+    public function column_name($item)
     {
         $id = $item['id'];
         $actions = array(
@@ -71,7 +71,7 @@ class NewsletterTable extends \WP_List_Table
         );
     }
 
-    function column_cb($item)
+    public function column_cb($item)
     {
         return sprintf(
             '<input type="checkbox" name="id[]" value="%s" />',
@@ -79,7 +79,7 @@ class NewsletterTable extends \WP_List_Table
         );
     }
 
-    function get_columns()
+    public function get_columns()
     {
         $columns = array(
             'cb' => '<input type="checkbox" />',
@@ -91,7 +91,7 @@ class NewsletterTable extends \WP_List_Table
         return $columns;
     }
 
-    function get_sortable_columns()
+    public function get_sortable_columns()
     {
         $sortable_columns = array(
             'name' => array('name', true),
@@ -101,7 +101,7 @@ class NewsletterTable extends \WP_List_Table
         return $sortable_columns;
     }
 
-    function get_bulk_actions()
+    public function get_bulk_actions()
     {
         $actions = array(
             'delete' => 'Delete'
@@ -109,25 +109,26 @@ class NewsletterTable extends \WP_List_Table
         return $actions;
     }
 
-    function process_bulk_action()
+    public function process_bulk_action()
     {
         if ('delete' === $this->current_action()) {
             $ids = isset($_REQUEST['id']) ? $_REQUEST['id'] : array();
-            if (is_array($ids))
+            if (is_array($ids)) {
                 $ids = implode(',', $ids);
+            }
 
             if (!empty($ids)) {
                 try {
-                    // Newsletter::whereIn('id', explode(",", $ids))->delete();
+                    global $wpdb;
+                    $wpdb->query($wpdb->prepare("delete from %i where id in ($ids)", [AIM_NEWSLETTER_TABLE]));
                 } catch (\Exception $e) {
                 }
             }
         }
     }
 
-    function prepare_items()
+    public function prepare_items()
     {
-        // dd($_REQUEST);
         global $wpdb;
         $s = @$_REQUEST['s'];
         $per_page = 10;
@@ -141,8 +142,16 @@ class NewsletterTable extends \WP_List_Table
         $order = (isset($_REQUEST['order']) && in_array($_REQUEST['order'], array('asc', 'desc'))) ? $_REQUEST['order'] : 'desc';
 
         $total = 1;
-        $data = $wpdb->get_results('SELECT * FROM ' . AIM_NEWSLETTER_TABLE, ARRAY_A);
-        // dd($data);
+        $query = $wpdb->prepare("SELECT * from %i where name like %s or email like %s order by %i ". ($order == 'desc' ? 'desc' : 'asc') ." LIMIT %d OFFSET %d", [
+            AIM_NEWSLETTER_TABLE,
+            '%' . $wpdb->esc_like($s) . '%',
+            '%' . $wpdb->esc_like($s) . '%',
+            $orderby,
+           $per_page,($paged - 1) * $per_page
+        ]);
+        $data = $wpdb->get_results($query, ARRAY_A);
+
+        // dd($query);
 
         foreach ($data as $key => $value) {
             $data[$key]['sync'] = '<a data-id="' . $value['id'] . '" class="button sync-newsletter">Sync</a>';
